@@ -1,16 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 5f;
 
     private Rigidbody2D rb;
     private Animator animator;
-    Vector2 movement;
-    
+    [SerializeField] Text resourcesCounterText;
 
+    Vector2 movement;
+
+    int totalResources = 0;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -37,5 +39,16 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);
+    }
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Resource")
+        {
+            Destroy(collision.gameObject);
+            totalResources++;
+            resourcesCounterText.text = "Resources: " + totalResources;
+        }
     }
 }
