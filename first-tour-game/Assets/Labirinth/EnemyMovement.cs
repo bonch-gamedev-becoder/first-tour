@@ -9,7 +9,8 @@ public class EnemyMovement : MonoBehaviour
     private BoxCollider2D boxCol;
 
     private Vector2 forward;
-    
+
+
 
     private void Start()
     {
@@ -51,7 +52,8 @@ public class EnemyMovement : MonoBehaviour
         if (distance < GameManager.instance.level * 3.5f)
         {
             gameObject.AddComponent<EnemyAttackBase>();
-            Destroy(this);
+            boxCol.enabled = true;
+            //Destroy(this);
         }
 
         if (HitWall())
@@ -99,13 +101,13 @@ public class EnemyMovement : MonoBehaviour
             return false;
         }
 
-        if (!hit.transform.CompareTag("blockingLayer"))
-        {
-            Debug.Log(hit.transform.tag);
-            hit.transform.GetComponent<BoxCollider2D>().enabled = false;
-            MoveForward();
-            return false;
-        }
+        //if (!hit.transform.CompareTag("blockingLayer"))
+        //{
+        //    Debug.Log(hit.transform.tag);
+        //    hit.transform.GetComponent<BoxCollider2D>().enabled = false;
+        //    MoveForward();
+        //    return false;
+        //}
 
 
         return true;
