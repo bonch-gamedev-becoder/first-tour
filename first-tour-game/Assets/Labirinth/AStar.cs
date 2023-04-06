@@ -23,6 +23,7 @@ public class AStar : MonoBehaviour
     int k;
     int l;
 
+
     //Передаем сюда лабиринт, сгенерированный BackTracker
     public AStar(Maze Maze)
     {

@@ -8,8 +8,8 @@ public class MazeGenerator
     //public AStar aStar;
     public Button BackTracker;
     public Button RightHand;
-    public int Width = 30;
-    public int Height = 30;
+    public int Width = 20;
+    public int Height = 20;
 
     public Maze GenerateMaze()
     {
@@ -40,7 +40,7 @@ public class MazeGenerator
         Maze maze = new Maze();
 
         maze.cells = cells;
-        maze.finishPosition = PlaceMazeExit(cells);
+        maze.finishPosition = PlaceBase(maze);
 
 
         AStar aStar = new AStar(maze);
@@ -101,27 +101,50 @@ public class MazeGenerator
         }
     }
 
-    private Vector2Int PlaceMazeExit(MazeGeneratorCell[,] maze)
+    private Vector2Int PlaceBase(Maze maze)
     {
-        MazeGeneratorCell furthest = maze[0, 0];
+        int X = Width / 2;
+        int Y = Height / 2;
 
-        for (int x = 0; x < maze.GetLength(0); x++)
+        int radious = GameManager.instance.level * 2;
+        int A = Mathf.Abs(radious - X / 2);
+        int B = X - A;
+
+        for (int i = 0; i < maze.cells.Length; i++)
         {
-            if (maze[x, Height - 2].DistanceFromStart > furthest.DistanceFromStart) furthest = maze[x, Height - 2];
-            if (maze[x, 0].DistanceFromStart > furthest.DistanceFromStart) furthest = maze[x, 0];
+            for (int j = 0; j < maze.cells.Length; j++)
+            {
+                if (maze.cells[i, j].X > A && maze.cells[i, j].X < B)
+                {
+                    maze.cells[i, j].WallLeft = false;
+                    maze.cells[i, j].WallBottom = false;
+                }
+            }
         }
-
-        for (int y = 0; y < maze.GetLength(1); y++)
-        {
-            if (maze[Width - 2, y].DistanceFromStart > furthest.DistanceFromStart) furthest = maze[Width - 2, y];
-            if (maze[0, y].DistanceFromStart > furthest.DistanceFromStart) furthest = maze[0, y];
-        }
-
-        if (furthest.X == 0) furthest.WallLeft = false;
-        else if (furthest.Y == 0) furthest.WallBottom = false;
-        else if (furthest.X == Width - 2) maze[furthest.X + 1, furthest.Y].WallLeft = false;
-        else if (furthest.Y == Height - 2) maze[furthest.X, furthest.Y + 1].WallBottom = false;
-
-        return new Vector2Int(furthest.X, furthest.Y);
+        return new Vector2Int(X, Y);
     }
+
+    //private Vector2Int PlaceMazeExit(MazeGeneratorCell[,] maze)
+    //{
+    //    MazeGeneratorCell furthest = maze[0, 0];
+
+    //    for (int x = 0; x < maze.GetLength(0); x++)
+    //    {
+    //        if (maze[x, Height - 2].DistanceFromStart > furthest.DistanceFromStart) furthest = maze[x, Height - 2];
+    //        if (maze[x, 0].DistanceFromStart > furthest.DistanceFromStart) furthest = maze[x, 0];
+    //    }
+
+    //    for (int y = 0; y < maze.GetLength(1); y++)
+    //    {
+    //        if (maze[Width - 2, y].DistanceFromStart > furthest.DistanceFromStart) furthest = maze[Width - 2, y];
+    //        if (maze[0, y].DistanceFromStart > furthest.DistanceFromStart) furthest = maze[0, y];
+    //    }
+
+    //    if (furthest.X == 0) furthest.WallLeft = false;
+    //    else if (furthest.Y == 0) furthest.WallBottom = false;
+    //    else if (furthest.X == Width - 2) maze[furthest.X + 1, furthest.Y].WallLeft = false;
+    //    else if (furthest.Y == Height - 2) maze[furthest.X, furthest.Y + 1].WallBottom = false;
+
+    //    return new Vector2Int(furthest.X, furthest.Y);
+    //}
 }
