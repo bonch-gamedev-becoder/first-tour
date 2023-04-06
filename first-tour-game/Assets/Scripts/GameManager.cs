@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 
     public Maze currentMaze;
 
+    public GameObject enemySpawnPoints;
     public int level;
 
 
@@ -15,7 +16,12 @@ public class GameManager : MonoBehaviour
     {
         if (instance == null)
             instance = this;
+    }
 
+    public void CoreGameplay(Maze maze)
+    {
+        currentMaze = maze;
+        Instantiate(enemySpawnPoints, transform.position, Quaternion.identity);
     }
 
 }

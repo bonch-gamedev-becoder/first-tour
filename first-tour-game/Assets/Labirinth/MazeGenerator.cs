@@ -41,7 +41,7 @@ public class MazeGenerator
 
         maze.cells = cells;
         maze.finishPosition = PlaceBase(maze.cells);
-        GameManager.instance.currentMaze = maze;
+        GameManager.instance.CoreGameplay(maze);
         PlayerMovement.instance.transform.Translate(new Vector2(maze.finishPosition.x, maze.finishPosition.y - 1));
 
 

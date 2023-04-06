@@ -12,6 +12,7 @@ public class BulletBehavior : MonoBehaviour
             Destroy(gameObject);
             collision.collider.gameObject.GetComponent<EnemyCombat>().TakeDamage(damage);
         }
+
         if (collision.transform.tag == "blockingLayer")
         {
             Destroy(gameObject);

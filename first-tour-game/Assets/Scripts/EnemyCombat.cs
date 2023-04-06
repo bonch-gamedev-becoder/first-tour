@@ -22,8 +22,9 @@ public class EnemyCombat : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        Debug.Log("Enemy taking damage. its hp is " + currentHealth);
         currentHealth -= damage;
-        if (currentHealth < 0 )
+        if (currentHealth < 0)
         {
             Death();
         }
