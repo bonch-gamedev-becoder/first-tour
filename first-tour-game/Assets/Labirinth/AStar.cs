@@ -72,9 +72,9 @@ public class AStar : MonoBehaviour
             current = MinimumCell;
             MyMaze.pathAStar.Add(current);
             
-            Debug.Log("("+ current.X + "," + current.Y + ")");
-            Debug.Log("Расстояние от старта:" + current.DistanceFromStart + "\t" + "Расстояние до конца: "
-                + current.DistanceTillEnd + "\t" + "F: " + current.F);
+            //Debug.Log("("+ current.X + "," + current.Y + ")");
+            //Debug.Log("Расстояние от старта:" + current.DistanceFromStart + "\t" + "Расстояние до конца: "
+            //    + current.DistanceTillEnd + "\t" + "F: " + current.F);
         k++;
 
         if (current.DistanceTillEnd != 0)
