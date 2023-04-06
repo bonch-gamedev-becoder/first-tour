@@ -3,26 +3,18 @@ using System.Collections;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public float Speed = 2;
+    public float Speed;
+    public float coolDown;
 
     private BoxCollider2D boxCol;
 
     private Vector2 forward;
-
-    private Vector2 End;
-
-    private Rigidbody2D componentRigidbody;
-
-    bool canMove;
-    float coolDown;
+    
 
     private void Start()
     {
-        canMove = true;
         forward = new Vector2(0, 1);
-        coolDown = 1f;
         boxCol = GetComponent<BoxCollider2D>();
-        componentRigidbody = GetComponent<Rigidbody2D>();
         RightHandAlgoritm();          // расскоментить что бы ходил
     }
 
@@ -54,6 +46,14 @@ public class EnemyMovement : MonoBehaviour
 
     private void RightHandAlgoritm()
     {
+        float distance = Vector2.Distance(GameManager.instance.currentMaze.finishPosition, transform.position);
+
+        if (distance < GameManager.instance.level * 3.5f)
+        {
+            gameObject.AddComponent<EnemyAttackBase>();
+            Destroy(this);
+        }
+
         if (HitWall())
         {
             Obsticle();
@@ -94,9 +94,19 @@ public class EnemyMovement : MonoBehaviour
 
         if (hit.transform == null)
         {
+            Debug.Log("MovingForward");
             MoveForward();
             return false;
         }
+
+        if (!hit.transform.CompareTag("blockingLayer"))
+        {
+            Debug.Log(hit.transform.tag);
+            hit.transform.GetComponent<BoxCollider2D>().enabled = false;
+            MoveForward();
+            return false;
+        }
+
 
         return true;
     }
@@ -104,20 +114,17 @@ public class EnemyMovement : MonoBehaviour
 
     private void MoveForward()
     {
-        transform.position = Vector3Extension.AsVector2(transform.position) + forward;
-        canMove = false;
+        LeanTween.move(gameObject, Vector3Extension.AsVector2(transform.position) + forward, Speed / 10);
     }
 
     public void MoveTo(Vector2 pos)
     {
         transform.position = pos;
-        canMove = false;
     }
 
     private void MoveBack()
     {
         transform.position = Vector3Extension.AsVector2(transform.position) - forward;
-        canMove = false;
     }
 
     private IEnumerator RestartAlgorithm()
