@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BulletBehavior : MonoBehaviour
 {
+
     [SerializeField] int damage;
     private void OnCollisionEnter2D(Collision2D collision)
     {
