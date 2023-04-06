@@ -8,8 +8,8 @@ public class MazeGenerator
     //public AStar aStar;
     public Button BackTracker;
     public Button RightHand;
-    public int Width = 20;
-    public int Height = 20;
+    public int Width = 12;
+    public int Height = 12;
 
     public Maze GenerateMaze()
     {
@@ -40,7 +40,8 @@ public class MazeGenerator
         Maze maze = new Maze();
 
         maze.cells = cells;
-        maze.finishPosition = PlaceBase(maze);
+        maze.finishPosition = PlaceBase(maze.cells);
+        PlayerMovement.instance.transform.Translate(new Vector2(maze.finishPosition.x, maze.finishPosition.y - 1));
 
 
         AStar aStar = new AStar(maze);
@@ -101,23 +102,30 @@ public class MazeGenerator
         }
     }
 
-    private Vector2Int PlaceBase(Maze maze)
+    private Vector2Int PlaceBase(MazeGeneratorCell[,] maze)
     {
         int X = Width / 2;
         int Y = Height / 2;
 
         int radious = GameManager.instance.level * 2;
-        int A = Mathf.Abs(radious - X / 2);
-        int B = X - A;
+        int A = Mathf.Abs(X - radious);
+        int B = X * 2 - A;
 
-        for (int i = 0; i < maze.cells.Length; i++)
+        Debug.Log("radious = " + radious);
+        Debug.Log("A = " + A);
+        Debug.Log("B = " + B);
+
+        for (int x = 0; x < maze.GetLength(0); x++)
         {
-            for (int j = 0; j < maze.cells.Length; j++)
+            for (int y = 0; y < maze.GetLength(1); y++)
             {
-                if (maze.cells[i, j].X > A && maze.cells[i, j].X < B)
+                if (maze[x, y].X >= A && maze[x, y].X < B)
                 {
-                    maze.cells[i, j].WallLeft = false;
-                    maze.cells[i, j].WallBottom = false;
+                    if (maze[x,y].Y >= A && maze[x, y].Y < B)
+                    {
+                        maze[x, y].WallLeft = false;
+                        maze[x, y].WallBottom = false;
+                    }
                 }
             }
         }
