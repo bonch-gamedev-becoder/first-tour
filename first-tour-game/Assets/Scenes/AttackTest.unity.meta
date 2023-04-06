@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:first-tour-game/Assets/Scenes/AttackTest.unity.meta
 guid: 1a0cf13636109ab44a657dc39f55c22c
 DefaultImporter:
+========
+guid: 85bfc3cd4c40d43878b68f63876287d3
+PrefabImporter:
+>>>>>>>> d657e544f833403e7ec665c8a6afcb5834b0f0b2:first-tour-game/Assets/Prefabs/FastEnemy.prefab.meta
   externalObjects: {}
   userData: 
   assetBundleName: 
