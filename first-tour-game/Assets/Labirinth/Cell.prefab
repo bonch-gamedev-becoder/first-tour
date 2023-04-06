@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9194031377775642994}
   m_Layer: 0
   m_Name: Cell
-  m_TagString: Envroment
+  m_TagString: blockingLayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

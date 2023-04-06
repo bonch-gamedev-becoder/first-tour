@@ -329,7 +329,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeTillStart: 2
-  prefab: {fileID: 9110567562325408298, guid: 85bfc3cd4c40d43878b68f63876287d3, type: 3}
+  prefab: {fileID: 9110567562325408298, guid: 4fceed27ad80142f6aaadaffc4b58b5c, type: 3}
   coolDown: 6
 --- !u!4 &1503617536
 Transform:
