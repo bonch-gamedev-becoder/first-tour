@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class PlayerMovement : MonoBehaviour
 {
+    public static PlayerMovement instance = null;
     [SerializeField] float moveSpeed = 5f;
 
     private Rigidbody2D rb;
@@ -19,13 +20,13 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    //обработка ввода
+    //????????? ?????
     void Update()
     {
         ProcessInputForMovement();
     }
 
-    //обработка движения
+    //????????? ????????
     private void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement.normalized * moveSpeed * Time.fixedDeltaTime);
