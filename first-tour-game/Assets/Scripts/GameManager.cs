@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 
     public Maze currentMaze;
 
+    public GameObject spawnBase;
     public GameObject enemySpawnPoints;
     public int level;
     public int points;
@@ -17,6 +18,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         DontDestroyOnLoad(this);
+
         if (instance == null)
             instance = this;
 
@@ -32,6 +34,11 @@ public class GameManager : MonoBehaviour
     public void CoreGameplay(Maze maze)
     {
         currentMaze = maze;
+
+        //PlayerBonusBehavior.instance.baseBehaviorScript =
+        Instantiate(spawnBase, transform.position, Quaternion.identity);
+            //.GetComponent<BaseBehavior>();
+
         Instantiate(enemySpawnPoints, transform.position, Quaternion.identity);
     }
 
@@ -57,6 +64,7 @@ public class GameManager : MonoBehaviour
 
     void loadNextLevel()
     {
+        points = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

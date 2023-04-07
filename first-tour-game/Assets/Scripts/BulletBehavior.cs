@@ -12,8 +12,9 @@ public class BulletBehavior : MonoBehaviour
 
         if (collision.collider.tag == "Enemy")
         {
-            Destroy(gameObject);
             collision.gameObject.GetComponent<EnemyCombat>().TakeDamage(damage);
+            Destroy(gameObject);
+            //collision.gameObject.GetComponent<EnemyCombat>().TakeDamage(damage);
         }
 
         if (collision.transform.tag == "blockingLayer")
@@ -21,7 +22,13 @@ public class BulletBehavior : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (collision.gameObject.tag == "Base" && gameObject.tag == "Enemy")
+        if (collision.transform.tag == "Bullet" || collision.transform.tag == "EnemyBullet")
+        {
+            Destroy(gameObject);
+        }
+
+
+        if (collision.gameObject.tag == "Base" && gameObject.tag == "EnemyBullet")
         {
             Destroy(gameObject);
             collision.gameObject.GetComponent<BaseBehavior>().TakeDamage(damage);

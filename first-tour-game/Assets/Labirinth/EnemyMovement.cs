@@ -51,7 +51,7 @@ public class EnemyMovement : MonoBehaviour
     {
         float distance = Vector2.Distance(GameManager.instance.currentMaze.finishPosition, transform.position);
 
-        if (distance < GameManager.instance.level * 3.5f)
+        if (distance < GameManager.instance.level * 2.5f)
         {
             if (!test)
             {
