@@ -9,6 +9,11 @@ TagManager:
   - Enemy
   - Enviroment
   - Envroment
+  - ResourceBonus
+  - ShieldBonus
+  - InvisibilityBonus
+  - ThanosBonus
+  - Base
   layers:
   - Default
   - TransparentFX
