@@ -19,19 +19,19 @@ public class PlayerCombat : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && canShoot)
         {
-             StartCoroutine(Shoot());
+             Shoot();
         }
     }
 
-    IEnumerator Shoot()
+    void Shoot()
     {
-        canShoot = false;
+        //canShoot = false;
 
         SpawnAndImpulseBullet();
         SoundsManager.instance.PlaySound("Shoot", true);
 
-        yield return new WaitForSeconds(0.25f);
-        canShoot = true;
+        //yield return new WaitForSeconds(0.25f);
+        //canShoot = true;
     }
 
     private void SpawnAndImpulseBullet()

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class BaseBehavior : MonoBehaviour
 {
-    int maxHealth;
+    [SerializeField] int maxHealth;
     int currentHealth;
 
     bool shieldActive = false;
@@ -14,23 +14,18 @@ public class BaseBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        maxHealth = 500;
         currentHealth = maxHealth;
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
-    public void activateShield()
+    public void ActivateShield()
     {
         shieldActive = true; 
         //TODO: замена спрайта на спрайт базы с включенным щитом
     }
 
-    public void disableShield()
+    public void DisableShield()
     {
         shieldActive = false;
         //TODO: замена спрайта на спрайт базы с выключенным щитом
