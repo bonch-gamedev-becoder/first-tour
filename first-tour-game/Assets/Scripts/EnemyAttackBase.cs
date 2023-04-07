@@ -6,6 +6,8 @@ public class EnemyAttackBase : MonoBehaviour
 {
     public Vector3 dir;
     private Transform target;
+
+    //use awake function instead of start to fix bug (enable script "enemy combat")
     private void Awake()
     {
         Debug.Log("Enemy attacking base!");
@@ -15,9 +17,17 @@ public class EnemyAttackBase : MonoBehaviour
         dir = target.position - transform.position;
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
 
-        transform.rotation = Quaternion.Euler(0f, 0f, angle + 180f);
+        transform.rotation = Quaternion.Euler(0f, 0f, angle);
 
         GetComponentInParent<EnemyCombat>().enabled = true;
+    }
+
+    private void Update()
+    {
+        dir = target.position - transform.position;
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+
+        transform.rotation = Quaternion.Euler(0f, 0f, angle);
     }
 
     public void StopMovementNearBase()
