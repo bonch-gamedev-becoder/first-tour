@@ -6,7 +6,7 @@ using UnityEngine;
 public class BaseBehavior : MonoBehaviour
 {
     [SerializeField] int maxHealth;
-    [SerializeField] int currentHealth;
+    public int currentHealth;
 
     public bool shieldActive = false;
 
@@ -41,6 +41,7 @@ public class BaseBehavior : MonoBehaviour
         {
             Death();
         }
+        BaseHpTracker.instance.ChangeText();
     }
 
     private void Death()
