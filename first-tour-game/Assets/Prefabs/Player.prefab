@@ -254,8 +254,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68c095deb55c36544b4c0a123be4f1d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resourcesCounterText: {fileID: 0}
+  totalResources: 0
   baseObject: {fileID: 0}
+  collider: {fileID: 0}
+  sr: {fileID: 0}
+  resourcesCounterText: {fileID: 0}
 --- !u!114 &5370806484650042493
 MonoBehaviour:
   m_ObjectHideFlags: 0

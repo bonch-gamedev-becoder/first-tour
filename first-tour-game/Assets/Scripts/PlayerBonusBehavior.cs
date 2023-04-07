@@ -24,18 +24,13 @@ public class PlayerBonusBehavior : MonoBehaviour
         //collider = GetComponent<BoxCollider2D>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Destroy(collision.gameObject);
         if (collision.tag == "ShieldBonus")
         {
-            ShieldBonus();
+            StartCoroutine(ShieldBonus());
         }
         if (collision.tag == "InvisibilityBonus")
         {
@@ -61,7 +56,6 @@ public class PlayerBonusBehavior : MonoBehaviour
 
     IEnumerator ShieldBonus()
     {
-        
         baseBehaviorScript.ActivateShield();
         yield return new WaitForSeconds(5f);
         baseBehaviorScript.DisableShield();

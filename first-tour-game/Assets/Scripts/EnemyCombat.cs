@@ -80,14 +80,13 @@ public class EnemyCombat : MonoBehaviour
 
         Random rand = new Random();
         int randNumber = rand.Next(0, 9);
-
-        if (randNumber >= 0 && randNumber <= 3)
-        {
-            Instantiate(thanosBonus, transform.position, Quaternion.identity);
-        }
-        else if (randNumber >= 8 && randNumber <= 9)
+        if (randNumber >= 8 && randNumber <= 9)
         {
             Instantiate(shieldBonus, transform.position, Quaternion.identity);
+        }
+        else if (randNumber >= 0 && randNumber <= 3)
+        {
+            Instantiate(thanosBonus, transform.position, Quaternion.identity);
         }
         else if (randNumber >= 4 && randNumber <= 7)
         {

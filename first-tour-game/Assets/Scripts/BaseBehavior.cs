@@ -8,7 +8,7 @@ public class BaseBehavior : MonoBehaviour
     [SerializeField] int maxHealth;
     int currentHealth;
 
-    bool shieldActive = false;
+    public bool shieldActive = false;
 
 
     // Start is called before the first frame update
@@ -31,21 +31,21 @@ public class BaseBehavior : MonoBehaviour
         //TODO: замена спрайта на спрайт базы с выключенным щитом
     }
 
-    private void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         if (!shieldActive)
         {
             currentHealth -= damage;
         }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Enemy")
+        if (currentHealth < 0)
         {
-            TakeDamage(40);
+            Death();
         }
     }
 
-
+    private void Death()
+    {
+        Destroy(gameObject);
+        //TODO game over restart level
+    }
 }

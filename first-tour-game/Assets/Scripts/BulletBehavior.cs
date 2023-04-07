@@ -20,5 +20,11 @@ public class BulletBehavior : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        if (collision.gameObject.tag == "Base" && gameObject.tag == "Enemy")
+        {
+            Destroy(gameObject);
+            collision.gameObject.GetComponent<BaseBehavior>().TakeDamage(damage);
+        }
     }
 }
