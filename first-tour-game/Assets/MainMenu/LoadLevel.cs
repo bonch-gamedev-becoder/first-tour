@@ -4,8 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class NewGame : MonoBehaviour
+public class LoadLevel : MonoBehaviour
 {
+    public int levelNumber;
     
     void Start()
     {
@@ -14,6 +15,7 @@ public class NewGame : MonoBehaviour
 
     void StartGame()
     {
+        PlayerPrefs.SetInt("level", levelNumber);
         SceneManager.LoadScene("GameMap");
     }
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,13 +11,19 @@ public class GameManager : MonoBehaviour
 
     public GameObject enemySpawnPoints;
     public int level;
+    public int points;
 
 
     private void Awake()
     {
         if (instance == null)
             instance = this;
+
+        
+        level = PlayerPrefs.GetInt("level");
     }
+
+    
 
     public void CoreGameplay(Maze maze)
     {
@@ -24,4 +31,27 @@ public class GameManager : MonoBehaviour
         Instantiate(enemySpawnPoints, transform.position, Quaternion.identity);
     }
 
+    public void AddPoints(int number)
+    {
+        points += number;
+
+        if (points > level * 10)
+            levelComplete();
+    }
+
+    void levelComplete()
+    {
+        PlayerPrefs.SetInt("level", level + 1);
+
+        if (PlayerPrefs.GetInt("level") > PlayerPrefs.GetInt("maximum"))
+            PlayerPrefs.SetInt("maximum", PlayerPrefs.GetInt("level"));
+
+        Debug.Log("You completed " + level + " level!");
+        loadNextLevel();
+    }
+
+    void loadNextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 }
