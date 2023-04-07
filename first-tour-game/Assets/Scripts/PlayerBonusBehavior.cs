@@ -27,6 +27,10 @@ public class PlayerBonusBehavior : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.gameObject.tag == "BoostBlock")
+        {
+            return;
+        }
         Destroy(collision.gameObject);
         if (collision.tag == "ShieldBonus")
         {
