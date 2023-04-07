@@ -79,17 +79,17 @@ public class EnemyCombat : MonoBehaviour
        // playerBonusBehavour.resourcesCounterText.text = "Resources: " + playerBonusBehavour.totalResources;
 
         Random rand = new Random();
-        int randNumber = rand.Next(0, 9);
+        int randNumber = rand.Next(0, 49);
 
-        if (randNumber >= 0 && randNumber <= 3)
+        if (randNumber >= 0 && randNumber <= 5)
         {
             Instantiate(thanosBonus, transform.position, Quaternion.identity);
         }
-        else if (randNumber >= 8 && randNumber <= 9)
+        else if (randNumber >= 6 && randNumber <= 16)
         {
             Instantiate(shieldBonus, transform.position, Quaternion.identity);
         }
-        else if (randNumber >= 4 && randNumber <= 7)
+        else if (randNumber >= 17 && randNumber <= 24)
         {
             Instantiate(invisibilityBonus, transform.position, Quaternion.identity);
         }
