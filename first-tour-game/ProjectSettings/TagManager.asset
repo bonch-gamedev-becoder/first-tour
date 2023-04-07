@@ -13,6 +13,7 @@ TagManager:
   - ShieldBonus
   - InvisibilityBonus
   - ThanosBonus
+  - Base
   layers:
   - Default
   - TransparentFX

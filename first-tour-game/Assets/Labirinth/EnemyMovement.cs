@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UIElements;
 
 public class EnemyMovement : MonoBehaviour
 {
@@ -10,10 +11,11 @@ public class EnemyMovement : MonoBehaviour
 
     private Vector2 forward;
 
-
+    bool test;
 
     private void Start()
     {
+        test = false;
         forward = new Vector2(0, 1);
         boxCol = GetComponent<BoxCollider2D>();
         RightHandAlgoritm();          // расскоментить что бы ходил
@@ -51,7 +53,15 @@ public class EnemyMovement : MonoBehaviour
 
         if (distance < GameManager.instance.level * 3.5f)
         {
-            gameObject.AddComponent<EnemyAttackBase>();
+            if (!test)
+            {
+                Debug.Log("add enemy attack base");
+                gameObject.AddComponent<EnemyAttackBase>();
+                Destroy(this);
+                //gameObject.GetComponent<EnemyAttackBase>().StopMovementNearBase();
+                test = true;
+            }
+            
             boxCol.enabled = true;
             //Destroy(this);
         }

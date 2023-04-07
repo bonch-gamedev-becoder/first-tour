@@ -54,7 +54,7 @@ public class PlayerBonusBehavior : MonoBehaviour
         
         for (int i = 0; i < enemies.Length; i+=2)
         {
-            Destroy(enemies[i]);
+            enemies[i].GetComponent<EnemyCombat>().Death();
         }
     }
 
