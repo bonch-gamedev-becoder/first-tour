@@ -74,7 +74,7 @@ public class EnemyCombat : MonoBehaviour
         Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
         //playerBonusBehavour.totalResources++;
-        //TODO UI
+        //TODO UI   
        // playerBonusBehavour.resourcesCounterText.text = "Resources: " + playerBonusBehavour.totalResources;
 
         Random rand = new Random();
