@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject Base;
     public GameObject enemySpawnPoints;
+    public GameObject upgrades;
     public int level;
     public int points;
 
@@ -45,9 +46,10 @@ public class GameManager : MonoBehaviour
         currentMaze = maze;
 
         SpawnBase();
-        //UpgradesSpawn.instance.SpawnRandomUpgrade();
 
         Instantiate(enemySpawnPoints, transform.position, Quaternion.identity);
+
+        Instantiate(upgrades, transform.position, Quaternion.identity);
     }
 
     void SpawnBase()

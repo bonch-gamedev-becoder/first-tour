@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class UpgradesSpawn : MonoBehaviour
 {
-    public static UpgradesSpawn instance = null;
 
     public List<GameObject> upgrades;
 
     private void Start()
     {
-        if (instance == null)
-            instance = this;
-
+        SpawnRandomUpgrade();
     }
 
     public void SpawnRandomUpgrade()
