@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        DontDestroyOnLoad(this);
         if (instance == null)
             instance = this;
 
@@ -38,16 +39,17 @@ public class GameManager : MonoBehaviour
     {
         points += number;
 
-        if (points > level * 10)
+        if (points > level * 10 * 1.5f)
             levelComplete();
     }
 
     void levelComplete()
     {
-        PlayerPrefs.SetInt("level", level + 1);
+        level += 1;
+        PlayerPrefs.SetInt("level", level);
 
-        if (PlayerPrefs.GetInt("level") > PlayerPrefs.GetInt("maximum"))
-            PlayerPrefs.SetInt("maximum", PlayerPrefs.GetInt("level"));
+        if (level > PlayerPrefs.GetInt("maximum"))
+            PlayerPrefs.SetInt("maximum", level);
 
         Debug.Log("You completed " + level + " level!");
         loadNextLevel();

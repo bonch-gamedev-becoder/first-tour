@@ -71,6 +71,7 @@ public class EnemyCombat : MonoBehaviour
 
     public void Death()
     {
+        GameManager.instance.AddPoints(1);
         Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
         //playerBonusBehavour.totalResources++;

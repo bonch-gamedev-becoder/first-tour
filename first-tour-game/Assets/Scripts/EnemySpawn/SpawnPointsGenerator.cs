@@ -17,10 +17,10 @@ public class SpawnPointsGenerator : MonoBehaviour
     void GetSpawnPositions()
     {
         int num = GameManager.instance.level * 12 - 1;
+
         for (int x = 0; x < num; x++)
             for (int y = 0; y < num; y++)
                 if (x == 0 || x == num || y == 0 || y == num) {
-                    //Debug.Log(GameManager.instance.currentMaze.cells[x, y].X + " + "  + GameManager.instance.currentMaze.cells[x, y].Y);
                     Vector2 vector = new(GameManager.instance.currentMaze.cells[x, y].X + 0.5f, GameManager.instance.currentMaze.cells[x, y].Y + 0.5f);
                     spawnPoints.Add(vector);
                 }       

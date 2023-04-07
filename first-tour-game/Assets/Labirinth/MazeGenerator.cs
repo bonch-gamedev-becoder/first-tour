@@ -8,8 +8,10 @@ public class MazeGenerator
     //public AStar aStar;
     public Button BackTracker;
     public Button RightHand;
-    public int Width = 12;
-    public int Height = 12;
+    public int Width = 12 * GameManager.instance.level;
+    public int Height = 12 * GameManager.instance.level;
+
+    
 
     public Maze GenerateMaze()
     {
