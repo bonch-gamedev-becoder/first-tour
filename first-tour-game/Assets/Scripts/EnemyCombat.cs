@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Random = System.Random;
 
 public class EnemyCombat : MonoBehaviour
 {
     [SerializeField] GameObject deathEffect;
+
     [SerializeField] Transform firePoint;
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] float bulletForce = 20f;
@@ -14,15 +16,19 @@ public class EnemyCombat : MonoBehaviour
     private int currentHealth;
     private bool canShoot;
 
-    [SerializeField] GameObject resourceBonus;
+    [SerializeField] GameObject thanosBonus;
     [SerializeField] GameObject shieldBonus;
     [SerializeField] GameObject invisibilityBonus;
+    [SerializeField] GameObject player;
+
+    private PlayerBonusBehavior playerBonusBehavour;
 
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
         canShoot = true;
+        playerBonusBehavour = player.GetComponent<PlayerBonusBehavior>();
     }
 
     // Update is called once per frame
@@ -63,16 +69,19 @@ public class EnemyCombat : MonoBehaviour
         }
     }
 
-    private void Death()
+    public void Death()
     {
         Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
+        playerBonusBehavour.totalResources++;
+       // playerBonusBehavour.resourcesCounterText.text = "Resources: " + playerBonusBehavour.totalResources;
 
         Random rand = new Random();
         int randNumber = rand.Next(0, 9);
-        if (randNumber >= 0 && randNumber < 3)
+
+        if (randNumber >= 0 && randNumber <= 3)
         {
-            Instantiate(resourceBonus, transform.position, Quaternion.identity);
+            Instantiate(thanosBonus, transform.position, Quaternion.identity);
         }
         else if (randNumber >= 8 && randNumber <= 9)
         {
