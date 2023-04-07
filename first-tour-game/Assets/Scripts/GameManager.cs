@@ -21,6 +21,9 @@ public class GameManager : MonoBehaviour
 
         
         level = PlayerPrefs.GetInt("level");
+
+        if (level == 0)
+            level = 1;
     }
 
     
