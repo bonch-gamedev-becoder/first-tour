@@ -100,6 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 500
   currentHealth: 0
+  healthBar: {fileID: 5858070838799331315, guid: e108b5b1b88bfc9419392833b80df1b0, type: 3}
   shieldActive: 0
 --- !u!61 &8893198667127680718
 BoxCollider2D:
