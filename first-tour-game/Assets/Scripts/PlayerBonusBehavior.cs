@@ -66,6 +66,7 @@ public class PlayerBonusBehavior : MonoBehaviour
         yield return new WaitForSeconds(5f);
         baseBehaviorScript.DisableShield();
     }
+
     IEnumerator InvisibilityBonus()
     {
         Debug.Log("collide Inside function");

@@ -47,7 +47,7 @@ public class EnemyCombat : MonoBehaviour
         SpawnAndImpulseBullet();
         SoundsManager.instance.PlaySound("Shoot", true);
 
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(1f);
         canShoot = true;
     }
 
@@ -73,7 +73,7 @@ public class EnemyCombat : MonoBehaviour
     {
         Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
-        playerBonusBehavour.totalResources++;
+        //playerBonusBehavour.totalResources++;
         //TODO UI
        // playerBonusBehavour.resourcesCounterText.text = "Resources: " + playerBonusBehavour.totalResources;
 

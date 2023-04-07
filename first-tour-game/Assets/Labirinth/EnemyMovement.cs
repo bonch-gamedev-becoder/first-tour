@@ -58,12 +58,10 @@ public class EnemyMovement : MonoBehaviour
                 Debug.Log("add enemy attack base");
                 gameObject.AddComponent<EnemyAttackBase>();
                 Destroy(this);
-                //gameObject.GetComponent<EnemyAttackBase>().StopMovementNearBase();
                 test = true;
             }
             
             boxCol.enabled = true;
-            //Destroy(this);
         }
 
         if (HitWall())
