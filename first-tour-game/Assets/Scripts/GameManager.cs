@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        DontDestroyOnLoad(this);
+        //DontDestroyOnLoad(this);
 
         if (instance == null)
             instance = this;
@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
         currentMaze = maze;
 
         SpawnBase();
-        UpgradesSpawn.instance.SpawnRandomUpgrade();
+        //UpgradesSpawn.instance.SpawnRandomUpgrade();
 
         Instantiate(enemySpawnPoints, transform.position, Quaternion.identity);
     }
