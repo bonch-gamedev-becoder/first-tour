@@ -30,13 +30,22 @@ public class GameManager : MonoBehaviour
             level = 1;
     }
 
-    
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
+    }
+
+
 
     public void CoreGameplay(Maze maze)
     {
         currentMaze = maze;
 
         SpawnBase();
+        UpgradesSpawn.instance.SpawnRandomUpgrade();
 
         Instantiate(enemySpawnPoints, transform.position, Quaternion.identity);
     }
