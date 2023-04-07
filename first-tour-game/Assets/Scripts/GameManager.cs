@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
 
         
         level = PlayerPrefs.GetInt("level");
+        Debug.Log("Level: " + level);
     }
 
     
