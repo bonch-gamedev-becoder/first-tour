@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c2a1dae6f7b26624ead9d2394dea0be6
+guid: 5a57723be70b3ec43b8099cbe8ba9150
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -117,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sprite_sheet_enemy_walking_0
+      name: kill_enemies_spritesheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 16
-        height: 16
+        width: 26
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e70570a26ba13b249acdff7f4e659d12
-      internalID: 948130177
+      spriteID: ff4b59eba610ba240a351ef8c54d3479
+      internalID: 366881789
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_sheet_enemy_walking_1
+      name: kill_enemies_spritesheet_1
       rect:
         serializedVersion: 2
-        x: 16
+        x: 26
         y: 0
-        width: 16
-        height: 16
+        width: 26
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dc114c49c0387c64087023fc67531bb0
-      internalID: 284355035
+      spriteID: 708debe4578ac1a4881ffb110381d5f9
+      internalID: 1280397302
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_sheet_enemy_walking_2
+      name: kill_enemies_spritesheet_2
       rect:
         serializedVersion: 2
-        x: 32
+        x: 52
         y: 0
-        width: 16
-        height: 16
+        width: 26
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,20 +173,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0237e0f6d25e7b141a193f96e71a2f16
-      internalID: -595495146
+      spriteID: 58867dab09540c4498d54345c0ec3296
+      internalID: 1777048968
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_sheet_enemy_walking_3
+      name: kill_enemies_spritesheet_3
       rect:
         serializedVersion: 2
-        x: 48
+        x: 78
         y: 0
-        width: 16
-        height: 16
+        width: 26
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,20 +194,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7bb907c1ef80d8b458590a1e4f0cfc62
-      internalID: 1592872144
+      spriteID: 3a92edfc639605449bac637dd834d767
+      internalID: 670032569
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_sheet_enemy_walking_4
+      name: kill_enemies_spritesheet_4
       rect:
         serializedVersion: 2
-        x: 64
+        x: 104
         y: 0
-        width: 16
-        height: 16
+        width: 26
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,8 +215,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 84e0699106490a1488a1d60606380620
-      internalID: 140086848
+      spriteID: 4f60a0b8443121448bf2fd9e2a4d5279
+      internalID: 696011930
       vertices: []
       indices: 
       edges: []
@@ -232,11 +232,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      sprite_sheet_enemy_walking_2: -595495146
-      sprite_sheet_enemy_walking_0: 948130177
-      sprite_sheet_enemy_walking_4: 140086848
-      sprite_sheet_enemy_walking_1: 284355035
-      sprite_sheet_enemy_walking_3: 1592872144
+      kill_enemies_spritesheet_1: 1280397302
+      kill_enemies_spritesheet_2: 1777048968
+      kill_enemies_spritesheet_0: 366881789
+      kill_enemies_spritesheet_3: 670032569
+      kill_enemies_spritesheet_4: 696011930
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

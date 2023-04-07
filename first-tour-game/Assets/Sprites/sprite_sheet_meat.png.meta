@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c2a1dae6f7b26624ead9d2394dea0be6
+guid: acae2344291c895488554b1a0a118732
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -117,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sprite_sheet_enemy_walking_0
+      name: sprite_sheet_meat_0
       rect:
         serializedVersion: 2
         x: 0
@@ -131,14 +131,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e70570a26ba13b249acdff7f4e659d12
-      internalID: 948130177
+      spriteID: f75af5a903cc04e4caa4ac36945e2aba
+      internalID: -299005306
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_sheet_enemy_walking_1
+      name: sprite_sheet_meat_1
       rect:
         serializedVersion: 2
         x: 16
@@ -152,14 +152,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dc114c49c0387c64087023fc67531bb0
-      internalID: 284355035
+      spriteID: e49bd029ef06a6e49a926a49badf7b93
+      internalID: -1405633818
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_sheet_enemy_walking_2
+      name: sprite_sheet_meat_2
       rect:
         serializedVersion: 2
         x: 32
@@ -173,14 +173,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0237e0f6d25e7b141a193f96e71a2f16
-      internalID: -595495146
+      spriteID: fd84bfbe59487ec418eff713686228dc
+      internalID: -2079528763
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_sheet_enemy_walking_3
+      name: sprite_sheet_meat_3
       rect:
         serializedVersion: 2
         x: 48
@@ -194,14 +194,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7bb907c1ef80d8b458590a1e4f0cfc62
-      internalID: 1592872144
+      spriteID: 535c2d0c701f85a4b97556e27c4a3f8a
+      internalID: 1694724006
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_sheet_enemy_walking_4
+      name: sprite_sheet_meat_4
       rect:
         serializedVersion: 2
         x: 64
@@ -215,8 +215,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 84e0699106490a1488a1d60606380620
-      internalID: 140086848
+      spriteID: bc26f58a3931ab54ca0ae34765647d21
+      internalID: -1590668458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_sheet_meat_5
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26f3c5a5c6f829d40a5bafca66e4130b
+      internalID: 2044248640
       vertices: []
       indices: 
       edges: []
@@ -232,11 +253,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      sprite_sheet_enemy_walking_2: -595495146
-      sprite_sheet_enemy_walking_0: 948130177
-      sprite_sheet_enemy_walking_4: 140086848
-      sprite_sheet_enemy_walking_1: 284355035
-      sprite_sheet_enemy_walking_3: 1592872144
+      sprite_sheet_meat_4: -1590668458
+      sprite_sheet_meat_0: -299005306
+      sprite_sheet_meat_1: -1405633818
+      sprite_sheet_meat_5: 2044248640
+      sprite_sheet_meat_2: -2079528763
+      sprite_sheet_meat_3: 1694724006
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

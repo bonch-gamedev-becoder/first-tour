@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c2a1dae6f7b26624ead9d2394dea0be6
+guid: 09a30fbb42c401946aa8bdb1278fd60d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -117,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sprite_sheet_enemy_walking_0
+      name: shield_spritesheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 16
-        height: 16
+        width: 26
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e70570a26ba13b249acdff7f4e659d12
-      internalID: 948130177
+      spriteID: 6fcf10404f152194687e15227b2eff87
+      internalID: 1283834627
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_sheet_enemy_walking_1
+      name: shield_spritesheet_1
       rect:
         serializedVersion: 2
-        x: 16
+        x: 26
         y: 0
-        width: 16
-        height: 16
+        width: 26
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dc114c49c0387c64087023fc67531bb0
-      internalID: 284355035
+      spriteID: 37d14d71262839f4c98d4b9d6ecfd743
+      internalID: 7750575
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_sheet_enemy_walking_2
+      name: shield_spritesheet_2
       rect:
         serializedVersion: 2
-        x: 32
+        x: 52
         y: 0
-        width: 16
-        height: 16
+        width: 26
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,20 +173,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0237e0f6d25e7b141a193f96e71a2f16
-      internalID: -595495146
+      spriteID: ba94e6c4c2f7abb4582b0a3ae4cde2b1
+      internalID: 1814128628
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_sheet_enemy_walking_3
+      name: shield_spritesheet_3
       rect:
         serializedVersion: 2
-        x: 48
+        x: 78
         y: 0
-        width: 16
-        height: 16
+        width: 26
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,20 +194,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7bb907c1ef80d8b458590a1e4f0cfc62
-      internalID: 1592872144
+      spriteID: e7fe9d4712687e245aad214537727b7d
+      internalID: 1608191445
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_sheet_enemy_walking_4
+      name: shield_spritesheet_4
       rect:
         serializedVersion: 2
-        x: 64
+        x: 104
         y: 0
-        width: 16
-        height: 16
+        width: 26
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,8 +215,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 84e0699106490a1488a1d60606380620
-      internalID: 140086848
+      spriteID: 9f88b477413bfe54cbea725abed7feb0
+      internalID: 1019066150
       vertices: []
       indices: 
       edges: []
@@ -232,11 +232,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      sprite_sheet_enemy_walking_2: -595495146
-      sprite_sheet_enemy_walking_0: 948130177
-      sprite_sheet_enemy_walking_4: 140086848
-      sprite_sheet_enemy_walking_1: 284355035
-      sprite_sheet_enemy_walking_3: 1592872144
+      shield_spritesheet_2: 1814128628
+      shield_spritesheet_1: 7750575
+      shield_spritesheet_4: 1019066150
+      shield_spritesheet_3: 1608191445
+      shield_spritesheet_0: 1283834627
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

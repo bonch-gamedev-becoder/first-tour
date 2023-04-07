@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c2a1dae6f7b26624ead9d2394dea0be6
+guid: beb6d3a2dcf86614eb93fa2a0e0ec9a3
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -117,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sprite_sheet_enemy_walking_0
+      name: sprite_sheet_Artillery_walking_0
       rect:
         serializedVersion: 2
         x: 0
@@ -131,14 +131,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e70570a26ba13b249acdff7f4e659d12
-      internalID: 948130177
+      spriteID: a8afd43b6eb49ed458454968db0ba8a2
+      internalID: -1871202592
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_sheet_enemy_walking_1
+      name: sprite_sheet_Artillery_walking_1
       rect:
         serializedVersion: 2
         x: 16
@@ -152,14 +152,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dc114c49c0387c64087023fc67531bb0
-      internalID: 284355035
+      spriteID: 60b627a0e64285c4ea5938e9c13c9780
+      internalID: -1442513238
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_sheet_enemy_walking_2
+      name: sprite_sheet_Artillery_walking_2
       rect:
         serializedVersion: 2
         x: 32
@@ -173,14 +173,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0237e0f6d25e7b141a193f96e71a2f16
-      internalID: -595495146
+      spriteID: efafa79f753d8e346b92a849baf92e98
+      internalID: 1687522916
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_sheet_enemy_walking_3
+      name: sprite_sheet_Artillery_walking_3
       rect:
         serializedVersion: 2
         x: 48
@@ -194,14 +194,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7bb907c1ef80d8b458590a1e4f0cfc62
-      internalID: 1592872144
+      spriteID: 570284d19ad7f6d468c8379d3c709b9d
+      internalID: 901829285
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_sheet_enemy_walking_4
+      name: sprite_sheet_Artillery_walking_4
       rect:
         serializedVersion: 2
         x: 64
@@ -215,8 +215,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 84e0699106490a1488a1d60606380620
-      internalID: 140086848
+      spriteID: 0c5051df520dfeb43a957da8ce95026e
+      internalID: 1298742390
       vertices: []
       indices: 
       edges: []
@@ -232,11 +232,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      sprite_sheet_enemy_walking_2: -595495146
-      sprite_sheet_enemy_walking_0: 948130177
-      sprite_sheet_enemy_walking_4: 140086848
-      sprite_sheet_enemy_walking_1: 284355035
-      sprite_sheet_enemy_walking_3: 1592872144
+      sprite_sheet_Artillery_walking_3: 901829285
+      sprite_sheet_Artillery_walking_0: -1871202592
+      sprite_sheet_Artillery_walking_1: -1442513238
+      sprite_sheet_Artillery_walking_2: 1687522916
+      sprite_sheet_Artillery_walking_4: 1298742390
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

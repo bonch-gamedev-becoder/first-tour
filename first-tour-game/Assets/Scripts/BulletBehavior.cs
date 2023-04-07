@@ -31,8 +31,8 @@ public class BulletBehavior : MonoBehaviour
         if (collision.gameObject.tag == "Base" && gameObject.tag == "BulletEnemy")
         {
             Debug.Log("Enemy hit base!");
-            GameManager.instance.currentBase.TakeDamage(damage);
             Destroy(gameObject);
+            GameManager.instance.currentBase.TakeDamage(damage);
         }
     }
 }
