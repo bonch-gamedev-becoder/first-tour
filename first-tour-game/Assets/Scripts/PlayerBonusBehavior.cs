@@ -7,11 +7,12 @@ using UnityEngine.UI;
 
 public class PlayerBonusBehavior : MonoBehaviour
 {
+    public static PlayerBonusBehavior instance;
+
     public int totalResources;
-    
-    [SerializeField] GameObject baseObject;
+
     [SerializeField] BoxCollider2D collider;
-    private BaseBehavior baseBehaviorScript;
+    public BaseBehavior baseBehaviorScript;
     [SerializeField] SpriteRenderer sr;
 
     public TextMeshPro resourcesCounterText;
@@ -19,18 +20,19 @@ public class PlayerBonusBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (instance == null)
+            instance = this;
+
         totalResources = 0;
-        baseBehaviorScript = baseObject.GetComponent<BaseBehavior>();
         //collider = GetComponent<BoxCollider2D>();
     }
 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "BoostBlock")
-        {
+        if (collision.tag == "Base")
             return;
-        }
+
         Destroy(collision.gameObject);
         if (collision.tag == "ShieldBonus")
         {
@@ -50,8 +52,8 @@ public class PlayerBonusBehavior : MonoBehaviour
     void ThanosBonus()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        
-        for (int i = 0; i < enemies.Length; i+=2)
+
+        for (int i = 0; i < enemies.Length; i += 2)
         {
             enemies[i].GetComponent<EnemyCombat>().Death();
         }
@@ -60,9 +62,9 @@ public class PlayerBonusBehavior : MonoBehaviour
 
     IEnumerator ShieldBonus()
     {
-        baseBehaviorScript.ActivateShield();
+        GameManager.instance.currentBase.ActivateShield();
         yield return new WaitForSeconds(5f);
-        baseBehaviorScript.DisableShield();
+        GameManager.instance.currentBase.DisableShield();
     }
 
     IEnumerator InvisibilityBonus()

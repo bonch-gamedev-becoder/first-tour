@@ -22,16 +22,17 @@ public class BulletBehavior : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (collision.transform.tag == "Bullet" || collision.transform.tag == "EnemyBullet")
+        if (collision.transform.tag == "Bullet" || collision.transform.tag == "BulletEnemy")
         {
             Destroy(gameObject);
         }
 
 
-        if (collision.gameObject.tag == "Base" && gameObject.tag == "EnemyBullet")
+        if (collision.gameObject.tag == "Base" && gameObject.tag == "BulletEnemy")
         {
+            Debug.Log("Enemy hit base!");
+            GameManager.instance.currentBase.TakeDamage(damage);
             Destroy(gameObject);
-            collision.gameObject.GetComponent<BaseBehavior>().TakeDamage(damage);
         }
     }
 }

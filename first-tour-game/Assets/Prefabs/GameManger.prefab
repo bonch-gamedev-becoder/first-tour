@@ -44,7 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f17926cb81b0b4eb3ac961a5c8178051, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnBase: {fileID: 6670402817009944381, guid: e0ca112278c5843cca3444e0d7772553, type: 3}
+  currentBase: {fileID: 0}
+  Base: {fileID: 6867460726070731020, guid: 666708d0bf87f2f459ae833cde8315a2, type: 3}
   enemySpawnPoints: {fileID: 636309523807561051, guid: d2811018386f74f2a8897bbe896205f4, type: 3}
   level: 1
   points: 0

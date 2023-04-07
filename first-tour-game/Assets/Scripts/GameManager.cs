@@ -8,8 +8,9 @@ public class GameManager : MonoBehaviour
     public static GameManager instance = null;
 
     public Maze currentMaze;
+    public BaseBehavior currentBase;
 
-    public GameObject spawnBase;
+    public GameObject Base;
     public GameObject enemySpawnPoints;
     public int level;
     public int points;
@@ -35,11 +36,16 @@ public class GameManager : MonoBehaviour
     {
         currentMaze = maze;
 
-        //PlayerBonusBehavior.instance.baseBehaviorScript =
-        Instantiate(spawnBase, transform.position, Quaternion.identity);
-            //.GetComponent<BaseBehavior>();
+        SpawnBase();
 
         Instantiate(enemySpawnPoints, transform.position, Quaternion.identity);
+    }
+
+    void SpawnBase()
+    {
+        int num = level * 12 / 2;
+        Vector2 pos = new Vector2(num, num);
+        currentBase = Instantiate(Base, pos, Quaternion.identity).GetComponent<BaseBehavior>();
     }
 
     public void AddPoints(int number)
