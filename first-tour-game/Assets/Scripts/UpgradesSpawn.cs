@@ -18,7 +18,7 @@ public class UpgradesSpawn : MonoBehaviour
         {
             for (int y = 0; y < GameManager.instance.level * 12 - 1; y++)
             {
-                int randnum = Random.Range(0, 10);
+                int randnum = Random.Range(0, 40);
                 if (randnum == 1)
                     SpawnUpgrade(x,y);
             }
@@ -29,6 +29,13 @@ public class UpgradesSpawn : MonoBehaviour
     {
         Vector2 pos = new Vector2(x + 0.5f, y + 0.5f);
         int randUpgrade = Random.Range(0, upgrades.Count);
+        if (randUpgrade == upgrades.Count-1)
+        {
+            int portalfix = Random.Range(0, 10);
+            if (portalfix == 1)
+                return;
+        }
+
         Instantiate(upgrades[randUpgrade], pos, Quaternion.identity);
     }
 }
