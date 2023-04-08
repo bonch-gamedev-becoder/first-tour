@@ -11,11 +11,11 @@ public class EnemyMovement : MonoBehaviour
 
     private Vector2 forward;
 
-    bool test;
+    bool isAttackBaseScriptAdded;
 
     private void Start()
     {
-        test = false;
+        isAttackBaseScriptAdded = false;
         forward = new Vector2(0, 1);
         boxCol = GetComponent<BoxCollider2D>();
         RightHandAlgoritm();          // расскоментить что бы ходил
@@ -51,14 +51,24 @@ public class EnemyMovement : MonoBehaviour
     {
         float distance = Vector2.Distance(GameManager.instance.currentMaze.finishPosition, transform.position);
 
-        if (distance < GameManager.instance.level * 2.5f)
+        float coefficientOfEnemy = 0;
+        if (tag == "ArtilleryEnemy")
         {
-            if (!test)
+            coefficientOfEnemy = 5f;
+        }
+        else if (tag == "Enemy")
+        {
+            coefficientOfEnemy = 2.5f;
+        }
+
+        if (distance < GameManager.instance.level * coefficientOfEnemy)
+        {
+            if (!isAttackBaseScriptAdded)
             {
                 Debug.Log("add enemy attack base");
                 gameObject.AddComponent<EnemyAttackBase>();
                 Destroy(this);
-                test = true;
+                isAttackBaseScriptAdded = true;
             }
             
             boxCol.enabled = true;

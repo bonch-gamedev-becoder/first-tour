@@ -20,7 +20,6 @@ public class EnemyCombat : MonoBehaviour
     [SerializeField] GameObject thanosBonus;
     [SerializeField] GameObject shieldBonus;
     [SerializeField] GameObject invisibilityBonus;
-    [SerializeField] GameObject player;
 
     // Start is called before the first frame update
     void Start()

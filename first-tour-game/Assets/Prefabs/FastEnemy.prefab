@@ -199,8 +199,8 @@ MonoBehaviour:
   deathEffect: {fileID: 0}
   firePoint: {fileID: 7131515063440193890}
   bulletPrefab: {fileID: 1427136655908854496, guid: 59d23700b1c73b043964bcc9518e3977, type: 3}
-  bulletForce: 20
-  maxHealth: 20
+  bulletForce: 15
+  maxHealth: 40
   thanosBonus: {fileID: 4014674198437839061, guid: 67bf03ef07a46744798c3f5e6089b1b3, type: 3}
   shieldBonus: {fileID: 2313528145229517081, guid: d068e0aa02e74924e9fad15ace2afaa8, type: 3}
   invisibilityBonus: {fileID: 5729504477036182342, guid: 7442d6989839204459b86216c7f33003, type: 3}
