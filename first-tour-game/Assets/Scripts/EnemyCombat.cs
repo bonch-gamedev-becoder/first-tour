@@ -6,7 +6,8 @@ using Random = System.Random;
 
 public class EnemyCombat : MonoBehaviour
 {
-    [SerializeField] GameObject deathEffect;
+    public GameObject deathEffectPermanent;
+    public GameObject deathEffect;
 
     [SerializeField] Transform firePoint;
     [SerializeField] GameObject bulletPrefab;
@@ -21,14 +22,12 @@ public class EnemyCombat : MonoBehaviour
     [SerializeField] GameObject invisibilityBonus;
     [SerializeField] GameObject player;
 
-    private PlayerBonusBehavior playerBonusBehavour;
-
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
         canShoot = true;
-        playerBonusBehavour = player.GetComponent<PlayerBonusBehavior>();
+        deathEffect = deathEffectPermanent;
     }
 
     // Update is called once per frame
@@ -72,24 +71,28 @@ public class EnemyCombat : MonoBehaviour
     public void Death()
     {
         GameManager.instance.AddPoints(1);
-        Instantiate(deathEffect, transform.position, Quaternion.identity);
+        if (deathEffect != null)
+        {
+            Instantiate(deathEffect, transform.position, Quaternion.identity);
+        }
+        
         Destroy(gameObject);
-        //playerBonusBehavour.totalResources++;
-        //TODO UI   
-       // playerBonusBehavour.resourcesCounterText.text = "Resources: " + playerBonusBehavour.totalResources;
 
         Random rand = new Random();
         int randNumber = rand.Next(0, 49);
 
-        if (randNumber >= 0 && randNumber <= 5)
+        //Thanos bonus (probability chance 1/10)
+        if (randNumber >= 0 && randNumber <= 25)
         {
             Instantiate(thanosBonus, transform.position, Quaternion.identity);
         }
-        else if (randNumber >= 6 && randNumber <= 16)
+        //Shield bonus (probability chance 1/5)
+        else if (randNumber >= 5 && randNumber <= 14)
         {
             Instantiate(shieldBonus, transform.position, Quaternion.identity);
         }
-        else if (randNumber >= 17 && randNumber <= 24)
+        //Shield bonus (probability chance 4/25)
+        else if (randNumber >= 15 && randNumber <= 22)
         {
             Instantiate(invisibilityBonus, transform.position, Quaternion.identity);
         }
