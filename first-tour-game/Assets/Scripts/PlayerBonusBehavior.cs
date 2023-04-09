@@ -33,19 +33,22 @@ public class PlayerBonusBehavior : MonoBehaviour
         if (collision.tag == "Base")
             return;
 
-        Destroy(collision.gameObject);
+        
         if (collision.tag == "ShieldBonus")
         {
             StartCoroutine(ShieldBonus());
+            Destroy(collision.gameObject);
         }
         if (collision.tag == "InvisibilityBonus")
         {
             Debug.Log("collide start");
             StartCoroutine(InvisibilityBonus());
+            Destroy(collision.gameObject);
         }
         if (collision.tag == "ThanosBonus")
         {
             ThanosBonus();
+            Destroy(collision.gameObject);
         }
     }
 
