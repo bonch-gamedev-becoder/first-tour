@@ -21,7 +21,6 @@ public class BulletBehavior : MonoBehaviour
             collision.gameObject.GetComponent<EnemyCombat>().TakeDamage(damage);
         }
 
-
         //enemies hit base
         if (collision.gameObject.tag == "Base" && tag != "Bullet")
         {
@@ -29,30 +28,6 @@ public class BulletBehavior : MonoBehaviour
             GameManager.instance.currentBase.TakeDamage(damage);
         }
 
-        //bullet of artillery hit blockingLayer
-        if (collision.transform.tag == "blockingLayer" && gameObject.tag == "BulletArtillery")
-        {
-            StartCoroutine(TurnOffCollider(collision));
-            StartCoroutine(DestroyBulletAfterTime());
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
-
-    IEnumerator TurnOffCollider(Collision2D collision)
-    {
-        Collider2D test = GetComponent<BoxCollider2D>();
-
-        test.isTrigger = true;
-        yield return new WaitForSeconds(0.01f);
-        test.isTrigger = false;
-    }
-
-    IEnumerator DestroyBulletAfterTime()
-    {
-        yield return new WaitForSeconds(0.5f);
         Destroy(gameObject);
     }
 }
