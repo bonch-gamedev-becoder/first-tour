@@ -10,6 +10,7 @@ public class TeleportBehavior : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             collision.gameObject.transform.position = new Vector3(GameManager.instance.currentBase.transform.position.x, GameManager.instance.currentBase.transform.position.y, 0);
+            Destroy(gameObject);
         }
     }
 }
