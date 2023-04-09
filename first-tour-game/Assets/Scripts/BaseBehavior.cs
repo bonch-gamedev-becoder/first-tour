@@ -9,26 +9,27 @@ public class BaseBehavior : MonoBehaviour
     public int currentHealth;
 
     public bool shieldActive = false;
-
+    private Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
 
     public void ActivateShield()
     {
-        shieldActive = true; 
-        //TODO: ?????? ??????? ?? ?????? ???? ? ?????????? ?????
+        shieldActive = true;
+        animator.SetBool("hasShield", true);
     }
 
     public void DisableShield()
     {
         shieldActive = false;
-        //TODO: ?????? ??????? ?? ?????? ???? ? ??????????? ?????
+        animator.SetBool("hasShield", false);
     }
 
     public void TakeDamage(int damage)
