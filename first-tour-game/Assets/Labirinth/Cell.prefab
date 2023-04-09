@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5605740959309748364}
   - component: {fileID: 9194031377775642994}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cell
   m_TagString: blockingLayer
   m_Icon: {fileID: 0}
@@ -58,9 +58,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1715736460886460419}
   - component: {fileID: 3460041336939875126}
-  - component: {fileID: 7455069011633928185}
-  - component: {fileID: 1770263652310311696}
-  m_Layer: 0
+  - component: {fileID: 2272830862160377896}
+  - component: {fileID: 7424804211840847692}
+  m_Layer: 7
   m_Name: Wall Bottom
   m_TagString: blockingLayer
   m_Icon: {fileID: 0}
@@ -181,30 +181,21 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 0
   m_Loop: 0
---- !u!68 &7455069011633928185
-EdgeCollider2D:
+--- !u!114 &2272830862160377896
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1758058181900491937}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: -0.0023841858, y: 0}
-  - {x: 1.079933, y: 0}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
---- !u!70 &1770263652310311696
-CapsuleCollider2D:
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97e1a862b9471414291323cca1657848, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 1427136655908854496, guid: 2abb0c4775fad484590f7510fb22722a, type: 3}
+--- !u!61 &7424804211840847692
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -216,9 +207,19 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.5431339, y: 0.0011530468}
-  m_Size: {x: 1.0701998, y: 0.16225375}
-  m_Direction: 1
+  m_Offset: {x: 0.5526364, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.9363513, y: 0.1564674}
+  m_EdgeRadius: 0
 --- !u!1 &2692927130739213107
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,9 +230,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4097853141623605143}
   - component: {fileID: 5523040412545377730}
-  - component: {fileID: 7353389154918289936}
-  - component: {fileID: 5568354537323987675}
-  m_Layer: 0
+  - component: {fileID: 3840379615364655602}
+  - component: {fileID: 2616909636936648175}
+  m_Layer: 7
   m_Name: Wall Left
   m_TagString: blockingLayer
   m_Icon: {fileID: 0}
@@ -352,30 +353,21 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 0
   m_Loop: 0
---- !u!68 &7353389154918289936
-EdgeCollider2D:
+--- !u!114 &3840379615364655602
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2692927130739213107}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: 0, y: 0}
-  - {x: 0, y: 1.0746523}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
---- !u!70 &5568354537323987675
-CapsuleCollider2D:
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97e1a862b9471414291323cca1657848, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 1427136655908854496, guid: 2abb0c4775fad484590f7510fb22722a, type: 3}
+--- !u!61 &2616909636936648175
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -387,6 +379,16 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0012066066, y: 0.5565987}
-  m_Size: {x: 0.16853352, y: 1.0617069}
-  m_Direction: 0
+  m_Offset: {x: 0, y: 0.5482075}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.1564674, y: 0.94264275}
+  m_EdgeRadius: 0

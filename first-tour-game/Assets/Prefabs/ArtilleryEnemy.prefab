@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 590524391086174879}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FIrepoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 7579734225162865773}
   - component: {fileID: 1340323760125501647}
   - component: {fileID: 1796204687}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ArtilleryEnemy
   m_TagString: ArtilleryEnemy
   m_Icon: {fileID: 0}
@@ -203,6 +203,7 @@ MonoBehaviour:
   thanosBonus: {fileID: 4014674198437839061, guid: 67bf03ef07a46744798c3f5e6089b1b3, type: 3}
   shieldBonus: {fileID: 2313528145229517081, guid: d068e0aa02e74924e9fad15ace2afaa8, type: 3}
   invisibilityBonus: {fileID: 5729504477036182342, guid: 7442d6989839204459b86216c7f33003, type: 3}
+  cell: {fileID: 924332599484309282, guid: 5602236dd25684e20803b30f57b0a1f0, type: 3}
 --- !u!114 &1340323760125501647
 MonoBehaviour:
   m_ObjectHideFlags: 0

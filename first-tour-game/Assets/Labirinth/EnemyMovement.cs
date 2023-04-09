@@ -61,6 +61,7 @@ public class EnemyMovement : MonoBehaviour
             coefficientOfEnemy = 2.5f;
         }
 
+        //start attack base and freeze movement
         if (distance < GameManager.instance.level * coefficientOfEnemy)
         {
             if (!isAttackBaseScriptAdded)
@@ -118,14 +119,13 @@ public class EnemyMovement : MonoBehaviour
             MoveForward();
             return false;
         }
-
-        //if (!hit.transform.CompareTag("blockingLayer"))
-        //{
-        //    Debug.Log(hit.transform.tag);
-        //    hit.transform.GetComponent<BoxCollider2D>().enabled = false;
-        //    MoveForward();
-        //    return false;
-        //}
+        else if (!hit.transform.CompareTag("blockingLayer"))
+        {
+            Debug.Log(hit.transform.tag);
+            hit.transform.GetComponent<BoxCollider2D>().enabled = false;
+            MoveForward();
+            return false;
+        }
 
 
         return true;
