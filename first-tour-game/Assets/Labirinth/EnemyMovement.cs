@@ -13,6 +13,8 @@ public class EnemyMovement : MonoBehaviour
 
     bool isAttackBaseScriptAdded;
 
+    [SerializeField] private LayerMask mask;
+
     private void Start()
     {
         isAttackBaseScriptAdded = false;
@@ -98,18 +100,15 @@ public class EnemyMovement : MonoBehaviour
         StartCoroutine(RestartAlgorithm());
     }
 
-
-
     private bool HitWall()
     {
-
         RaycastHit2D hit;
         Vector2 start = transform.position;
 
         Vector2 end = Vector3Extension.AsVector2(transform.position) + forward;
         boxCol.enabled = false;
 
-        hit = Physics2D.Linecast(start, end);
+        hit = Physics2D.Linecast(start, end, mask);
 
         boxCol.enabled = true;
 
@@ -122,10 +121,11 @@ public class EnemyMovement : MonoBehaviour
         else if (!hit.transform.CompareTag("blockingLayer"))
         {
             Debug.Log(hit.transform.tag);
-            hit.transform.GetComponent<BoxCollider2D>().enabled = false;
+            //hit.transform.GetComponent<BoxCollider2D>().enabled = false;
             MoveForward();
             return false;
         }
+        
 
 
         return true;

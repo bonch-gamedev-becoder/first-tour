@@ -21,8 +21,6 @@ public class EnemyCombat : MonoBehaviour
     [SerializeField] GameObject shieldBonus;
     [SerializeField] GameObject invisibilityBonus;
 
-    [SerializeField] GameObject cell;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -55,7 +53,6 @@ public class EnemyCombat : MonoBehaviour
     {
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        Physics2D.IgnoreLayerCollision(14, 0);
         rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
     }
 
@@ -84,7 +81,7 @@ public class EnemyCombat : MonoBehaviour
         int randNumber = rand.Next(0, 49);
 
         //Thanos bonus (probability chance 1/10)
-        if (randNumber >= 0 && randNumber <= 25)
+        if (randNumber >= 0 && randNumber <= 4)
         {
             Instantiate(thanosBonus, transform.position, Quaternion.identity);
         }
