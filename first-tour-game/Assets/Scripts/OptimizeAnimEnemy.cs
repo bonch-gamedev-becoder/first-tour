@@ -12,13 +12,13 @@ public class OptimizeAnimEnemy : MonoBehaviour
 
     private void OnBecameInvisible()
     {
-        Debug.Log("camera out");
+        //Debug.Log("camera out");
         enemyCombatScript.deathEffect = null;
     }
 
     private void OnBecameVisible()
     {
-        Debug.Log("camera in");
+        //Debug.Log("camera in");
         enemyCombatScript.deathEffect = enemyCombatScript.deathEffectPermanent;
     }
 }   

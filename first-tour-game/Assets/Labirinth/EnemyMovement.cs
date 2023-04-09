@@ -11,11 +11,13 @@ public class EnemyMovement : MonoBehaviour
 
     private Vector2 forward;
 
-    bool test;
+    bool isAttackBaseScriptAdded;
+
+    [SerializeField] private LayerMask mask;
 
     private void Start()
     {
-        test = false;
+        isAttackBaseScriptAdded = false;
         forward = new Vector2(0, 1);
         boxCol = GetComponent<BoxCollider2D>();
         RightHandAlgoritm();          // расскоментить что бы ходил
@@ -51,14 +53,25 @@ public class EnemyMovement : MonoBehaviour
     {
         float distance = Vector2.Distance(GameManager.instance.currentMaze.finishPosition, transform.position);
 
-        if (distance < GameManager.instance.level * 2.5f)
+        float coefficientOfEnemy = 0;
+        if (tag == "ArtilleryEnemy")
         {
-            if (!test)
+            coefficientOfEnemy = 5f;
+        }
+        else if (tag == "Enemy")
+        {
+            coefficientOfEnemy = 2.5f;
+        }
+
+        //start attack base and freeze movement
+        if (distance < GameManager.instance.level * coefficientOfEnemy)
+        {
+            if (!isAttackBaseScriptAdded)
             {
                 Debug.Log("add enemy attack base");
                 gameObject.AddComponent<EnemyAttackBase>();
                 Destroy(this);
-                test = true;
+                isAttackBaseScriptAdded = true;
             }
             
             boxCol.enabled = true;
@@ -87,18 +100,15 @@ public class EnemyMovement : MonoBehaviour
         StartCoroutine(RestartAlgorithm());
     }
 
-
-
     private bool HitWall()
     {
-
         RaycastHit2D hit;
         Vector2 start = transform.position;
 
         Vector2 end = Vector3Extension.AsVector2(transform.position) + forward;
         boxCol.enabled = false;
 
-        hit = Physics2D.Linecast(start, end);
+        hit = Physics2D.Linecast(start, end, mask);
 
         boxCol.enabled = true;
 
@@ -108,14 +118,14 @@ public class EnemyMovement : MonoBehaviour
             MoveForward();
             return false;
         }
-
-        //if (!hit.transform.CompareTag("blockingLayer"))
-        //{
-        //    Debug.Log(hit.transform.tag);
-        //    hit.transform.GetComponent<BoxCollider2D>().enabled = false;
-        //    MoveForward();
-        //    return false;
-        //}
+        else if (!hit.transform.CompareTag("blockingLayer"))
+        {
+            Debug.Log(hit.transform.tag);
+            //hit.transform.GetComponent<BoxCollider2D>().enabled = false;
+            MoveForward();
+            return false;
+        }
+        
 
 
         return true;

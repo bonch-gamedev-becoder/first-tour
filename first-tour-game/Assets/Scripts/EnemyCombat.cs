@@ -20,7 +20,8 @@ public class EnemyCombat : MonoBehaviour
     [SerializeField] GameObject thanosBonus;
     [SerializeField] GameObject shieldBonus;
     [SerializeField] GameObject invisibilityBonus;
-    [SerializeField] GameObject player;
+
+    private Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,7 @@ public class EnemyCombat : MonoBehaviour
         currentHealth = maxHealth;
         canShoot = true;
         deathEffect = deathEffectPermanent;
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -44,8 +46,14 @@ public class EnemyCombat : MonoBehaviour
         canShoot = false;
 
         SpawnAndImpulseBullet();
-        SoundsManager.instance.PlaySound("Shoot", true);
 
+        if (gameObject.tag == "ArtilleryEnemy")
+        {
+            animator.SetTrigger("attack");
+        }
+        
+        SoundsManager.instance.PlaySound("Shoot", true);
+        
         yield return new WaitForSeconds(1f);
         canShoot = true;
     }
@@ -82,7 +90,7 @@ public class EnemyCombat : MonoBehaviour
         int randNumber = rand.Next(0, 49);
 
         //Thanos bonus (probability chance 1/10)
-        if (randNumber >= 0 && randNumber <= 25)
+        if (randNumber >= 0 && randNumber <= 4)
         {
             Instantiate(thanosBonus, transform.position, Quaternion.identity);
         }

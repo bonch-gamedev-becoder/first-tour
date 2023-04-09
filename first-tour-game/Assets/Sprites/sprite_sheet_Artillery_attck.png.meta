@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: beb6d3a2dcf86614eb93fa2a0e0ec9a3
+guid: 713f4a600b1567d479d95344e20619cf
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sprite_sheet_Artillery_walking_0
+      name: sprite_sheet_Artillery_attck_0
       rect:
         serializedVersion: 2
         x: 0
@@ -131,14 +131,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a8afd43b6eb49ed458454968db0ba8a2
-      internalID: -1871202592
+      spriteID: c7e5663874656f7448c986f5ca5f2c58
+      internalID: 342197539
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_sheet_Artillery_walking_1
+      name: sprite_sheet_Artillery_attck_1
       rect:
         serializedVersion: 2
         x: 16
@@ -152,71 +152,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 60b627a0e64285c4ea5938e9c13c9780
-      internalID: -1442513238
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: sprite_sheet_Artillery_walking_2
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: efafa79f753d8e346b92a849baf92e98
-      internalID: 1687522916
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: sprite_sheet_Artillery_walking_3
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 570284d19ad7f6d468c8379d3c709b9d
-      internalID: 901829285
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: sprite_sheet_Artillery_walking_4
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0c5051df520dfeb43a957da8ce95026e
-      internalID: 1298742390
+      spriteID: 23015f91a54897d439095de0da689544
+      internalID: -399890166
       vertices: []
       indices: 
       edges: []
@@ -232,11 +169,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      sprite_sheet_Artillery_walking_3: 901829285
-      sprite_sheet_Artillery_walking_0: -1871202592
-      sprite_sheet_Artillery_walking_1: -1442513238
-      sprite_sheet_Artillery_walking_2: 1687522916
-      sprite_sheet_Artillery_walking_4: 1298742390
+      sprite_sheet_Artillery_attck_1: -399890166
+      sprite_sheet_Artillery_attck_0: 342197539
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
