@@ -118,15 +118,13 @@ public class EnemyMovement : MonoBehaviour
             MoveForward();
             return false;
         }
-        else if (!hit.transform.CompareTag("blockingLayer"))
+        else if (!hit.transform.CompareTag("blockingLayer") && !hit.transform.CompareTag("blockingLayerBreakable"))
         {
             Debug.Log(hit.transform.tag);
             //hit.transform.GetComponent<BoxCollider2D>().enabled = false;
             MoveForward();
             return false;
         }
-        
-
 
         return true;
     }
