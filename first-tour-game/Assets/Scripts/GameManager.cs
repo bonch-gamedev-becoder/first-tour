@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     public GameObject Base;
     public GameObject enemySpawnPoints;
     public GameObject upgrades;
+    public int difficulty;
+    public int mazeCof = 8;
     public int level;
     public int points;
 
@@ -24,11 +26,33 @@ public class GameManager : MonoBehaviour
         if (instance == null)
             instance = this;
 
-        
+    
         level = PlayerPrefs.GetInt("level");
 
         if (level == 0)
             level = 1;
+
+        difficultyScale();
+
+
+
+    }
+
+    private void difficultyScale()
+    {
+        Debug.Log("level = " + level);
+        difficulty = 2;
+
+        if (level > 1)
+            difficulty = 3;
+        if (level > 3)
+            difficulty = 4;
+        if (level > 6)
+            difficulty = 6;
+        if (level > 8)
+            difficulty = 10;
+
+        Debug.Log("difficulty=" + difficulty);
     }
 
     private void Update()
@@ -54,7 +78,7 @@ public class GameManager : MonoBehaviour
 
     void SpawnBase()
     {
-        int num = level * 12 / 2;
+        int num = difficulty * mazeCof/2;
         Vector2 pos = new Vector2(num, num);
         currentBase = Instantiate(Base, pos, Quaternion.identity).GetComponent<BaseBehavior>();
     }
@@ -63,7 +87,7 @@ public class GameManager : MonoBehaviour
     {
         points += number;
 
-        if (points > level * 10 * 1.5f)
+        if (points > difficulty * 10)
             levelComplete();
     }
 

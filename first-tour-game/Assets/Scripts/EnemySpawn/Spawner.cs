@@ -26,7 +26,7 @@ public class Spawner : MonoBehaviour
     private IEnumerator SpawnEnemy()
     {
         SpawnGameObject();
-        yield return new WaitForSeconds(coolDown);
+        yield return new WaitForSeconds(coolDown / GameManager.instance.difficulty);
         StartCoroutine(SpawnEnemy());
     }
 

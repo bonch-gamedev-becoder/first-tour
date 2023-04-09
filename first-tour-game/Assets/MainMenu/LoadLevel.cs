@@ -15,7 +15,11 @@ public class LoadLevel : MonoBehaviour
 
     void StartGame()
     {
-        PlayerPrefs.SetInt("level", levelNumber);
+        if (PlayerPrefs.GetInt("maximum") >= levelNumber)
+            PlayerPrefs.SetInt("level", levelNumber);
+        else
+            return;
+
         SceneManager.LoadScene("GameMap");
     }
 

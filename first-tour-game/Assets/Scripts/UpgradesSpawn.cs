@@ -14,9 +14,9 @@ public class UpgradesSpawn : MonoBehaviour
 
     public void SpawnRandomUpgrade()
     {
-        for (int x = 0; x < GameManager.instance.level * 12 - 1; x++)
+        for (int x = 0; x < GameManager.instance.difficulty * GameManager.instance.mazeCof - 1; x++)
         {
-            for (int y = 0; y < GameManager.instance.level * 12 - 1; y++)
+            for (int y = 0; y < GameManager.instance.difficulty * GameManager.instance.mazeCof - 1; y++)
             {
                 int randnum = Random.Range(0, 40);
                 if (randnum == 1)

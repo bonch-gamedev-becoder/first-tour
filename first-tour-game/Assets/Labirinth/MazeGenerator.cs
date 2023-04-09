@@ -8,8 +8,8 @@ public class MazeGenerator
     //public AStar aStar;
     public Button BackTracker;
     public Button RightHand;
-    public int Width = 12 * GameManager.instance.level;
-    public int Height = 12 * GameManager.instance.level;
+    public int Width = GameManager.instance.mazeCof * GameManager.instance.difficulty;
+    public int Height = GameManager.instance.mazeCof * GameManager.instance.difficulty;
 
     
 
@@ -47,7 +47,7 @@ public class MazeGenerator
         PlayerMovement.instance.transform.Translate(new Vector2(maze.finishPosition.x, maze.finishPosition.y - 1));
 
 
-        AStar aStar = new AStar(maze);
+        //AStar aStar = new AStar(maze);
 
         return maze;
     }
@@ -110,7 +110,12 @@ public class MazeGenerator
         int X = Width / 2;
         int Y = Height / 2;
 
-        int radious = GameManager.instance.level * 2;
+        int radious;
+        if (GameManager.instance.difficulty < 4)
+            radious = GameManager.instance.difficulty;
+        else
+            radious = GameManager.instance.difficulty / 2;
+
         int A = Mathf.Abs(X - radious);
         int B = X * 2 - A;
 

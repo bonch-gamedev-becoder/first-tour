@@ -56,15 +56,19 @@ public class EnemyMovement : MonoBehaviour
         float coefficientOfEnemy = 0;
         if (tag == "ArtilleryEnemy")
         {
-            coefficientOfEnemy = 5f;
+            coefficientOfEnemy = 2f;
         }
         else if (tag == "Enemy")
         {
-            coefficientOfEnemy = 2.5f;
+            coefficientOfEnemy = 1f;
         }
 
         //start attack base and freeze movement
-        if (distance < GameManager.instance.level * coefficientOfEnemy)
+        int num = GameManager.instance.difficulty;
+        if (num >= 4)
+            num /= 2;
+            
+        if (distance < num * coefficientOfEnemy)
         {
             if (!isAttackBaseScriptAdded)
             {

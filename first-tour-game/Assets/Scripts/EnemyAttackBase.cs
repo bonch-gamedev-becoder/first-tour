@@ -24,6 +24,9 @@ public class EnemyAttackBase : MonoBehaviour
 
     private void Update()
     {
+        if (target == null)
+            return;
+
         dir = target.position - transform.position;
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
 
