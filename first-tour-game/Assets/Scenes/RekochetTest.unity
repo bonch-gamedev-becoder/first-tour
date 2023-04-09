@@ -273,14 +273,14 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1277379783 stripped
-BoxCollider2D:
-  m_CorrespondingSourceObject: {fileID: 5370806484650042492, guid: 783718a4ee0c14086bde7f59dca8df86, type: 3}
-  m_PrefabInstance: {fileID: 5370806484410176247}
-  m_PrefabAsset: {fileID: 0}
 --- !u!212 &1277379788 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 5370806484650042470, guid: 783718a4ee0c14086bde7f59dca8df86, type: 3}
+  m_PrefabInstance: {fileID: 5370806484410176247}
+  m_PrefabAsset: {fileID: 0}
+--- !u!58 &1277379789 stripped
+CircleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 4121692323646447430, guid: 783718a4ee0c14086bde7f59dca8df86, type: 3}
   m_PrefabInstance: {fileID: 5370806484410176247}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1490873796
@@ -741,7 +741,7 @@ PrefabInstance:
     - target: {fileID: 175142445618155393, guid: 783718a4ee0c14086bde7f59dca8df86, type: 3}
       propertyPath: collider
       value: 
-      objectReference: {fileID: 1277379783}
+      objectReference: {fileID: 1277379789}
     - target: {fileID: 175142445618155393, guid: 783718a4ee0c14086bde7f59dca8df86, type: 3}
       propertyPath: baseObject
       value: 
@@ -790,6 +790,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5370806484650042470, guid: 783718a4ee0c14086bde7f59dca8df86, type: 3}
+      propertyPath: m_Size.x
+      value: 0.6666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 5370806484650042470, guid: 783718a4ee0c14086bde7f59dca8df86, type: 3}
+      propertyPath: m_Size.y
+      value: 0.6666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 5370806484650042470, guid: 783718a4ee0c14086bde7f59dca8df86, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 390003699, guid: eaaf4bf8de34266458896706d122c48e, type: 3}
+    - target: {fileID: 5370806484650042470, guid: 783718a4ee0c14086bde7f59dca8df86, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5370806484650042492, guid: 783718a4ee0c14086bde7f59dca8df86, type: 3}
       propertyPath: m_Size.x
       value: 0.20173192
@@ -815,7 +831,7 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 5370806484650042490, guid: 783718a4ee0c14086bde7f59dca8df86, type: 3}
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 783718a4ee0c14086bde7f59dca8df86, type: 3}
 --- !u!1001 &8556974058145177142
 PrefabInstance:

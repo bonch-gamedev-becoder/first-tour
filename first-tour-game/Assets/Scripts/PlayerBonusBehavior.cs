@@ -11,15 +11,13 @@ public class PlayerBonusBehavior : MonoBehaviour
 
     public int totalResources;
 
-    [SerializeField] BoxCollider2D collider;
-    public BaseBehavior baseBehaviorScript;
+    private CircleCollider2D collider;
     [SerializeField] SpriteRenderer sr;
-
-    public TextMeshPro resourcesCounterText;
 
     // Start is called before the first frame update
     void Start()
     {
+        collider = GetComponent<CircleCollider2D>();
         if (instance == null)
             instance = this;
 
@@ -81,7 +79,6 @@ public class PlayerBonusBehavior : MonoBehaviour
             
         }
     }
-
 
     IEnumerator ShieldBonus()
     {
