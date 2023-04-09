@@ -26,12 +26,12 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - ArtilleryBulletLayer
+  - blockLayer
+  - ArtilleryEnemy
+  - FastEnemy
+  - Player
+  - BonusOrBlock
   - 
   - 
   - 

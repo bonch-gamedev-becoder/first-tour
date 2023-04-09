@@ -21,12 +21,15 @@ public class EnemyCombat : MonoBehaviour
     [SerializeField] GameObject shieldBonus;
     [SerializeField] GameObject invisibilityBonus;
 
+    private Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
         canShoot = true;
         deathEffect = deathEffectPermanent;
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -43,8 +46,14 @@ public class EnemyCombat : MonoBehaviour
         canShoot = false;
 
         SpawnAndImpulseBullet();
-        SoundsManager.instance.PlaySound("Shoot", true);
 
+        if (gameObject.tag == "ArtilleryEnemy")
+        {
+            animator.SetTrigger("attack");
+        }
+        
+        SoundsManager.instance.PlaySound("Shoot", true);
+        
         yield return new WaitForSeconds(1f);
         canShoot = true;
     }
