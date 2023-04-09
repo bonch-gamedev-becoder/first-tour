@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 5307077551760388085}
   - component: {fileID: 3662344775889276558}
   - component: {fileID: 8252110910022005545}
-  m_Layer: 0
-  m_Name: BulletEnemy
-  m_TagString: BulletEnemy
+  m_Layer: 6
+  m_Name: BulletArtillery
+  m_TagString: BulletArtillery
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2798bea015029dd47931611bcf3ac214, type: 3}
-  m_Color: {r: 1, g: 0.2516691, b: 0.2516691, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 36b15b9a93d2340419773407493239df, type: 3}
+  m_Color: {r: 1, g: 0.7773379, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

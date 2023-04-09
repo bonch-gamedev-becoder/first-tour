@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -51,10 +52,30 @@ public class PlayerBonusBehavior : MonoBehaviour
     void ThanosBonus()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        GameObject[] artillery = GameObject.FindGameObjectsWithTag("ArtilleryEnemy");
 
         for (int i = 0; i < enemies.Length; i += 2)
         {
-            enemies[i].GetComponent<EnemyCombat>().Death();
+            try
+            {
+                enemies[i].GetComponent<EnemyCombat>().Death();
+            }
+            catch (IndexOutOfRangeException)
+            {
+                break;
+            }
+        }
+        for (int i = 0; i < artillery.Length; i += 2)
+        {
+            try
+            {
+                artillery[i].GetComponent<EnemyCombat>().Death();
+            }
+            catch (IndexOutOfRangeException)
+            {
+                break;
+            }
+            
         }
     }
 

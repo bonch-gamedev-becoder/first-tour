@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5370806483847302449}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Firepoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49,7 +49,7 @@ GameObject:
   - component: {fileID: 5370806484650042492}
   - component: {fileID: 175142445618155393}
   - component: {fileID: 5370806484650042493}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,7 +121,7 @@ SpriteRenderer:
   m_Size: {x: 0.16, y: 0.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!50 &5370806484650042471
@@ -255,8 +255,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalResources: 0
-  baseObject: {fileID: 0}
   collider: {fileID: 0}
+  baseBehaviorScript: {fileID: 0}
   sr: {fileID: 0}
   resourcesCounterText: {fileID: 0}
 --- !u!114 &5370806484650042493
@@ -273,4 +273,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 5370806483847302449}
   bulletPrefab: {fileID: 1427136655908854496, guid: 68df74c38370b4bc695e871ac85874ed, type: 3}
-  bulletForce: 20
+  bulletForce: 15

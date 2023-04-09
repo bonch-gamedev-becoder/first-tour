@@ -17,6 +17,8 @@ TagManager:
   - BoostBlock
   - Bullet
   - BulletEnemy
+  - ArtilleryEnemy
+  - BulletArtillery
   layers:
   - Default
   - TransparentFX
@@ -24,12 +26,12 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - ArtilleryBulletLayer
+  - blockLayer
+  - ArtilleryEnemy
+  - FastEnemy
+  - Player
+  - BonusOrBlock
   - 
   - 
   - 
