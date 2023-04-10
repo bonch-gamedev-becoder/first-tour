@@ -8,7 +8,8 @@ public class HoleBehavior : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Destroy(collision.gameObject);
+            //Destroy(collision.gameObject);
+            GameManager.instance.loadNextLevel();
             //TODO Gameover;
         }
     }

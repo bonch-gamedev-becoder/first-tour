@@ -52,7 +52,9 @@ public class EnemyMovement : MonoBehaviour
 
     private void RightHandAlgoritm()
     {
+
         float distance = Vector2.Distance(GameManager.instance.currentMaze.finishPosition, transform.position);
+        
 
         //start attack base and freeze movement
         int num = GameManager.instance.difficulty;

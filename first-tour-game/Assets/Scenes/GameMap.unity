@@ -273,11 +273,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1277379783 stripped
-BoxCollider2D:
-  m_CorrespondingSourceObject: {fileID: 5370806484650042492, guid: 783718a4ee0c14086bde7f59dca8df86, type: 3}
-  m_PrefabInstance: {fileID: 5370806484410176247}
-  m_PrefabAsset: {fileID: 0}
 --- !u!212 &1277379788 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 5370806484650042470, guid: 783718a4ee0c14086bde7f59dca8df86, type: 3}
@@ -443,7 +438,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Base HP:'
+  m_Text: 'Base HP: 500'
 --- !u!1 &1735647537
 GameObject:
   m_ObjectHideFlags: 0
@@ -741,7 +736,7 @@ PrefabInstance:
     - target: {fileID: 175142445618155393, guid: 783718a4ee0c14086bde7f59dca8df86, type: 3}
       propertyPath: collider
       value: 
-      objectReference: {fileID: 1277379783}
+      objectReference: {fileID: 0}
     - target: {fileID: 175142445618155393, guid: 783718a4ee0c14086bde7f59dca8df86, type: 3}
       propertyPath: baseObject
       value: 

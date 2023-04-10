@@ -16,7 +16,7 @@ public class BaseHpTracker : MonoBehaviour
             instance = this;
 
         text = GetComponent<Text>();
-        ChangeText();
+        //ChangeText();
     }
 
     public void ChangeText()

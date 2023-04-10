@@ -119,7 +119,7 @@ public class MazeGenerator
             int y = current.Y;
             if (x == 8 && y == 8) return;
 
-            if (x > 0 && !current.WallLeft)
+            if (x > 0 && !current.Visited && !current.WallLeft)
             {
                 //x--;
                 if (maze[x - 1, y].DistanceFromStart >= current.DistanceFromStart + 1 || maze[x - 1, y].DistanceFromStart == 0)

@@ -112,7 +112,7 @@ public class GameManager : MonoBehaviour
         loadNextLevel();
     }
 
-    void loadNextLevel()
+    public void loadNextLevel()
     {
         points = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2730857615006945802
+--- !u!1 &636309523807561051
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,44 +8,44 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2730857615006945800}
-  - component: {fileID: 2730857615006945803}
+  - component: {fileID: 6010851336593138715}
+  - component: {fileID: 3938568206905222361}
   m_Layer: 0
-  m_Name: SpawnUpgrade
+  m_Name: SpawnPointsGenerator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2730857615006945800
+--- !u!4 &6010851336593138715
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2730857615006945802}
+  m_GameObject: {fileID: 636309523807561051}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.104534, y: 5.681431, z: 0.03757327}
+  m_LocalPosition: {x: 1.4214687, y: 0.68475777, z: 0.061528366}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2730857615006945803
+--- !u!114 &3938568206905222361
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2730857615006945802}
+  m_GameObject: {fileID: 636309523807561051}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7c0ff832a2094ea0adefb2cb8617127, type: 3}
+  m_Script: {fileID: 11500000, guid: abd87d8ed8b5348ac83ef462d8ac9e27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgrades:
-  - {fileID: 334504115486616768, guid: 694e787cc7c4afb449a668fa4316afe3, type: 3}
-  - {fileID: 2700190372703937656, guid: ce202415d26de4d4fa75cf28f02f96c7, type: 3}
-  - {fileID: 7284783116802447960, guid: d69c37edaab9d85428ccfcdb179cfbaa, type: 3}
-  - {fileID: 8540741278544936299, guid: 23fb8f3f155865b469ea6afb28e95b5f, type: 3}
+  spawners:
+  - {fileID: 8059920797659201068, guid: 7b9e0e9637ed64519b017c832500cd50, type: 3}
+  - {fileID: 8059920797659201068, guid: 59d287f31529c49f6a7424ee95794b72, type: 3}
+  spawnPoints: []
+  currentSpawnPoints: []

@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class SpawnPointsGenerator : MonoBehaviour
 {
-    public Spawner spawner;
+    public List<Spawner> spawners;
 
+    [HideInInspector]
     public List<Vector2> spawnPoints = new List<Vector2>();
+    [HideInInspector]
     public List<GameObject> currentSpawnPoints = new List<GameObject>();
 
     void Start()
@@ -62,7 +64,9 @@ public class SpawnPointsGenerator : MonoBehaviour
     void SetSpawner()
     {
         int randnum = Random.Range(0, spawnPoints.Count);
-        GameObject obj = Instantiate(spawner, spawnPoints[randnum], Quaternion.identity).gameObject;
+        int randSpawner = Random.Range(0, spawners.Count);
+
+        GameObject obj = Instantiate(spawners[randSpawner], spawnPoints[randnum], Quaternion.identity).gameObject;
         currentSpawnPoints.Add(obj);
         spawnPoints.RemoveAt(randnum);
     }
