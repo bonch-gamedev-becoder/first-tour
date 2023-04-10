@@ -51,7 +51,9 @@ public class EnemyMovement : MonoBehaviour
 
     private void RightHandAlgoritm()
     {
+
         float distance = Vector2.Distance(GameManager.instance.currentMaze.finishPosition, transform.position);
+        
 
         float coefficientOfEnemy = 0;
         if (tag == "ArtilleryEnemy")
