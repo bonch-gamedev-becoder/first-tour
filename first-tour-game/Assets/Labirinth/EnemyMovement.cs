@@ -21,7 +21,7 @@ public class EnemyMovement : MonoBehaviour
         isAttackBaseScriptAdded = false;
         forward = new Vector2(0, 1);
         boxCol = GetComponent<BoxCollider2D>();
-        RightHandAlgoritm();          // расскоментить что бы ходил
+        //RightHandAlgoritm();          // расскоментить что бы ходил
     }
 
 

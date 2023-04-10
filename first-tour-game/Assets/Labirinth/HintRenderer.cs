@@ -9,15 +9,16 @@ public class HintRenderer : MonoBehaviour
 
     private bool Active;
 
+    public List<Vector3> positions = new List<Vector3>();
     private void Start()
     {
-        componentLineRenderer = GetComponent<LineRenderer>();
-        Active = true;
+        /*componentLineRenderer = GetComponent<LineRenderer>();
+        Active = true;*/
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        /*if (Input.GetKeyDown(KeyCode.E))
             if (Active)
             {
                 componentLineRenderer.enabled = false;
@@ -28,18 +29,20 @@ public class HintRenderer : MonoBehaviour
                 componentLineRenderer.enabled = true;
                 Active = true;
             }
-
-
+        */
     }
 
-    public void DrawPath()
+    public void DrawPath(Vector2 spawnPos)
     {
+        GameObject mazeGameobject = GameObject.FindGameObjectWithTag("Maze");
+        MazeSpawner MazeSpawner = mazeGameobject.GetComponent<MazeSpawner>();
         Maze maze = MazeSpawner.maze;
         int x = maze.finishPosition.x;
         int y = maze.finishPosition.y;
-        List<Vector3> positions = new List<Vector3>();
 
-        while ((x != 0 || y != 0) && positions.Count < 10000)
+        int ceilSpawnPosX = Mathf.CeilToInt(spawnPos.x);
+        int ceilSpawnPosY = Mathf.CeilToInt(spawnPos.y);
+        while ((x != ceilSpawnPosX || y != ceilSpawnPosY) && positions.Count < 10000)
         {
             positions.Add(new Vector3(x * MazeSpawner.CellSize.x, y * MazeSpawner.CellSize.y, y * MazeSpawner.CellSize.z));
 
@@ -72,7 +75,7 @@ public class HintRenderer : MonoBehaviour
         }
 
         positions.Add(Vector3.zero);
-        componentLineRenderer.positionCount = positions.Count;
-        componentLineRenderer.SetPositions(positions.ToArray());
+        /*componentLineRenderer.positionCount = positions.Count;
+        componentLineRenderer.SetPositions(positions.ToArray());*/
     }
 }

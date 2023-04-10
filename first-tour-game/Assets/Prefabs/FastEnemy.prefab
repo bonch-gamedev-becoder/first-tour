@@ -41,6 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4752039344726604629}
   - component: {fileID: 5373971172425205341}
+  - component: {fileID: 7370374801015485012}
   - component: {fileID: 6425118310537953836}
   - component: {fileID: 6984211838997623290}
   - component: {fileID: 7362462535759571802}
@@ -122,6 +123,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7370374801015485012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9110567562325408298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed9103692628b21499e2604c6bd1be90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mazespawner: {fileID: 8556974059376787603, guid: 5424bade280704503b1b2a04cd7d6e31, type: 3}
+  cooldown: 0.25
+  coefficientOfEnemy: 1
 --- !u!50 &6425118310537953836
 Rigidbody2D:
   serializedVersion: 4
@@ -150,7 +166,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9110567562325408298}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 310178df1c1d14fa6af48b5aeed7b519, type: 3}
   m_Name: 
