@@ -48,7 +48,7 @@ public class MazeSpawner : MonoBehaviour
             }
         }
 
-        if (HintRenderer != null)
-            HintRenderer.DrawPath();
+        /*if (HintRenderer != null)
+            HintRenderer.DrawPath();*/
     }
 }
