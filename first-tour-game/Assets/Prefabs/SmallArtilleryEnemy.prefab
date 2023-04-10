@@ -16,7 +16,6 @@ GameObject:
   - component: {fileID: 3454481862857248194}
   - component: {fileID: 883026795509685019}
   - component: {fileID: 5299804238483402102}
-  - component: {fileID: -5286950879816717220}
   m_Layer: 14
   m_Name: SmallArtilleryEnemy
   m_TagString: Enemy
@@ -120,7 +119,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2385277963218165701}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 310178df1c1d14fa6af48b5aeed7b519, type: 3}
   m_Name: 
@@ -130,6 +129,7 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 4224
+  coefficientOfEnemy: 2
 --- !u!61 &4132529768759791285
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -209,22 +209,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35d608063dece1440afe763cca253638, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-5286950879816717220
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2385277963218165701}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed9103692628b21499e2604c6bd1be90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefabDebug: {fileID: 0}
-  mazespawner: {fileID: 8556974059376787603, guid: 5424bade280704503b1b2a04cd7d6e31, type: 3}
-  cooldown: 1
-  coefficientOfEnemy: 0
 --- !u!1 &8544324271534307195
 GameObject:
   m_ObjectHideFlags: 0
