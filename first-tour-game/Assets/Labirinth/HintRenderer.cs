@@ -43,8 +43,8 @@ public class HintRenderer : MonoBehaviour
         int ceilSpawnPosX = Mathf.CeilToInt(spawnPos.x);
         int ceilSpawnPosY = Mathf.CeilToInt(spawnPos.y);
 
-        MazeGenerator.MakeCellsArrUnvisited(maze.cells, 16, 16);
-        MazeGenerator.RegenerateBacktracker(maze.cells, ceilSpawnPosX, ceilSpawnPosY, 16, 16);
+        MazeGenerator.MakeCellsArrUnvisited(maze.cells, maze.cells.GetLength(0), maze.cells.GetLength(1));
+        MazeGenerator.RegenerateBacktracker(maze.cells, ceilSpawnPosX, ceilSpawnPosY, maze.cells.GetLength(0), maze.cells.GetLength(1), maze);
         int x = maze.finishPosition.x;
         int y = maze.finishPosition.y;
 
@@ -76,7 +76,7 @@ public class HintRenderer : MonoBehaviour
             {
                 y++;
             }
-            Instantiate(prefabDebug, new Vector2(x, y), Quaternion.identity);
+            //Instantiate(prefabDebug, new Vector2(x, y), Quaternion.identity);
         }
         //positions.Add(new Vector2(ceilSpawnPosX, ceilSpawnPosY));
         /*componentLineRenderer.positionCount = positions.Count;

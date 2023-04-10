@@ -101,10 +101,13 @@ public class MazeGenerator
         }
     }
 
-    public static void RegenerateBacktracker(MazeGeneratorCell[,] maze, int startX, int startY, int Width, int Height)
+    public static void RegenerateBacktracker(MazeGeneratorCell[,] maze, int startX, int startY, int Width, int Height, Maze mazeObject)
     {
+        if (startX < 0 || startY < 0)
+        {
+            return;
+        }
         MazeGeneratorCell current = maze[startX, startY];
-        current.Visited = true;
         current.DistanceFromStart = 0;
 
         Queue<MazeGeneratorCell> queue = new Queue<MazeGeneratorCell>();
@@ -117,49 +120,31 @@ public class MazeGenerator
             current.Visited = true;
             int x = current.X;
             int y = current.Y;
-            if (x == 8 && y == 8) return;
+            if (x == mazeObject.finishPosition.x && y == mazeObject.finishPosition.y) return;
 
-            if (x > 0 && !current.Visited && !current.WallLeft)
+            if (x > 0 && !maze[x - 1, y].Visited && !current.WallLeft)
             {
-                //x--;
-                if (maze[x - 1, y].DistanceFromStart >= current.DistanceFromStart + 1 || maze[x - 1, y].DistanceFromStart == 0)
-                {
-                    maze[x - 1, y].DistanceFromStart += current.DistanceFromStart + 1;
+                    maze[x - 1, y].DistanceFromStart = current.DistanceFromStart + 1;
                     queue.Enqueue(maze[x - 1, y]);
-                }
             }
 
-            if (y > 0 && !current.WallBottom)
+            if (y > 0 && !maze[x, y - 1].Visited && !current.WallBottom)
             {
-                //y--; 
-                if (maze[x, y - 1].DistanceFromStart >= current.DistanceFromStart + 1 || maze[x, y - 1].DistanceFromStart == 0)
-                {
-                    maze[x, y - 1].DistanceFromStart += current.DistanceFromStart + 1;
+                    maze[x, y - 1].DistanceFromStart = current.DistanceFromStart + 1;
                     queue.Enqueue(maze[x, y - 1]);
-                }
-                    
             }
 
-            if (x < Width - 2 && !maze[x + 1, y].WallLeft)
+            if (x < Width - 2 && !maze[x + 1, y].Visited && !maze[x + 1, y].WallLeft)
             {
-                    //x++;
-                    
-                if (maze[x + 1, y].DistanceFromStart >= current.DistanceFromStart + 1 || maze[x + 1, y].DistanceFromStart == 0)
-                {
-                    maze[x + 1, y].DistanceFromStart += current.DistanceFromStart + 1;
+                    maze[x + 1, y].DistanceFromStart = current.DistanceFromStart + 1;
                     queue.Enqueue(maze[x + 1, y]);
-                }
             }
 
-            if (y < Height - 2 && !maze[x, y + 1].WallBottom)
+            if (y < Height - 2 && !maze[x, y + 1].Visited && !maze[x, y + 1].WallBottom)
             {
-                    //y++;
-                    
-                if (maze[x, y + 1].DistanceFromStart >= current.DistanceFromStart + 1 || maze[x, y + 1].DistanceFromStart == 0)
-                {
-                    maze[x, y + 1].DistanceFromStart += current.DistanceFromStart + 1;
+                    maze[x, y + 1].DistanceFromStart = current.DistanceFromStart + 1;
                     queue.Enqueue(maze[x, y + 1]);
-                }
+                
             }
         }
     }
