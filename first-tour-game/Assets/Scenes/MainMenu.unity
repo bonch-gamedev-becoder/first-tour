@@ -3633,20 +3633,20 @@ MonoBehaviour:
   - name: Hit
     audioClip: {fileID: 8300000, guid: bfc4f83ff312a4576b136676129e8bc3, type: 3}
     volume: 0.404
-    pitch: 1.41
+    pitch: 1
     loop: 0
     audioSource: {fileID: 0}
   - name: Shoot
     audioClip: {fileID: 8300000, guid: 9135ab226c8fd400c82b68ded891350f, type: 3}
     volume: 0.428
-    pitch: 1.35
+    pitch: 1
     loop: 0
     audioSource: {fileID: 0}
   - name: SoundTrack
-    audioClip: {fileID: 8300000, guid: c0e81262e99304d319f09b7094b2f96b, type: 3}
+    audioClip: {fileID: 8300000, guid: 496aa6bf90aec412b98e5a5c8f6de91a, type: 3}
     volume: 0.366
-    pitch: 1.51
-    loop: 0
+    pitch: 1
+    loop: 1
     audioSource: {fileID: 0}
   mainMixer: {fileID: 24300002, guid: bbd87a4bf97e5481cbfec41e848779b7, type: 2}
   effectsMixer: {fileID: 24300002, guid: 72e56958a4f694c579d3d3e0d3c061a4, type: 2}

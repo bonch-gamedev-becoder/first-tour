@@ -8,7 +8,7 @@ public class SpawnPointsGenerator : MonoBehaviour
 
     [HideInInspector]
     public List<Vector2> spawnPoints = new List<Vector2>();
-    [HideInInspector]
+
     public List<GameObject> currentSpawnPoints = new List<GameObject>();
 
     void Start()
@@ -42,19 +42,30 @@ public class SpawnPointsGenerator : MonoBehaviour
 
     void GetSpawnPositions()
     {
+        Debug.Log("mazecof = " + GameManager.instance.mazeCof);
+        Debug.Log("difficulty = " + GameManager.instance.difficulty);
         int num = GameManager.instance.difficulty * GameManager.instance.mazeCof - 1;
+
+        float baseX = num / 2 + 0.5f;
+        float baseY = num / 2 + 0.5f;
+
+        Debug.Log("normalX = " + baseX);
+        Debug.Log("normalY = " + baseY);
 
         for (int x = 0; x < num; x++)
             for (int y = 0; y < num; y++)
-                if (y % num == 0 || x % num == 0) {
-                    Vector2 vector = new(GameManager.instance.currentMaze.cells[x, y].X + 0.5f, GameManager.instance.currentMaze.cells[x, y].Y + 0.5f);
-                    spawnPoints.Add(vector);
+                if (Mathf.Abs(x - baseX) > GameManager.instance.difficulty + 2) {
+                    if (Mathf.Abs(x - baseY) > GameManager.instance.difficulty + 2)
+                    {
+                        Vector2 vector = new(GameManager.instance.currentMaze.cells[x, y].X + 0.5f, GameManager.instance.currentMaze.cells[x, y].Y + 0.5f);
+                        spawnPoints.Add(vector);
+                    }
                 }       
     }
 
     void SetSpawners()
     {
-        for (int i = 0; i < GameManager.instance.difficulty; i++)
+        for (int i = 0; i < GameManager.instance.difficulty * 3; i++)
             SetSpawner();
         
     }
