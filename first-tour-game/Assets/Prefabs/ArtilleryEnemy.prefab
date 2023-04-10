@@ -181,10 +181,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 1
-  coolDown: 0.5
+  coolDown: 0.25
   mask:
     serializedVersion: 2
     m_Bits: 128
+  coefficientOfEnemy: 2.5
 --- !u!114 &7579734225162865773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,7 +203,7 @@ MonoBehaviour:
   firePoint: {fileID: 590524391086174879}
   bulletPrefab: {fileID: 1427136655908854496, guid: 2abb0c4775fad484590f7510fb22722a, type: 3}
   bulletForce: 20
-  maxHealth: 60
+  maxHealth: 20
   thanosBonus: {fileID: 4014674198437839061, guid: 67bf03ef07a46744798c3f5e6089b1b3, type: 3}
   shieldBonus: {fileID: 2313528145229517081, guid: d068e0aa02e74924e9fad15ace2afaa8, type: 3}
   invisibilityBonus: {fileID: 5729504477036182342, guid: 7442d6989839204459b86216c7f33003, type: 3}

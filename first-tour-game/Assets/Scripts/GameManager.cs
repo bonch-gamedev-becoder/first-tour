@@ -43,14 +43,23 @@ public class GameManager : MonoBehaviour
         Debug.Log("level = " + level);
         difficulty = 2;
 
-        if (level > 1)
+        /*if (level > 1)
             difficulty = 3;
         if (level > 3)
             difficulty = 4;
         if (level > 6)
             difficulty = 6;
         if (level > 8)
-            difficulty = 10;
+            difficulty = 10;*/
+
+        if (level > 1)
+            difficulty = 2;
+        if (level > 3)
+            difficulty = 2;
+        if (level > 6)
+            difficulty = 3;
+        if (level > 8)
+            difficulty = 3;
 
         Debug.Log("difficulty=" + difficulty);
     }

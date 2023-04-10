@@ -13,6 +13,10 @@ public class BulletBehavior : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            return;
+        }
         Debug.Log("Collistion for bullit is " + collision.transform.name);
 
         if (gameObject.CompareTag("Bullet") && collision.gameObject.CompareTag("blockingLayer"))

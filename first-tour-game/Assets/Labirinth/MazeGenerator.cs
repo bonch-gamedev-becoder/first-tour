@@ -11,8 +11,6 @@ public class MazeGenerator
     public int Width = GameManager.instance.mazeCof * GameManager.instance.difficulty;
     public int Height = GameManager.instance.mazeCof * GameManager.instance.difficulty;
 
-    
-
     public Maze GenerateMaze()
     {
         MazeGeneratorCell[,] cells = new MazeGeneratorCell[Width, Height];
@@ -52,7 +50,7 @@ public class MazeGenerator
         return maze;
     }
 
-    private void RemoveWallsWithBacktracker(MazeGeneratorCell[,] maze)
+    public void RemoveWallsWithBacktracker(MazeGeneratorCell[,] maze)
     {
         //Задаем начало лабиринта в левом нижнем углу
         MazeGeneratorCell current = maze[0, 0];
@@ -86,10 +84,85 @@ public class MazeGenerator
             {
                 current = stack.Pop();
             }
+
         } while (stack.Count > 0);
     }
 
-        
+
+    public static void MakeCellsArrUnvisited(MazeGeneratorCell[,] maze, int Width, int Height)
+    {
+        for (int i = 0; i < Width; i++)
+        {
+            for (int j = 0; j < Height; j++)
+            {
+                maze[i, j].Visited = false;
+                maze[i, j].DistanceFromStart = 0;
+            }
+        }
+    }
+
+    public static void RegenerateBacktracker(MazeGeneratorCell[,] maze, int startX, int startY, int Width, int Height)
+    {
+        MazeGeneratorCell current = maze[startX, startY];
+        current.Visited = true;
+        current.DistanceFromStart = 0;
+
+        Queue<MazeGeneratorCell> queue = new Queue<MazeGeneratorCell>();
+       
+        queue.Enqueue(current);
+
+        while (queue.Count != 0)
+        {
+            current = queue.Dequeue();
+            current.Visited = true;
+            int x = current.X;
+            int y = current.Y;
+            if (x == 8 && y == 8) return;
+
+            if (x > 0 && !current.Visited && !current.WallLeft)
+            {
+                //x--;
+                if (maze[x - 1, y].DistanceFromStart >= current.DistanceFromStart + 1 || maze[x - 1, y].DistanceFromStart == 0)
+                {
+                    maze[x - 1, y].DistanceFromStart += current.DistanceFromStart + 1;
+                    queue.Enqueue(maze[x - 1, y]);
+                }
+            }
+
+            if (y > 0 && !current.WallBottom)
+            {
+                //y--; 
+                if (maze[x, y - 1].DistanceFromStart >= current.DistanceFromStart + 1 || maze[x, y - 1].DistanceFromStart == 0)
+                {
+                    maze[x, y - 1].DistanceFromStart += current.DistanceFromStart + 1;
+                    queue.Enqueue(maze[x, y - 1]);
+                }
+                    
+            }
+
+            if (x < Width - 2 && !maze[x + 1, y].WallLeft)
+            {
+                    //x++;
+                    
+                if (maze[x + 1, y].DistanceFromStart >= current.DistanceFromStart + 1 || maze[x + 1, y].DistanceFromStart == 0)
+                {
+                    maze[x + 1, y].DistanceFromStart += current.DistanceFromStart + 1;
+                    queue.Enqueue(maze[x + 1, y]);
+                }
+            }
+
+            if (y < Height - 2 && !maze[x, y + 1].WallBottom)
+            {
+                    //y++;
+                    
+                if (maze[x, y + 1].DistanceFromStart >= current.DistanceFromStart + 1 || maze[x, y + 1].DistanceFromStart == 0)
+                {
+                    maze[x, y + 1].DistanceFromStart += current.DistanceFromStart + 1;
+                    queue.Enqueue(maze[x, y + 1]);
+                }
+            }
+        }
+    }
 
     private void RemoveWall(MazeGeneratorCell a, MazeGeneratorCell b)
     {
