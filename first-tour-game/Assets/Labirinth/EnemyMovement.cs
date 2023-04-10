@@ -14,6 +14,7 @@ public class EnemyMovement : MonoBehaviour
     bool isAttackBaseScriptAdded;
 
     [SerializeField] private LayerMask mask;
+    [SerializeField] float coefficientOfEnemy;
 
     private void Start()
     {
@@ -52,16 +53,6 @@ public class EnemyMovement : MonoBehaviour
     private void RightHandAlgoritm()
     {
         float distance = Vector2.Distance(GameManager.instance.currentMaze.finishPosition, transform.position);
-
-        float coefficientOfEnemy = 0;
-        if (tag == "ArtilleryEnemy")
-        {
-            coefficientOfEnemy = 2f;
-        }
-        else if (tag == "Enemy")
-        {
-            coefficientOfEnemy = 1f;
-        }
 
         //start attack base and freeze movement
         int num = GameManager.instance.difficulty;
