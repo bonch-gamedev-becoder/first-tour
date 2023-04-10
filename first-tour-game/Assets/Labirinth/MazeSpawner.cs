@@ -24,9 +24,26 @@ public class MazeSpawner : MonoBehaviour
             for (int y = 0; y < maze.cells.GetLength(1); y++)
             {
                 Cell c = Instantiate(CellPrefab, new Vector3(x * CellSize.x, y * CellSize.y, y * CellSize.z), Quaternion.identity);
+                c.WallLeftBreak.SetActive(false);
+                c.WallBottomBreak.SetActive(false);
+                int randnum = Random.Range(0, 6);
+
+                if (randnum == 1)
+                    c.WallLeftBreak.SetActive(maze.cells[x, y].WallLeft);
 
                 c.WallLeft.SetActive(maze.cells[x, y].WallLeft);
+
+
+                if (randnum == 2)
+                    c.WallBottomBreak.SetActive(maze.cells[x, y].WallBottom);
+
                 c.WallBottom.SetActive(maze.cells[x, y].WallBottom);
+
+
+                if (c.WallLeftBreak.active)
+                    c.WallLeft.SetActive(false);
+                if (c.WallBottomBreak.active)
+                    c.WallBottom.SetActive(false);
             }
         }
 
