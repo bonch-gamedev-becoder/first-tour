@@ -32,6 +32,7 @@ public class SpawnPointsGenerator : MonoBehaviour
 
     private void DeleteOldPoints()
     {
+        //currentSpawnPoints.Count
         for (int i = 0; i < currentSpawnPoints.Count; i++)
         {
             Destroy(currentSpawnPoints[i].gameObject);
@@ -40,18 +41,19 @@ public class SpawnPointsGenerator : MonoBehaviour
 
     void GetSpawnPositions()
     {
-        int num = GameManager.instance.difficulty * GameManager.instance.mazeCof - 1;
+        int num = GameManager.instance.difficulty * GameManager.instance.mazeCof - 1; //GameManager.instance.difficulty * GameManager.instance.mazeCof - 1
 
         for (int x = 0; x < num; x++)
             for (int y = 0; y < num; y++)
                 if (y % num == 0 || x % num == 0) {
-                    Vector2 vector = new(GameManager.instance.currentMaze.cells[x, y].X + 0.5f, GameManager.instance.currentMaze.cells[x, y].Y + 0.5f);
-                    spawnPoints.Add(vector);
+                      Vector2 vector = new(GameManager.instance.currentMaze.cells[x, y].X + 0.5f, GameManager.instance.currentMaze.cells[x, y].Y + 0.5f);
+                      spawnPoints.Add(vector);
                 }       
     }
 
     void SetSpawners()
     {
+        //GameManager.instance.difficulty
         for (int i = 0; i < GameManager.instance.difficulty; i++)
             SetSpawner();
         

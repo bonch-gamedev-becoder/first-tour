@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class NewEnemyMovementTest : MonoBehaviour
 {
-
+    [SerializeField] GameObject prefabDebug;
     [SerializeField] MazeSpawner mazespawner;
     private HintRenderer renderer;
     [SerializeField] float cooldown = 1f;
@@ -17,7 +17,7 @@ public class NewEnemyMovementTest : MonoBehaviour
     void Start()
     {
         renderer = new HintRenderer();
-        renderer.DrawPath(transform.position);
+        renderer.DrawPath(transform.position, prefabDebug);
         isAttackBaseScriptAdded = false;
         StartCoroutine(StartMovement());
     }
@@ -26,8 +26,9 @@ public class NewEnemyMovementTest : MonoBehaviour
     {
         List<Vector3> positions = renderer.positions;
         positions.Reverse();
+        positions[0] = transform.position;
         for (int i = 0; i < positions.Count; i++)
-        {
+        {   
             transform.position = new Vector2(positions[i].x + 0.5f, positions[i].y + 0.7f);
 
             float distance = Vector2.Distance(GameManager.instance.currentMaze.finishPosition, transform.position);

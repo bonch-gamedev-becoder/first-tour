@@ -135,6 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed9103692628b21499e2604c6bd1be90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prefabDebug: {fileID: 2700190372703937656, guid: ce202415d26de4d4fa75cf28f02f96c7, type: 3}
   mazespawner: {fileID: 8556974059376787603, guid: 5424bade280704503b1b2a04cd7d6e31, type: 3}
   cooldown: 0.25
   coefficientOfEnemy: 1
