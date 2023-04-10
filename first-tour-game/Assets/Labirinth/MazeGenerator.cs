@@ -117,49 +117,43 @@ public class MazeGenerator
             current.Visited = true;
             int x = current.X;
             int y = current.Y;
-            if (x == 8 && y == 8) return;
-
-            if (x > 0 && !current.Visited && !current.WallLeft)
+            if (x == 8 && y == 8) 
+            {
+                return;
+            }
+            Debug.Log("distance: " + current.DistanceFromStart);
+            if (x > 0 && !maze[x - 1, y].Visited && !current.WallLeft)
             {
                 //x--;
-                if (maze[x - 1, y].DistanceFromStart >= current.DistanceFromStart + 1 || maze[x - 1, y].DistanceFromStart == 0)
-                {
-                    maze[x - 1, y].DistanceFromStart += current.DistanceFromStart + 1;
+                
+                    maze[x - 1, y].DistanceFromStart = current.DistanceFromStart + 1;
                     queue.Enqueue(maze[x - 1, y]);
-                }
+                
             }
 
-            if (y > 0 && !current.WallBottom)
+            if (y > 0 && !maze[x, y - 1].Visited && !current.WallBottom)
             {
                 //y--; 
-                if (maze[x, y - 1].DistanceFromStart >= current.DistanceFromStart + 1 || maze[x, y - 1].DistanceFromStart == 0)
-                {
-                    maze[x, y - 1].DistanceFromStart += current.DistanceFromStart + 1;
+                
+                    maze[x, y - 1].DistanceFromStart = current.DistanceFromStart + 1;
                     queue.Enqueue(maze[x, y - 1]);
-                }
+                
                     
             }
 
-            if (x < Width - 2 && !maze[x + 1, y].WallLeft)
+            if (x < Width - 2 && !maze[x + 1, y].Visited && !maze[x + 1, y].WallLeft)
             {
                     //x++;
-                    
-                if (maze[x + 1, y].DistanceFromStart >= current.DistanceFromStart + 1 || maze[x + 1, y].DistanceFromStart == 0)
-                {
-                    maze[x + 1, y].DistanceFromStart += current.DistanceFromStart + 1;
+                    maze[x + 1, y].DistanceFromStart = current.DistanceFromStart + 1;
                     queue.Enqueue(maze[x + 1, y]);
-                }
+                
             }
 
-            if (y < Height - 2 && !maze[x, y + 1].WallBottom)
+            if (y < Height - 2 && !maze[x, y + 1].Visited && !maze[x, y + 1].WallBottom)
             {
-                    //y++;
-                    
-                if (maze[x, y + 1].DistanceFromStart >= current.DistanceFromStart + 1 || maze[x, y + 1].DistanceFromStart == 0)
-                {
-                    maze[x, y + 1].DistanceFromStart += current.DistanceFromStart + 1;
+                    maze[x, y + 1].DistanceFromStart = current.DistanceFromStart + 1;
                     queue.Enqueue(maze[x, y + 1]);
-                }
+                
             }
         }
     }
