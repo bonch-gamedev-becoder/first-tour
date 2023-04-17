@@ -100,13 +100,22 @@ public class MazeGenerator
         }
     }
 
-    public static void RegenerateBacktracker(MazeGeneratorCell[,] maze, int startX, int startY, int Width, int Height, Maze mazeObject)
+    public static void RegenerateBacktracker(MazeGeneratorCell[,] maze, int startX, int startY, int Width, int Height, Vector2 finishPosition)
     {
         if (startX < 0 || startY < 0)
         {
             return;
         }
-        MazeGeneratorCell current = maze[startX, startY];
+        MazeGeneratorCell current = maze[0, 0];
+        try
+        {
+            current = maze[startX, startY];
+        }
+        catch (IndexOutOfRangeException)
+        {
+            Debug.Log("exception: " + startX + ", " + startY);
+        }
+        
         current.DistanceFromStart = 0;
 
         Queue<MazeGeneratorCell> queue = new Queue<MazeGeneratorCell>();
@@ -119,7 +128,7 @@ public class MazeGenerator
             current.Visited = true;
             int x = current.X;
             int y = current.Y;
-            if (x == mazeObject.finishPosition.x && y == mazeObject.finishPosition.y) return;
+            if (x == finishPosition.x && y == finishPosition.y) return;
 
             if (x > 0 && !maze[x - 1, y].Visited && !current.WallLeft)
             {
@@ -133,13 +142,13 @@ public class MazeGenerator
                     queue.Enqueue(maze[x, y - 1]);
             }
 
-            if (x < Width - 2 && !maze[x + 1, y].Visited && !maze[x + 1, y].WallLeft)
+            if (x < Width - 1 && !maze[x + 1, y].Visited && !maze[x + 1, y].WallLeft)
             {
                     maze[x + 1, y].DistanceFromStart = current.DistanceFromStart + 1;
                     queue.Enqueue(maze[x + 1, y]);
             }
 
-            if (y < Height - 2 && !maze[x, y + 1].Visited && !maze[x, y + 1].WallBottom)
+            if (y < Height - 1 && !maze[x, y + 1].Visited && !maze[x, y + 1].WallBottom)
             {
                     maze[x, y + 1].DistanceFromStart = current.DistanceFromStart + 1;
                     queue.Enqueue(maze[x, y + 1]);

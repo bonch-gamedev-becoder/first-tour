@@ -3,39 +3,13 @@ using UnityEngine;
 
 public class HintRenderer : MonoBehaviour
 {
-    public MazeSpawner MazeSpawner;
+    public Vector2 finishPosition;
 
-    private LineRenderer componentLineRenderer;
-
-    private bool Active;
-
-    public List<Vector3> positions = new();
-
-    
-    private void Start()
-    {
-        /*componentLineRenderer = GetComponent<LineRenderer>();
-        Active = true;*/
-    }
-
-    private void Update()
-    {
-        /*if (Input.GetKeyDown(KeyCode.E))
-            if (Active)
-            {
-                componentLineRenderer.enabled = false;
-                Active = false;
-            }
-            else
-            {
-                componentLineRenderer.enabled = true;
-                Active = true;
-            }
-        */
-    }
+    public List<Vector3> positions = new List<Vector3>();
 
     public void DrawPath(Vector2 spawnPos, GameObject prefabDebug)
     {
+        positions.Clear();
         GameObject mazeGameobject = GameObject.FindGameObjectWithTag("Maze");
         MazeSpawner MazeSpawner = mazeGameobject.GetComponent<MazeSpawner>();
         Maze maze = MazeSpawner.maze;
@@ -43,18 +17,22 @@ public class HintRenderer : MonoBehaviour
         int ceilSpawnPosX = Mathf.CeilToInt(spawnPos.x);
         int ceilSpawnPosY = Mathf.CeilToInt(spawnPos.y);
 
+        if (ceilSpawnPosX < 0 || ceilSpawnPosX == maze.cells.GetLength(0) - 1) ceilSpawnPosX = 0;
+        if (ceilSpawnPosY < 0 || ceilSpawnPosY == maze.cells.GetLength(1) - 1) ceilSpawnPosY = 0;
+
+
         MazeGenerator.MakeCellsArrUnvisited(maze.cells, maze.cells.GetLength(0), maze.cells.GetLength(1));
-        MazeGenerator.RegenerateBacktracker(maze.cells, ceilSpawnPosX, ceilSpawnPosY, maze.cells.GetLength(0), maze.cells.GetLength(1), maze);
-        int x = maze.finishPosition.x;
-        int y = maze.finishPosition.y;
+        MazeGenerator.RegenerateBacktracker(maze.cells, ceilSpawnPosX, ceilSpawnPosY, maze.cells.GetLength(0), maze.cells.GetLength(1), finishPosition);
+        int x = Mathf.CeilToInt(finishPosition.x);
+        int y = Mathf.CeilToInt(finishPosition.y);
 
         while ((x != ceilSpawnPosX || y != ceilSpawnPosY) && positions.Count < 10000)
         {
             if (positions.Count > 100)
             {
+                Debug.Log("coords: " + ceilSpawnPosX + ", " + ceilSpawnPosY);
                 return;
             }
-//            Debug.Log("coords: " + x + ", " + y + ". Number: " + (ceilSpawnPosX + ceilSpawnPosY));
             //Debug.Log("ceil: " + ceilSpawnPosX + ", " + ceilSpawnPosY + ". without ceil: " + spawnPos.x + ", " + spawnPos.y);
             positions.Add(new Vector3(x * MazeSpawner.CellSize.x, y * MazeSpawner.CellSize.y, y * MazeSpawner.CellSize.z));
 
@@ -76,9 +54,13 @@ public class HintRenderer : MonoBehaviour
             {
                 y++;
             }
-            //Instantiate(prefabDebug, new Vector2(x, y), Quaternion.identity);
+            if (prefabDebug != null)
+            {
+                Instantiate(prefabDebug, new Vector2(x, y), Quaternion.identity);
+            }
+            
         }
-        //positions.Add(new Vector2(ceilSpawnPosX, ceilSpawnPosY));
+        positions.Add(new Vector2(ceilSpawnPosX, ceilSpawnPosY));
         /*componentLineRenderer.positionCount = positions.Count;
         componentLineRenderer.SetPositions(positions.ToArray());*/
     }

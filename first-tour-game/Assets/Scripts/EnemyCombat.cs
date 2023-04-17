@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,7 @@ public class EnemyCombat : MonoBehaviour
     [SerializeField] Transform firePoint;
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] float bulletForce = 20f;
+    public int bulletDamage = 10;
 
     [SerializeField] int maxHealth;
     private int currentHealth;
@@ -61,6 +63,9 @@ public class EnemyCombat : MonoBehaviour
     private void SpawnAndImpulseBullet()
     {
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        bullet.AddComponent<BulletBehavior>();
+        bullet.GetComponent<BulletBehavior>().executor = gameObject;
+        bullet.GetComponent<BulletBehavior>().damage = bulletDamage;
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
     }

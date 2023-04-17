@@ -13,7 +13,16 @@ public class EnemyAttackBase : MonoBehaviour
 //        Debug.Log("Enemy attacking base!");
         GetComponent<BoxCollider2D>().enabled = true;
 
-        target = GameObject.FindWithTag("Base").transform;
+        if (tag == "HunterEnemy")
+        {
+            target = GameObject.FindGameObjectWithTag("Player").transform;
+        }
+        else
+        {
+            target = GameObject.FindWithTag("Base").transform;
+        }
+
+        
         dir = target.position - transform.position;
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
 
@@ -33,8 +42,8 @@ public class EnemyAttackBase : MonoBehaviour
         transform.rotation = Quaternion.Euler(0f, 0f, angle);
     }
 
-    public void StopMovementNearBase()
+    /*public void StopMovementNearBase()
     {
         GetComponent<EnemyMovement>().enabled = false;
-    }
+    }*/
 }

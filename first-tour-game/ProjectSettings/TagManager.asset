@@ -20,6 +20,9 @@ TagManager:
   - ArtilleryEnemy
   - BulletArtillery
   - blockingLayerBreakable
+  - Maze
+  - HunterEnemy
+  - BulletHunter
   layers:
   - Default
   - TransparentFX
@@ -34,8 +37,8 @@ TagManager:
   - Player
   - BonusOrBlock
   - blockLayerBreakable
-  - SmallEnemy
-  - SmallArtilleryEnemy
+  - 
+  - 
   - 
   - 
   - 

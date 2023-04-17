@@ -52,8 +52,7 @@ public class PlayerBonusBehavior : MonoBehaviour
 
     void ThanosBonus()
     {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        GameObject[] artillery = GameObject.FindGameObjectsWithTag("ArtilleryEnemy");
+        GameObject[] enemies = FindGameObjectsWithLayer(9);
 
         for (int i = 0; i < enemies.Length; i += 2)
         {
@@ -65,18 +64,6 @@ public class PlayerBonusBehavior : MonoBehaviour
             {
                 break;
             }
-        }
-        for (int i = 0; i < artillery.Length; i += 2)
-        {
-            try
-            {
-                artillery[i].GetComponent<EnemyCombat>().Death();
-            }
-            catch (IndexOutOfRangeException)
-            {
-                break;
-            }
-            
         }
     }
 
@@ -101,5 +88,23 @@ public class PlayerBonusBehavior : MonoBehaviour
 
         //Debug.Log("collide enabled");
         collider.enabled = true;
+    }
+
+    private GameObject[] FindGameObjectsWithLayer(int layerNumbeer)
+    {
+        GameObject[] tempArr = FindObjectsOfType<GameObject>();
+        List<GameObject> list = new List<GameObject>();
+        for (int i = 0; i < tempArr.Length; i++)
+        {
+            if (tempArr[i].layer == layerNumbeer)
+            {
+                list.Add(tempArr[i]);
+            }
+        }
+        if (list.Count == 0)
+        {
+            return null;
+        }
+        return list.ToArray();
     }
 }
