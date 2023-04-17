@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -131,6 +132,8 @@ public class GameManager : MonoBehaviour
 
         if (points > difficulty * 10)
             levelComplete();
+
+        ScoreTracker.instance.ChangeText();
     }
 
     void levelComplete()
