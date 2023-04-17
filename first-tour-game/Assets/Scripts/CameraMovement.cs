@@ -25,7 +25,10 @@ public class CameraMovement : MonoBehaviour
 
 	void CameraForSingle()
     {
-		
+
+		if (GameManager.instance.currentBase == null)
+			return;
+
 		Player1Pos = new Vector3(Cooperative.instance.Player1.transform.position.x, Cooperative.instance.Player1.transform.position.y, -10);
 
 		float distanceFromFirstToSecond = Vector2.Distance(Player1Pos, GameManager.instance.currentBase.transform.position);
@@ -35,7 +38,7 @@ public class CameraMovement : MonoBehaviour
 
 		transform.position = Vector3.Lerp(Player1Pos, GameManager.instance.currentBase.transform.position, 0.5f / distanceFromFirstToSecond);
 
-		Debug.Log("Size of camera: " + mainCamera.orthographicSize + "\n distance from target: " + distanceFromFirstToSecond);
+//		Debug.Log("Size of camera: " + mainCamera.orthographicSize + "\n distance from target: " + distanceFromFirstToSecond);
 
 	}
 

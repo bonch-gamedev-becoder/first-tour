@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
 
     private void difficultyScale()
     {
-//        Debug.Log("level = " + level);
+        Debug.Log("level = " + level);
         difficulty = 2;
 
         /*if (level > 1)
@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour
         if (level > 8)
             difficulty = 3;
 
-//        Debug.Log("difficulty=" + difficulty);
+        Debug.Log("difficulty=" + difficulty);
     }
 
     private void Update()

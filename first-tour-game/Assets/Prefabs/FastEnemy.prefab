@@ -137,7 +137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabDebug: {fileID: 2700190372703937656, guid: ce202415d26de4d4fa75cf28f02f96c7, type: 3}
   mazespawner: {fileID: 8556974059376787603, guid: 5424bade280704503b1b2a04cd7d6e31, type: 3}
-  cooldown: 0.25
+  cooldown: 1
   coefficientOfEnemy: 1
 --- !u!50 &6425118310537953836
 Rigidbody2D:
@@ -177,7 +177,6 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 4224
-  coefficientOfEnemy: 0.5
 --- !u!61 &7362462535759571802
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -227,7 +226,7 @@ MonoBehaviour:
   invisibilityBonus: {fileID: 5729504477036182342, guid: 7442d6989839204459b86216c7f33003, type: 3}
 --- !u!95 &5995466996403420916
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -244,7 +243,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &-7567834462707513191
 MonoBehaviour:
   m_ObjectHideFlags: 0
