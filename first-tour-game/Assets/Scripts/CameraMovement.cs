@@ -38,6 +38,9 @@ public class CameraMovement : MonoBehaviour
 
 		transform.position = Vector3.Lerp(Player1Pos, GameManager.instance.currentBase.transform.position, 0.5f / distanceFromFirstToSecond);
 
+		if (transform.position.z >= 0)
+			transform.position = new(transform.position.x, transform.position.y, -10);
+
 //		Debug.Log("Size of camera: " + mainCamera.orthographicSize + "\n distance from target: " + distanceFromFirstToSecond);
 
 	}
