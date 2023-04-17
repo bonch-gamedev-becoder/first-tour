@@ -11,42 +11,50 @@ public class MoveWASD : MonoBehaviour
     Rigidbody2D rgd;
     Animator animator;
 
+    #region KEYCODES
+
+    public KeyCode left;
+    public KeyCode right;
+    public KeyCode up;
+    public KeyCode down;
+    
+    #endregion
+
+    private float x, y;
     private void Start()
     {
         rgd = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         movement.x = 0;
         movement.y = 0;
-
     }
 
     private void FixedUpdate()
     {
         movement = Vector3.zero;
 
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(up))
             movement.y = 1;
 
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(down))
             movement.y = -1;
 
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(left))
             movement.x = -1;
 
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(right))
             movement.x = 1;
 
-        if (movement.x != 0)
+        if (movement.x != 0 || movement.y != 0)
+        {
             animator.SetFloat("Horizontal", movement.x);
-
-        if (movement.y != 0)
             animator.SetFloat("Vertical", movement.y);
+        }
 
         rgd.MovePosition(rgd.position + movement.normalized * speed * Time.fixedDeltaTime);
 
         animSpeed = new Vector2(movement.x, movement.y).sqrMagnitude;
 
         animator.SetFloat("Speed", animSpeed);
-
     }
 }
