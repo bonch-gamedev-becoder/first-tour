@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class MoveArrows : MonoBehaviour
 {
-    public float speed;
+    public float speed = 5;
 
-    float movementX;
-    float movementY;
+    Vector2 movement;
     float animSpeed;
     Rigidbody2D rgd;
     Animator animator;
@@ -16,42 +15,36 @@ public class MoveArrows : MonoBehaviour
     {
         rgd = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        movementX = 0;
-        movementY = 0;
-        speed = 10000 / 2f;
+        movement.x = 0;
+        movement.y = 0;
 
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        rgd.velocity = new Vector2(movementX * speed * Time.deltaTime, movementY * speed * Time.deltaTime);
+        movement = Vector3.zero;
 
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-            movementY = 1;
+        if (Input.GetKey(KeyCode.UpArrow))
+            movement.y = 1;
 
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-            movementY = -1;
+        if (Input.GetKey(KeyCode.DownArrow))
+            movement.y = -1;
 
+        if (Input.GetKey(KeyCode.LeftArrow))
+            movement.x = -1;
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-            movementX = -1;
+        if (Input.GetKey(KeyCode.RightArrow))
+            movement.x = 1;
 
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-            movementX = 1;
+        if (movement.x != 0)
+            animator.SetFloat("Horizontal", movement.x);
 
-        if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.DownArrow))
-            movementY = 0;
+        if (movement.y != 0)
+            animator.SetFloat("Vertical", movement.y);
 
-        if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow))
-            movementX = 0;
+        rgd.MovePosition(rgd.position + movement.normalized * speed * Time.fixedDeltaTime);
 
-        if (movementX != 0)
-            animator.SetFloat("Horizontal", movementX);
-
-        if (movementY != 0)
-            animator.SetFloat("Vertical", movementY);
-
-        animSpeed = new Vector2(movementX, movementY).sqrMagnitude;
+        animSpeed = new Vector2(movement.x, movement.y).sqrMagnitude;
 
         animator.SetFloat("Speed", animSpeed);
 

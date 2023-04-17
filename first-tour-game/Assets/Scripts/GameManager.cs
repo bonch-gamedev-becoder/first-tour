@@ -70,9 +70,15 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             SceneManager.LoadScene("MainMenu");
+        }
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            if (Coop == false)
+            SpawnSecondPlayer();
         }
     }
 
@@ -88,27 +94,22 @@ public class GameManager : MonoBehaviour
 
         Instantiate(upgrades, transform.position, Quaternion.identity);
 
-        PlayerPrefs.SetInt("Coop", 1);
-        SpawnPlayers();
+        SpawnPlayer();
     }
 
-    void SpawnPlayers()
+    void SpawnPlayer()
     {
-        if (PlayerPrefs.GetInt("Coop") == 1)
-            Coop = true;
-
         Vector2 pos = new Vector2(currentMaze.finishPosition.x, currentMaze.finishPosition.y - 1);
-
         Cooperative.instance.Player1 = Instantiate(PlayerPrefab, pos, Quaternion.identity);
+        Cooperative.instance.SetControls();
+    }
 
-        if (Coop == true)
-        {
-            pos = new Vector2(currentMaze.finishPosition.x, currentMaze.finishPosition.y + 1);
-            Cooperative.instance.Player2 = Instantiate(PlayerPrefab, pos, Quaternion.identity);
-        }
-
-        Cooperative.instance.SetControls();    
-
+    void SpawnSecondPlayer()
+    {
+        Coop = true;
+        Vector2 pos = new Vector2(currentMaze.finishPosition.x, currentMaze.finishPosition.y + 1);
+        Cooperative.instance.Player2 = Instantiate(PlayerPrefab, pos, Quaternion.identity);
+        Cooperative.instance.SetControls();
     }
 
     void SpawnBase()

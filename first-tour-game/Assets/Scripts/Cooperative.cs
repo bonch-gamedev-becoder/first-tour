@@ -22,7 +22,12 @@ public class Cooperative : MonoBehaviour
 
     public void SetControls()
     {
-        Player1.AddComponent<MoveWASD>();
-        Player2.AddComponent<MoveArrows>();
+        if (!Player1.TryGetComponent(out MoveWASD movewasd))
+            Player1.AddComponent<MoveWASD>();
+
+
+        if (Player2 != null)
+            Player2.AddComponent<MoveArrows>();
+        
     }
 }

@@ -16,22 +16,16 @@ public class IncSpeedBehaviour : MonoBehaviour
     {
 
         if (collision.TryGetComponent(out MoveWASD movewasd))
-        {
-            movewasd.speed = 10000;
-            Debug.Log("SPEED UP wasd!");
-        }
+            movewasd.speed = 7.5f;
 
         if (collision.TryGetComponent(out MoveArrows movearrows))
-        {
-            movearrows.speed = 10000;
-            Debug.Log("SPEED UP arrows!");
-        }
+            movearrows.speed = 7.5f;
 
         yield return new WaitForSeconds(3f);
 
         if (movewasd != null)
-            movewasd.speed = 5000;
+            movewasd.speed = 5f;
         if (movearrows != null)
-            movearrows.speed = 5000;
+            movearrows.speed = 5f;
     }
 }
