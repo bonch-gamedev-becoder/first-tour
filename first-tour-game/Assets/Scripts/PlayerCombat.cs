@@ -10,6 +10,9 @@ public class PlayerCombat : MonoBehaviour
     [SerializeField] float bulletForce = 20f;
     public int bulletDamage = 10;
     private bool canShoot;
+
+    public KeyCode shootButton;
+
     void Start()
     {
         canShoot = true;
@@ -18,7 +21,7 @@ public class PlayerCombat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && canShoot)
+        if (Input.GetKeyDown(shootButton) && canShoot)
         {
              Shoot();
         }

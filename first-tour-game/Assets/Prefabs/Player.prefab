@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5370806483847302450}
   m_LocalRotation: {x: 0, y: -0, z: 0.7071068, w: -0.7071068}
-  m_LocalPosition: {x: -0.015, y: 0.108, z: -0.8028099}
+  m_LocalPosition: {x: 0.023, y: 0.152, z: -0.8028099}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -110,7 +110,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 390003699, guid: eaaf4bf8de34266458896706d122c48e, type: 3}
+  m_Sprite: {fileID: 1008165051, guid: 09779a62083239f4c898b6ef17dab07c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -144,7 +144,7 @@ Rigidbody2D:
   m_Constraints: 4
 --- !u!95 &5370806484650042489
 Animator:
-  serializedVersion: 5
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -161,8 +161,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &175142445618155393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,6 +191,8 @@ MonoBehaviour:
   firePoint: {fileID: 5370806483847302449}
   bulletPrefab: {fileID: 1427136655908854496, guid: 68df74c38370b4bc695e871ac85874ed, type: 3}
   bulletForce: 20
+  bulletDamage: 10
+  shootButton: 0
 --- !u!58 &4121692323646447430
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -205,6 +206,6 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.10670607, y: -0.022315815}
+  m_Offset: {x: -0.056149602, y: -0.0064266175}
   serializedVersion: 2
-  m_Radius: 0.10332002
+  m_Radius: 0.09465322
