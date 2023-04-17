@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 7579734225162865773}
   - component: {fileID: 1340323760125501647}
   - component: {fileID: 1796204687}
+  - component: {fileID: -9071485139225849494}
   m_Layer: 8
   m_Name: ArtilleryEnemy
   m_TagString: ArtilleryEnemy
@@ -175,7 +176,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6220381779711281211}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 310178df1c1d14fa6af48b5aeed7b519, type: 3}
   m_Name: 
@@ -185,7 +186,6 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 128
-  coefficientOfEnemy: 2.5
 --- !u!114 &7579734225162865773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,7 +203,7 @@ MonoBehaviour:
   firePoint: {fileID: 590524391086174879}
   bulletPrefab: {fileID: 1427136655908854496, guid: 2abb0c4775fad484590f7510fb22722a, type: 3}
   bulletForce: 20
-  maxHealth: 20
+  maxHealth: 10
   thanosBonus: {fileID: 4014674198437839061, guid: 67bf03ef07a46744798c3f5e6089b1b3, type: 3}
   shieldBonus: {fileID: 2313528145229517081, guid: d068e0aa02e74924e9fad15ace2afaa8, type: 3}
   invisibilityBonus: {fileID: 5729504477036182342, guid: 7442d6989839204459b86216c7f33003, type: 3}
@@ -240,3 +240,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-9071485139225849494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6220381779711281211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed9103692628b21499e2604c6bd1be90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyTarget: {fileID: 6867460726070731017, guid: 666708d0bf87f2f459ae833cde8315a2, type: 3}
+  prefabDebug: {fileID: 0}
+  mazespawner: {fileID: 8556974059376787603, guid: 5424bade280704503b1b2a04cd7d6e31, type: 3}
+  cooldown: 1
+  coefficientOfEnemy: 2.5

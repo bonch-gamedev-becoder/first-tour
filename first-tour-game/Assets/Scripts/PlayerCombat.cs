@@ -25,13 +25,8 @@ public class PlayerCombat : MonoBehaviour
 
     void Shoot()
     {
-        //canShoot = false;
-
         SpawnAndImpulseBullet();
         SoundsManager.instance.PlaySound("Shoot", true);
-
-        //yield return new WaitForSeconds(0.25f);
-        //canShoot = true;
     }
 
     private void SpawnAndImpulseBullet()

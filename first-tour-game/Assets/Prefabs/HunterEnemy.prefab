@@ -49,8 +49,8 @@ GameObject:
   - component: {fileID: 5995466996403420916}
   - component: {fileID: -7567834462707513191}
   m_Layer: 9
-  m_Name: FastEnemy
-  m_TagString: Enemy
+  m_Name: HunterEnemy
+  m_TagString: HunterEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113,7 +113,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 746715112, guid: 74c9d5fda8cdd084398c37eda5977d9b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9811321, g: 0.42018956, b: 0.35799217, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -218,7 +218,7 @@ MonoBehaviour:
   deathEffectPermanent: {fileID: 8492290064383286078, guid: 13b49ef46b8e1074290c9faf38769f0b, type: 3}
   deathEffect: {fileID: 0}
   firePoint: {fileID: 7131515063440193890}
-  bulletPrefab: {fileID: 1427136655908854496, guid: 59d23700b1c73b043964bcc9518e3977, type: 3}
+  bulletPrefab: {fileID: 1427136655908854496, guid: 9a01eafbc83f0224383acdf1edf0f1fa, type: 3}
   bulletForce: 5
   maxHealth: 10
   thanosBonus: {fileID: 4014674198437839061, guid: 67bf03ef07a46744798c3f5e6089b1b3, type: 3}

@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = System.Random;
 
 public class BulletBehavior : MonoBehaviour
 {
+    public GameObject executor;
     [SerializeField] int damage;
     private Rigidbody2D rb;
     private void Start()
@@ -13,12 +15,13 @@ public class BulletBehavior : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        /*if (collision.gameObject.CompareTag("Player"))
         {
             return;
-        }
+        }*/
         Debug.Log("Collistion for bullit is " + collision.transform.name);
 
+        //рикошет пули от стены
         if (gameObject.CompareTag("Bullet") && collision.gameObject.CompareTag("blockingLayer"))
         {
             Vector2 wallNormal = collision.contacts[0].normal;
@@ -29,9 +32,16 @@ public class BulletBehavior : MonoBehaviour
         }
 
         //player hit enemies
-        if (gameObject.tag == "Bullet" && (collision.collider.tag == "Enemy" || collision.collider.tag == "ArtilleryEnemy"))
+        if (gameObject.tag == "Bullet" && (collision.collider.tag == "Enemy" || collision.collider.tag == "ArtilleryEnemy" || collision.collider.tag == "HunterEnemy"))
         {
             collision.gameObject.GetComponent<EnemyCombat>().TakeDamage(damage);
+        }
+
+        if (gameObject.tag == "BulletHunter" && collision.collider.tag == "Player")
+        {
+            Random random = new Random();
+            collision.gameObject.transform.position = new Vector3(random.Next(3, 7), random.Next(3, 7), 0);
+            Destroy(executor);
         }
 
         //enemies hit base
