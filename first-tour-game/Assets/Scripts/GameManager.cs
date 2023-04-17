@@ -99,6 +99,9 @@ public class GameManager : MonoBehaviour
 
     void SpawnPlayer()
     {
+        if (Cooperative.instance == null)
+            return;
+
         Vector2 pos = new Vector2(currentMaze.finishPosition.x, currentMaze.finishPosition.y - 1);
         Cooperative.instance.Player1 = Instantiate(PlayerPrefab, pos, Quaternion.identity);
         Cooperative.instance.SetControls();
@@ -106,6 +109,9 @@ public class GameManager : MonoBehaviour
 
     void SpawnSecondPlayer()
     {
+        if (Cooperative.instance == null)
+            return;
+
         Coop = true;
         Vector2 pos = new Vector2(currentMaze.finishPosition.x, currentMaze.finishPosition.y + 1);
         Cooperative.instance.Player2 = Instantiate(PlayerPrefab, pos, Quaternion.identity);
