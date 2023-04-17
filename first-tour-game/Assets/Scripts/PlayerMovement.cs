@@ -4,17 +4,12 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public static PlayerMovement instance = null;
     public float moveSpeed = 5f;
 
     private Rigidbody2D rb;
     private Animator animator;
     Vector2 movement;
 
-    private void Awake()
-    {
-        instance = this;
-    }
 
     void Start()
     {

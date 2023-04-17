@@ -14,8 +14,24 @@ public class IncSpeedBehaviour : MonoBehaviour
 
     IEnumerator IncSpeed(Collider2D collision)
     {
-        collision.gameObject.GetComponent<PlayerMovement>().moveSpeed = 7.5f;
+
+        if (TryGetComponent<MoveWASD>(out MoveWASD movewasd))
+        {
+            movewasd.speed = 10000;
+            Debug.Log("SPEED UP wasd!");
+        }
+
+        if (TryGetComponent<MoveArrows>(out MoveArrows movearrows))
+        {
+            movearrows.speed = 10000;
+            Debug.Log("SPEED UP arrows!");
+        }
+
         yield return new WaitForSeconds(3f);
-        collision.gameObject.GetComponent<PlayerMovement>().moveSpeed = 5f;
+
+        if (movewasd != null)
+            movewasd.speed = 5000;
+        if (movearrows != null)
+            movearrows.speed = 5000;
     }
 }

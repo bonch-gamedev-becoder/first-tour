@@ -10,6 +10,10 @@ public class GameManager : MonoBehaviour
     public Maze currentMaze;
     public BaseBehavior currentBase;
 
+    [HideInInspector]
+    public bool Coop;
+
+    public GameObject PlayerPrefab;
     public GameObject Base;
     public GameObject enemySpawnPoints;
     public GameObject upgrades;
@@ -83,6 +87,28 @@ public class GameManager : MonoBehaviour
         Instantiate(enemySpawnPoints, transform.position, Quaternion.identity);
 
         Instantiate(upgrades, transform.position, Quaternion.identity);
+
+        PlayerPrefs.SetInt("Coop", 1);
+        SpawnPlayers();
+    }
+
+    void SpawnPlayers()
+    {
+        if (PlayerPrefs.GetInt("Coop") == 1)
+            Coop = true;
+
+        Vector2 pos = new Vector2(currentMaze.finishPosition.x, currentMaze.finishPosition.y - 1);
+
+        Cooperative.instance.Player1 = Instantiate(PlayerPrefab, pos, Quaternion.identity);
+
+        if (Coop == true)
+        {
+            pos = new Vector2(currentMaze.finishPosition.x, currentMaze.finishPosition.y + 1);
+            Cooperative.instance.Player2 = Instantiate(PlayerPrefab, pos, Quaternion.identity);
+        }
+
+        Cooperative.instance.SetControls();    
+
     }
 
     void SpawnBase()

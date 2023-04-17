@@ -14,9 +14,22 @@ public class SwampBehavior : MonoBehaviour
 
     IEnumerator DecSpeed(Collider2D collision)
     {
-        PlayerMovement script = collision.gameObject.GetComponent<PlayerMovement>();
-        script.moveSpeed = 2.5f;
+        if (TryGetComponent<MoveWASD>(out MoveWASD movewasd))
+        {
+            movewasd.speed = 2500f;
+            Debug.Log("wasd dec");
+        }
+
+        if (TryGetComponent<MoveArrows>(out MoveArrows movearrows))
+        {
+            movearrows.speed = 2500f;
+            Debug.Log("arrows dec");
+        }
+
         yield return new WaitForSeconds(3f);
-        script.moveSpeed = 5f;
+        if (movewasd != null)
+        movewasd.speed = 5000f;
+        if (movearrows != null)
+        movearrows.speed = 5000f;
     }
 }

@@ -45,8 +45,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentBase: {fileID: 0}
+  Coop: 0
+  PlayerPrefab: {fileID: 5370806484650042494, guid: 783718a4ee0c14086bde7f59dca8df86, type: 3}
   Base: {fileID: 6867460726070731020, guid: 666708d0bf87f2f459ae833cde8315a2, type: 3}
   enemySpawnPoints: {fileID: 636309523807561051, guid: d2811018386f74f2a8897bbe896205f4, type: 3}
   upgrades: {fileID: 2730857615006945802, guid: ea8d65af833fd4ca8bdb4c1b507150a9, type: 3}
+  difficulty: 0
+  mazeCof: 8
   level: 1
   points: 0

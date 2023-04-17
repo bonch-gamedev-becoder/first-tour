@@ -54,7 +54,7 @@ public class HintRenderer : MonoBehaviour
             {
                 return;
             }
-            Debug.Log("coords: " + x + ", " + y + ". Number: " + (ceilSpawnPosX + ceilSpawnPosY));
+//            Debug.Log("coords: " + x + ", " + y + ". Number: " + (ceilSpawnPosX + ceilSpawnPosY));
             //Debug.Log("ceil: " + ceilSpawnPosX + ", " + ceilSpawnPosY + ". without ceil: " + spawnPos.x + ", " + spawnPos.y);
             positions.Add(new Vector3(x * MazeSpawner.CellSize.x, y * MazeSpawner.CellSize.y, y * MazeSpawner.CellSize.z));
 
