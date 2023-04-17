@@ -9,7 +9,7 @@ public class HintRenderer : MonoBehaviour
 
     private bool Active;
 
-    public List<Vector3> positions = new List<Vector3>();
+    public List<Vector3> positions = new();
 
     
     private void Start()

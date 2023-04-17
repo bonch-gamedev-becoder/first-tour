@@ -67,7 +67,7 @@ public class EnemyCombat : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        Debug.Log("Enemy taking damage. its hp is " + currentHealth);
+//        Debug.Log("Enemy taking damage. its hp is " + currentHealth);
         currentHealth -= damage;
         SoundsManager.instance.PlaySound("Hit", true);
         if (currentHealth < 0)

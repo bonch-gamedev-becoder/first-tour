@@ -10,7 +10,7 @@ public class EnemyAttackBase : MonoBehaviour
     //use awake function instead of start to fix bug (enable script "enemy combat")
     private void Awake()
     {
-        Debug.Log("Enemy attacking base!");
+//        Debug.Log("Enemy attacking base!");
         GetComponent<BoxCollider2D>().enabled = true;
 
         target = GameObject.FindWithTag("Base").transform;

@@ -74,7 +74,7 @@ public class EnemyMovement : MonoBehaviour
         {
             if (!isAttackBaseScriptAdded)
             {
-                Debug.Log("add enemy attack base");
+//                Debug.Log("add enemy attack base");
                 gameObject.AddComponent<EnemyAttackBase>();
                 Destroy(this);
                 isAttackBaseScriptAdded = true;
@@ -120,13 +120,13 @@ public class EnemyMovement : MonoBehaviour
 
         if (hit.transform == null)
         {
-            Debug.Log("MovingForward");
+//            Debug.Log("MovingForward");
             MoveForward();
             return false;
         }
         else if (!hit.transform.CompareTag("blockingLayer") && !hit.transform.CompareTag("blockingLayerBreakable"))
         {
-            Debug.Log(hit.transform.tag);
+            //Debug.Log(hit.transform.tag);
             //hit.transform.GetComponent<BoxCollider2D>().enabled = false;
             MoveForward();
             return false;

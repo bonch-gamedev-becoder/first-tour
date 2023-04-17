@@ -40,7 +40,7 @@ public class SoundsManager : MonoBehaviour
 
     public void PlaySound(string name, bool turnOn)
     {
-        Debug.Log(name);
+//        Debug.Log(name);
         Sound s = Array.Find(sounds, sound => sound.name == name);
 
         if (s == null)

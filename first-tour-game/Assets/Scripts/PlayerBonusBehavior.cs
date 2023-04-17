@@ -89,17 +89,17 @@ public class PlayerBonusBehavior : MonoBehaviour
 
     IEnumerator InvisibilityBonus()
     {
-        Debug.Log("collide Inside function");
+//        Debug.Log("collide Inside function");
 
         collider.enabled = false;
         sr.color = new Color(0, 236, 215, 130);
 
-        Debug.Log("collide before waitforseconds function");
+        //Debug.Log("collide before waitforseconds function");
 
         yield return new WaitForSeconds(3f);
         sr.color = new Color(255, 255, 255, 255);
 
-        Debug.Log("collide enabled");
+        //Debug.Log("collide enabled");
         collider.enabled = true;
     }
 }

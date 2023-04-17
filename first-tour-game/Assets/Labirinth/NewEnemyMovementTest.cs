@@ -42,7 +42,7 @@ public class NewEnemyMovementTest : MonoBehaviour
             {
                 if (!isAttackBaseScriptAdded)
                 {
-                    Debug.Log("add enemy attack base");
+//                    Debug.Log("add enemy attack base");
                     gameObject.AddComponent<EnemyAttackBase>();
                     Destroy(this);
                     isAttackBaseScriptAdded = true;

@@ -14,13 +14,13 @@ public class SwampBehavior : MonoBehaviour
 
     IEnumerator DecSpeed(Collider2D collision)
     {
-        if (TryGetComponent<MoveWASD>(out MoveWASD movewasd))
+        if (collision.TryGetComponent(out MoveWASD movewasd))
         {
             movewasd.speed = 2500f;
             Debug.Log("wasd dec");
         }
 
-        if (TryGetComponent<MoveArrows>(out MoveArrows movearrows))
+        if (collision.TryGetComponent(out MoveArrows movearrows))
         {
             movearrows.speed = 2500f;
             Debug.Log("arrows dec");

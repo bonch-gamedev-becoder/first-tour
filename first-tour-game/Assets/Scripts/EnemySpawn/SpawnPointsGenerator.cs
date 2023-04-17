@@ -22,7 +22,7 @@ public class SpawnPointsGenerator : MonoBehaviour
         DeleteOldPoints();
         GetSpawnPositions();
         SetSpawners();
-        Debug.Log("Spawners reloaded.");
+//        Debug.Log("Spawners reloaded.");
         StartCoroutine(WaitForReset());
     }
 
@@ -42,15 +42,15 @@ public class SpawnPointsGenerator : MonoBehaviour
 
     void GetSpawnPositions()
     {
-        Debug.Log("mazecof = " + GameManager.instance.mazeCof);
-        Debug.Log("difficulty = " + GameManager.instance.difficulty);
+//        Debug.Log("mazecof = " + GameManager.instance.mazeCof);
+        //Debug.Log("difficulty = " + GameManager.instance.difficulty);
         int num = GameManager.instance.difficulty * GameManager.instance.mazeCof - 1;
 
         float baseX = num / 2 + 0.5f;
         float baseY = num / 2 + 0.5f;
 
-        Debug.Log("normalX = " + baseX);
-        Debug.Log("normalY = " + baseY);
+        //Debug.Log("normalX = " + baseX);
+        //Debug.Log("normalY = " + baseY);
 
         for (int x = 0; x < num; x++)
             for (int y = 0; y < num; y++)

@@ -176,9 +176,9 @@ public class MazeGenerator
         int A = Mathf.Abs(X - radious);
         int B = X * 2 - A;
 
-        Debug.Log("radious = " + radious);
-        Debug.Log("A = " + A);
-        Debug.Log("B = " + B);
+//        Debug.Log("radious = " + radious);
+        //Debug.Log("A = " + A);
+        //Debug.Log("B = " + B);
 
         for (int x = 0; x < maze.GetLength(0); x++)
         {

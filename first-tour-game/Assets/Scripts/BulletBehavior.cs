@@ -17,7 +17,7 @@ public class BulletBehavior : MonoBehaviour
         {
             return;
         }
-        Debug.Log("Collistion for bullit is " + collision.transform.name);
+//        Debug.Log("Collistion for bullit is " + collision.transform.name);
 
         if (gameObject.CompareTag("Bullet") && collision.gameObject.CompareTag("blockingLayer"))
         {
@@ -37,7 +37,7 @@ public class BulletBehavior : MonoBehaviour
         //enemies hit base
         if (collision.gameObject.tag == "Base" && tag != "Bullet")
         {
-            Debug.Log("Enemy hit base!");
+//            Debug.Log("Enemy hit base!");
             GameManager.instance.currentBase.TakeDamage(damage);
         }
 

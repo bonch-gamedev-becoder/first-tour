@@ -15,13 +15,13 @@ public class IncSpeedBehaviour : MonoBehaviour
     IEnumerator IncSpeed(Collider2D collision)
     {
 
-        if (TryGetComponent<MoveWASD>(out MoveWASD movewasd))
+        if (collision.TryGetComponent(out MoveWASD movewasd))
         {
             movewasd.speed = 10000;
             Debug.Log("SPEED UP wasd!");
         }
 
-        if (TryGetComponent<MoveArrows>(out MoveArrows movearrows))
+        if (collision.TryGetComponent(out MoveArrows movearrows))
         {
             movearrows.speed = 10000;
             Debug.Log("SPEED UP arrows!");
