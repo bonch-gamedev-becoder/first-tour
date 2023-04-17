@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 590524391086174879}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: FIrepoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 1340323760125501647}
   - component: {fileID: 1796204687}
   - component: {fileID: -9071485139225849494}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: ArtilleryEnemy
   m_TagString: ArtilleryEnemy
   m_Icon: {fileID: 0}
@@ -252,7 +252,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed9103692628b21499e2604c6bd1be90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyTarget: {fileID: 6867460726070731017, guid: 666708d0bf87f2f459ae833cde8315a2, type: 3}
   prefabDebug: {fileID: 0}
   mazespawner: {fileID: 8556974059376787603, guid: 5424bade280704503b1b2a04cd7d6e31, type: 3}
   cooldown: 1

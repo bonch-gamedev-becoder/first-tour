@@ -8,6 +8,7 @@ public class PlayerCombat : MonoBehaviour
     [SerializeField] GameObject bulletPrefab;
 
     [SerializeField] float bulletForce = 20f;
+    public int bulletDamage = 10;
     private bool canShoot;
     void Start()
     {
@@ -32,7 +33,10 @@ public class PlayerCombat : MonoBehaviour
     private void SpawnAndImpulseBullet()
     {
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        bullet.AddComponent<BulletBehavior>();
+        bullet.GetComponent<BulletBehavior>().executor = gameObject;
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
+
     }
 }

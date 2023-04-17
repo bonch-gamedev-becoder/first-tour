@@ -6,7 +6,7 @@ using Random = System.Random;
 public class BulletBehavior : MonoBehaviour
 {
     public GameObject executor;
-    [SerializeField] int damage;
+    public int damage;
     private Rigidbody2D rb;
     private void Start()
     {
@@ -15,10 +15,6 @@ public class BulletBehavior : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        /*if (collision.gameObject.CompareTag("Player"))
-        {
-            return;
-        }*/
         Debug.Log("Collistion for bullit is " + collision.transform.name);
 
         //рикошет пули от стены
@@ -32,7 +28,7 @@ public class BulletBehavior : MonoBehaviour
         }
 
         //player hit enemies
-        if (gameObject.tag == "Bullet" && (collision.collider.tag == "Enemy" || collision.collider.tag == "ArtilleryEnemy" || collision.collider.tag == "HunterEnemy"))
+        if (gameObject.tag == "Bullet" && collision.gameObject.layer == 9)
         {
             collision.gameObject.GetComponent<EnemyCombat>().TakeDamage(damage);
         }

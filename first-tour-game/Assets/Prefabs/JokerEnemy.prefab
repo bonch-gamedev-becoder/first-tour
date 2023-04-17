@@ -44,13 +44,14 @@ GameObject:
   - component: {fileID: 7370374801015485012}
   - component: {fileID: 6425118310537953836}
   - component: {fileID: 6984211838997623290}
+  - component: {fileID: -1499431279116371454}
   - component: {fileID: 7362462535759571802}
   - component: {fileID: -1115272347690506195}
   - component: {fileID: 5995466996403420916}
   - component: {fileID: -7567834462707513191}
   m_Layer: 9
-  m_Name: HunterEnemy
-  m_TagString: HunterEnemy
+  m_Name: JokerEnemy
+  m_TagString: JokerEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113,7 +114,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 746715112, guid: 74c9d5fda8cdd084398c37eda5977d9b, type: 3}
-  m_Color: {r: 0.9811321, g: 0.42018956, b: 0.35799217, a: 1}
+  m_Color: {r: 0.44129586, g: 0.9811321, b: 0.51086557, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -177,6 +178,21 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 4224
+--- !u!114 &-1499431279116371454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9110567562325408298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7c0ff832a2094ea0adefb2cb8617127, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgrades:
+  - {fileID: 334504115486616768, guid: 694e787cc7c4afb449a668fa4316afe3, type: 3}
+  - {fileID: 8540741278544936299, guid: 23fb8f3f155865b469ea6afb28e95b5f, type: 3}
 --- !u!61 &7362462535759571802
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -218,9 +234,9 @@ MonoBehaviour:
   deathEffectPermanent: {fileID: 8492290064383286078, guid: 13b49ef46b8e1074290c9faf38769f0b, type: 3}
   deathEffect: {fileID: 0}
   firePoint: {fileID: 7131515063440193890}
-  bulletPrefab: {fileID: 1427136655908854496, guid: 9a01eafbc83f0224383acdf1edf0f1fa, type: 3}
+  bulletPrefab: {fileID: 1427136655908854496, guid: 59d23700b1c73b043964bcc9518e3977, type: 3}
   bulletForce: 5
-  bulletDamage: 5
+  bulletDamage: 15
   maxHealth: 10
   thanosBonus: {fileID: 4014674198437839061, guid: 67bf03ef07a46744798c3f5e6089b1b3, type: 3}
   shieldBonus: {fileID: 2313528145229517081, guid: d068e0aa02e74924e9fad15ace2afaa8, type: 3}
