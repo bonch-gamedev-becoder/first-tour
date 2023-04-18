@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     public int mazeCof = 8;
     public int level;
     public int points;
+    public bool gameOver;
 
 
     private void Awake()
@@ -127,7 +128,7 @@ public class GameManager : MonoBehaviour
     {
         points += number;
 
-        if (points > difficulty * 10)
+        if (points > level * 10)
             levelComplete();
 
         ScoreTracker.instance.ChangeText();
@@ -147,7 +148,18 @@ public class GameManager : MonoBehaviour
 
     public void loadNextLevel()
     {
+        PlayerPrefs.SetInt("previous", level);
         points = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void showStat()
+    {
+        if (gameOver)
+            return;
+
+        gameOver = true;
+        Cooperative.instance.DisablePlayers();
+        GameOver.instance.ShowGameOver();
     }
 }

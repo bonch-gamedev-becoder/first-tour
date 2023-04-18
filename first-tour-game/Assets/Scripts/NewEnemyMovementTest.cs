@@ -16,6 +16,9 @@ public class NewEnemyMovementTest : MonoBehaviour
 
     private void Start()
     {
+        if (GameManager.instance.gameOver)
+            return;
+
         lastPlayerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
         isAttackBaseScriptAdded = false;
         Test();
