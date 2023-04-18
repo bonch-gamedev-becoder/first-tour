@@ -54,11 +54,15 @@ public class PlayerBonusBehavior : MonoBehaviour
     {
         GameObject[] enemies = FindGameObjectsWithLayer(9);
 
+        if (enemies == null)
+            return;
+
         for (int i = 0; i < enemies.Length; i += 2)
         {
             try
             {
-                enemies[i].GetComponent<EnemyCombat>().Death();
+                enemies[i].TryGetComponent(out EnemyCombat combat);
+                combat.Death();
             }
             catch (IndexOutOfRangeException)
             {

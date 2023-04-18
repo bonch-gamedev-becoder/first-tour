@@ -45,7 +45,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawners:
-  - {fileID: 8059920797659201068, guid: 7b9e0e9637ed64519b017c832500cd50, type: 3}
   - {fileID: 8059920797659201068, guid: 59d287f31529c49f6a7424ee95794b72, type: 3}
+  - {fileID: 8059920797659201068, guid: 7b9e0e9637ed64519b017c832500cd50, type: 3}
+  - {fileID: 8059920797659201068, guid: 21a9e2ea999a14eb08941a9728ddf562, type: 3}
+  - {fileID: 8059920797659201068, guid: 8906ea5bcfa964abdb42b62b78265ee3, type: 3}
   spawnPoints: []
   currentSpawnPoints: []

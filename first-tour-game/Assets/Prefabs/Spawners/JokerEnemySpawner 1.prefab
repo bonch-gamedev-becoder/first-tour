@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8059920797659200979}
   - component: {fileID: 8059920797659201068}
   m_Layer: 0
-  m_Name: ArtilleryEnemy
+  m_Name: JokerEnemySpawner 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,6 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 393289cba524349419b0f651bf610508, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeTillStart: 5
-  prefab: {fileID: 6220381779711281211, guid: 94f114ab9cf57b240b87b2df1e627935, type: 3}
-  coolDown: 20
+  timeTillStart: 10
+  prefab: {fileID: 9110567562325408298, guid: 1bde6434f338baf4bb5f612b9cb4d0e3, type: 3}
+  coolDown: 30
