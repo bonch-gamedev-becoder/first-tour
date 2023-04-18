@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene("MainMenu");
         }
 
-        if (Input.GetKeyDown(KeyCode.L))
+        if (Input.GetKeyDown(KeyCode.L) || PlayerPrefs.GetInt("Second") == 1)
         {
             if (Coop == false)
             SpawnSecondPlayer();
@@ -114,6 +114,7 @@ public class GameManager : MonoBehaviour
             return;
 
         Coop = true;
+        PlayerPrefs.SetInt("Second", 1);
         Vector2 pos = new Vector2(currentMaze.finishPosition.x, currentMaze.finishPosition.y + 1);
         Cooperative.instance.Player2 = Instantiate(PlayerPrefab, pos, Quaternion.identity);
         Cooperative.instance.SetControls();

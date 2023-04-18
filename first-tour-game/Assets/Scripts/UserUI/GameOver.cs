@@ -25,6 +25,8 @@ public class GameOver : MonoBehaviour
         getStat();
 
         LeanTween.scale(gameObject, Vector3.one, 0.5f).setEaseInElastic();
+
+        if (First != null)
         player1.text = "Score: " + First.score;
 
         if (Second != null)
