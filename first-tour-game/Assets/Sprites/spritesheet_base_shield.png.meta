@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f832d39639b6b624aba5721809adaec5
+guid: ba6fb51d6027cf2438e6e7ad5eff71e2
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -117,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: swamp_spritesheet_0
+      name: spritesheet_base_shield_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 22
-        height: 22
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0feddcb46d846ed49ad75e03294c7f9d
-      internalID: 1194034505
+      spriteID: 82d739fe91c6f024caeb1c754f8c5f84
+      internalID: -204474295
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: swamp_spritesheet_1
+      name: spritesheet_base_shield_1
       rect:
         serializedVersion: 2
-        x: 22
+        x: 32
         y: 0
-        width: 22
-        height: 22
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 64fb3dfd924237c46bd9cd76e2f57c47
-      internalID: -1008845753
+      spriteID: 44a88674a364c914b91494df72bef5e4
+      internalID: 4866606
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: swamp_spritesheet_2
+      name: spritesheet_base_shield_2
       rect:
         serializedVersion: 2
-        x: 44
+        x: 64
         y: 0
-        width: 22
-        height: 22
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,8 +173,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4ebebc3bd6e01f042a5b034427b5a3d9
-      internalID: -424218327
+      spriteID: 6b620292f89723740a7dbb26a63dbecc
+      internalID: -500310573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_base_shield_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c7098cc995c21c45bedf31feb8194b9
+      internalID: 1093473815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_base_shield_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8651d9009efdad64cb4c03ca6f587eee
+      internalID: 1158360491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_base_shield_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc3df8c41dc122142b9feedb38b2ee5a
+      internalID: 2004251873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_base_shield_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd6ad4c11e6a4524cb488597113b6d57
+      internalID: 1517013679
       vertices: []
       indices: 
       edges: []
@@ -190,9 +274,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      swamp_spritesheet_2: -424218327
-      swamp_spritesheet_0: 1194034505
-      swamp_spritesheet_1: -1008845753
+      spritesheet_base_shield_0: -204474295
+      spritesheet_base_shield_2: -500310573
+      spritesheet_base_shield_6: 1517013679
+      spritesheet_base_shield_4: 1158360491
+      spritesheet_base_shield_3: 1093473815
+      spritesheet_base_shield_5: 2004251873
+      spritesheet_base_shield_1: 4866606
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

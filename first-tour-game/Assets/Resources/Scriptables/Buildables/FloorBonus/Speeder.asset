@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dfa4b07bf761204eb3aae6423ff5938, type: 3}
+  m_Name: Speeder
+  m_EditorClassIdentifier: 
+  category: {fileID: 11400000, guid: d6dfeceb15774c4468ffc135ce8ac8c5, type: 2}
+  uiCategory: {fileID: 11400000, guid: 5f53e2f2ebdc04742886237b26d284a1, type: 2}
+  tileBase: {fileID: 11400000, guid: fb0024bc0bc7995449fc5f4d4460cb93, type: 2}
+  placeType: 0
+  usePlacementRestrictions: 0
+  placementRestrictions:
+  - {fileID: 11400000, guid: d6dfeceb15774c4468ffc135ce8ac8c5, type: 2}
