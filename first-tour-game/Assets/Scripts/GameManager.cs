@@ -66,6 +66,9 @@ public class GameManager : MonoBehaviour
         if (level > 8)
             difficulty = 3;
 
+        if (level > 10)
+            SceneManager.LoadScene("Ending");
+
         Debug.Log("difficulty=" + difficulty);
     }
 
