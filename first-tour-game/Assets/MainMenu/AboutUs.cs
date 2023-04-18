@@ -9,6 +9,7 @@ public class AboutUs : MonoBehaviour
     private void Start()
     {
         GetComponent<Button>().onClick.AddListener(About);
+        PlayerPrefs.SetInt("Second", 0);
     }
 
     void About()
