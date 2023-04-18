@@ -14,3 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   placeType: 1
   sortingOrder: 1
+  placementRestrictions:
+  - {fileID: 11400000, guid: 0878aa3b90e622a489aec699a056ef7a, type: 2}
+  - {fileID: 11400000}

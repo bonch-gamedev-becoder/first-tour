@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -169,7 +170,17 @@ public class BuildingCreator : Singleton<BuildingCreator>
 
     private bool IsForbidden(Vector3Int pos)
     {
-        List<BuildingCategory> restrictedCategories = selectedObj.PlacementRestrictions;
+        List<BuildingCategory> restrictedCategories;
+        try
+        {
+            restrictedCategories = selectedObj.PlacementRestrictions;
+        }
+        catch (NullReferenceException)
+        {
+            return false;
+        }
+
+        
         List<Tilemap> restrictedMaps = restrictedCategories.ConvertAll(category => category.Tilemap);
 
         List<Tilemap> allMaps = forbidPlacingWithMaps.Concat(restrictedMaps).ToList();
