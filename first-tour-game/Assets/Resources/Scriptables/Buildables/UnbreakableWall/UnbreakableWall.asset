@@ -10,7 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1dfa4b07bf761204eb3aae6423ff5938, type: 3}
-  m_Name: Speeder
+  m_Name: UnbreakableWall
   m_EditorClassIdentifier: 
-  category: 3
-  tileBase: {fileID: 11400000, guid: fb0024bc0bc7995449fc5f4d4460cb93, type: 2}
+  category: {fileID: 11400000, guid: 0878aa3b90e622a489aec699a056ef7a, type: 2}
+  uiCategory: {fileID: 11400000, guid: d4ac0b086a5e97b4c8c1963a13d35d8f, type: 2}
+  tileBase: {fileID: 11400000, guid: 25f9ae62cddd70f469f835ed330eeb60, type: 2}
+  placeType: 0

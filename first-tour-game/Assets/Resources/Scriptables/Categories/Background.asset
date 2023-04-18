@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1dfa4b07bf761204eb3aae6423ff5938, type: 3}
-  m_Name: UnbreakableWall
+  m_Script: {fileID: 11500000, guid: d931df03a048e934fac856b175708362, type: 3}
+  m_Name: Background
   m_EditorClassIdentifier: 
-  category: 1
-  tileBase: {fileID: 11400000, guid: 25f9ae62cddd70f469f835ed330eeb60, type: 2}
+  placeType: 3
+  sortingOrder: -1

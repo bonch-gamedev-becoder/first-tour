@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1dfa4b07bf761204eb3aae6423ff5938, type: 3}
-  m_Name: Hole
+  m_Script: {fileID: 11500000, guid: 73eca226c7d6b4e469327824c143e251, type: 3}
+  m_Name: UIFloorBonuses
   m_EditorClassIdentifier: 
-  category: 3
-  tileBase: {fileID: 11400000, guid: 0110fe90756ba1e40aeac7c8aa37d501, type: 2}
+  siblingIndex: 0
+  backgroundColor: {r: 1, g: 0.11764705, b: 0.46643436, a: 1}

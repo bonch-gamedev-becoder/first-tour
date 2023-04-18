@@ -65,6 +65,18 @@ public class BuildingCreator : Singleton<BuildingCreator>
         }
     }
 
+    private Tilemap tilemap
+    {
+        get
+        {
+            if (selectedObj != null && selectedObj.Category != null && selectedObj.Category.Tilemap != null)
+            {
+                return selectedObj.Category.Tilemap;
+            }
+            return defaultMap;
+        }
+    }
+
     private void Update()
     {
         if (selectedObj != null)
@@ -161,7 +173,7 @@ public class BuildingCreator : Singleton<BuildingCreator>
             {
                 case PlaceType.Line:
                 case PlaceType.Rectangle:
-                    DrawBounds(defaultMap);
+                    DrawBounds(tilemap);
                     previewMap.ClearAllTiles();
                     break;
             }
@@ -220,6 +232,6 @@ public class BuildingCreator : Singleton<BuildingCreator>
 
     private void DrawItem()
     {
-        defaultMap.SetTile(currentGridPosition, tileBase);
+        tilemap.SetTile(currentGridPosition, tileBase);
     }
 }

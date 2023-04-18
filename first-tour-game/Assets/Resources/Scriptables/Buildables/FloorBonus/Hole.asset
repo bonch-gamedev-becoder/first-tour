@@ -10,7 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1dfa4b07bf761204eb3aae6423ff5938, type: 3}
-  m_Name: BreakableWall
+  m_Name: Hole
   m_EditorClassIdentifier: 
-  category: 0
-  tileBase: {fileID: 11400000, guid: 75c7706d736a75548b993ee15b2dad03, type: 2}
+  category: {fileID: 11400000, guid: d6dfeceb15774c4468ffc135ce8ac8c5, type: 2}
+  uiCategory: {fileID: 11400000, guid: 5f53e2f2ebdc04742886237b26d284a1, type: 2}
+  tileBase: {fileID: 11400000, guid: 0110fe90756ba1e40aeac7c8aa37d501, type: 2}
+  placeType: 0

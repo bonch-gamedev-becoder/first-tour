@@ -15,6 +15,11 @@ public class BuildingButtonHandler : MonoBehaviour
         buildingCreator = BuildingCreator.GetInstance();
     }
 
+    public BuildingObjectBase Item 
+    {
+        set { item = value; }
+    }
+
     //обработка нажатия по текстуре, которую игрок хочет нарисовать
     private void ButtonClicked()
     {

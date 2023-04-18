@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1dfa4b07bf761204eb3aae6423ff5938, type: 3}
-  m_Name: Portal
+  m_Script: {fileID: 11500000, guid: d931df03a048e934fac856b175708362, type: 3}
+  m_Name: Wall
   m_EditorClassIdentifier: 
-  category: 3
-  tileBase: {fileID: 11400000, guid: 17a4d434f6ee7ed478627bf159e3440a, type: 2}
+  placeType: 2
+  sortingOrder: 1
