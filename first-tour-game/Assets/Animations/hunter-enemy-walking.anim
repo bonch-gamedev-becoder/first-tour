@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: fast-enemy-walking
+  m_Name: hunter-enemy-walking
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,13 +20,13 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 1799682504, guid: 7399e802e23cf254493c3d4064abfc25, type: 3}
+      value: {fileID: 816511291, guid: 42cf0f1ba011897438813659df701f05, type: 3}
     - time: 0.1
-      value: {fileID: 1634457147, guid: 7399e802e23cf254493c3d4064abfc25, type: 3}
+      value: {fileID: 1239917301, guid: 42cf0f1ba011897438813659df701f05, type: 3}
     - time: 0.2
-      value: {fileID: -1299697226, guid: 7399e802e23cf254493c3d4064abfc25, type: 3}
+      value: {fileID: -1350974715, guid: 42cf0f1ba011897438813659df701f05, type: 3}
     - time: 0.3
-      value: {fileID: -1017639916, guid: 7399e802e23cf254493c3d4064abfc25, type: 3}
+      value: {fileID: -25953807, guid: 42cf0f1ba011897438813659df701f05, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -46,10 +46,10 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 1799682504, guid: 7399e802e23cf254493c3d4064abfc25, type: 3}
-    - {fileID: 1634457147, guid: 7399e802e23cf254493c3d4064abfc25, type: 3}
-    - {fileID: -1299697226, guid: 7399e802e23cf254493c3d4064abfc25, type: 3}
-    - {fileID: -1017639916, guid: 7399e802e23cf254493c3d4064abfc25, type: 3}
+    - {fileID: 816511291, guid: 42cf0f1ba011897438813659df701f05, type: 3}
+    - {fileID: 1239917301, guid: 42cf0f1ba011897438813659df701f05, type: 3}
+    - {fileID: -1350974715, guid: 42cf0f1ba011897438813659df701f05, type: 3}
+    - {fileID: -25953807, guid: 42cf0f1ba011897438813659df701f05, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

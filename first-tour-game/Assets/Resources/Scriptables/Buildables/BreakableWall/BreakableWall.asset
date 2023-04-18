@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   category: {fileID: 11400000, guid: 36d9c7bb34cbbdb4eacd046fb737aae0, type: 2}
   uiCategory: {fileID: 11400000, guid: d4ac0b086a5e97b4c8c1963a13d35d8f, type: 2}
-  tileBase: {fileID: 0}
+  tileBase: {fileID: 11400000, guid: 75c7706d736a75548b993ee15b2dad03, type: 2}
   placeType: 0
   usePlacementRestrictions: 0
   placementRestrictions: []
