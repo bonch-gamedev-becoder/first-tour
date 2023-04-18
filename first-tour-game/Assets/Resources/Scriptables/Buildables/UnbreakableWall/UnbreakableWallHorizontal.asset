@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1dfa4b07bf761204eb3aae6423ff5938, type: 3}
-  m_Name: BreakableWall
+  m_Name: UnbreakableWallHorizontal
   m_EditorClassIdentifier: 
-  category: {fileID: 11400000, guid: 36d9c7bb34cbbdb4eacd046fb737aae0, type: 2}
+  category: {fileID: 11400000, guid: 0878aa3b90e622a489aec699a056ef7a, type: 2}
   uiCategory: {fileID: 11400000, guid: d4ac0b086a5e97b4c8c1963a13d35d8f, type: 2}
-  tileBase: {fileID: 0}
+  tileBase: {fileID: 11400000, guid: 3311880355699bc408a9b75d4764489b, type: 2}
   placeType: 0
   usePlacementRestrictions: 0
   placementRestrictions: []

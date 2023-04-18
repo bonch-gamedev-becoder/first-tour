@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e5473deb0c7a1ea4b95a460bb4f6391a
+guid: 6707ddc3195a5064bba27294aa0cf9af
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 128
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -117,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spritesheet_hero1_0
+      name: spritesheet_enemy_trap_run_0
       rect:
         serializedVersion: 2
         x: 0
@@ -131,14 +131,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7cfcae461103f594d8bfd066a0de8ea5
-      internalID: -1662618935
+      spriteID: 022704ca0a3e1b14caab3e03e422a900
+      internalID: 1841137394
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_hero1_1
+      name: spritesheet_enemy_trap_run_1
       rect:
         serializedVersion: 2
         x: 32
@@ -152,14 +152,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b1215af6558f16940b4fa62290c378c2
-      internalID: 1018014979
+      spriteID: 4383a98edda23fe4db5dcd3baacbc28c
+      internalID: -476472942
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_hero1_2
+      name: spritesheet_enemy_trap_run_2
       rect:
         serializedVersion: 2
         x: 64
@@ -173,14 +173,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90f7280e403d65f4ea9dcf9059aac246
-      internalID: 1965958370
+      spriteID: 033d0aba46a098b4eb33383d340cb275
+      internalID: 228677937
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_hero1_3
+      name: spritesheet_enemy_trap_run_3
       rect:
         serializedVersion: 2
         x: 96
@@ -194,8 +194,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c2d21bc8dc3a9f448142f3adfe44a68
-      internalID: 1732315131
+      spriteID: 8b679448487e00d479547d6559991eac
+      internalID: 474721386
       vertices: []
       indices: 
       edges: []
@@ -211,10 +211,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      spritesheet_hero1_0: -1662618935
-      spritesheet_hero1_3: 1732315131
-      spritesheet_hero1_1: 1018014979
-      spritesheet_hero1_2: 1965958370
+      spritesheet_enemy_trap_run_0: 1841137394
+      spritesheet_enemy_trap_run_3: 474721386
+      spritesheet_enemy_trap_run_2: 228677937
+      spritesheet_enemy_trap_run_1: -476472942
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1dfa4b07bf761204eb3aae6423ff5938, type: 3}
-  m_Name: BreakableWall
+  m_Name: Dirt
   m_EditorClassIdentifier: 
-  category: {fileID: 11400000, guid: 36d9c7bb34cbbdb4eacd046fb737aae0, type: 2}
-  uiCategory: {fileID: 11400000, guid: d4ac0b086a5e97b4c8c1963a13d35d8f, type: 2}
-  tileBase: {fileID: 0}
+  category: {fileID: 11400000, guid: d6dfeceb15774c4468ffc135ce8ac8c5, type: 2}
+  uiCategory: {fileID: 11400000, guid: 5f53e2f2ebdc04742886237b26d284a1, type: 2}
+  tileBase: {fileID: 11400000, guid: 69344cc7b009982489668f1bc6661ba3, type: 2}
   placeType: 0
   usePlacementRestrictions: 0
-  placementRestrictions: []
+  placementRestrictions:
+  - {fileID: 11400000, guid: d6dfeceb15774c4468ffc135ce8ac8c5, type: 2}

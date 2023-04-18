@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e5473deb0c7a1ea4b95a460bb4f6391a
+guid: 0531bdc70fb67db4baddd57bcab5f69d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spritesheet_hero1_0
+      name: spritesheet_artillery_run_0
       rect:
         serializedVersion: 2
         x: 0
@@ -131,14 +131,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7cfcae461103f594d8bfd066a0de8ea5
-      internalID: -1662618935
+      spriteID: 67fe83b45882f5247bbeb4f2a06dbd37
+      internalID: -798291358
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_hero1_1
+      name: spritesheet_artillery_run_1
       rect:
         serializedVersion: 2
         x: 32
@@ -152,14 +152,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b1215af6558f16940b4fa62290c378c2
-      internalID: 1018014979
+      spriteID: 231920e68c7d0184ba1c4f163b75cd97
+      internalID: 230132750
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_hero1_2
+      name: spritesheet_artillery_run_2
       rect:
         serializedVersion: 2
         x: 64
@@ -173,14 +173,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90f7280e403d65f4ea9dcf9059aac246
-      internalID: 1965958370
+      spriteID: 283aef0032d725640b5470b6a2fb83b9
+      internalID: 997737211
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_hero1_3
+      name: spritesheet_artillery_run_3
       rect:
         serializedVersion: 2
         x: 96
@@ -194,8 +194,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c2d21bc8dc3a9f448142f3adfe44a68
-      internalID: 1732315131
+      spriteID: 11fc707e1e174554295d497d9e26e6ff
+      internalID: -1777823121
       vertices: []
       indices: 
       edges: []
@@ -211,10 +211,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      spritesheet_hero1_0: -1662618935
-      spritesheet_hero1_3: 1732315131
-      spritesheet_hero1_1: 1018014979
-      spritesheet_hero1_2: 1965958370
+      spritesheet_artillery_run_0: -798291358
+      spritesheet_artillery_run_1: 230132750
+      spritesheet_artillery_run_3: -1777823121
+      spritesheet_artillery_run_2: 997737211
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
