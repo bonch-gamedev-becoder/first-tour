@@ -649,12 +649,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2983174cca8d83b44b9d3a0b6b08674c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7b6d2c34b36799c45be195817b12b6b1, type: 3}
   m_Color: {r: 0.9622642, g: 0.5714439, b: 0.32387388, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.125, y: 1}
+  m_Size: {x: 1, y: 0.125}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -677,8 +677,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.125, y: 1}
-    newSize: {x: 0.125, y: 1}
+    oldSize: {x: 1, y: 0.125}
+    newSize: {x: 1, y: 0.125}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -775,7 +775,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2983174cca8d83b44b9d3a0b6b08674c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0502e956adf9eda458038cb037249157, type: 3}
   m_Color: {r: 0.9607843, g: 0.57254905, b: 0.3254902, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -931,6 +931,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5605740959309748364}
     m_Modifications:
+    - target: {fileID: 2360447400834686667, guid: 9100cf557b78449aea92ef610a8016c4, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7031507484361135295, guid: 9100cf557b78449aea92ef610a8016c4, type: 3}
       propertyPath: m_Name
       value: BreakableWallLeft
@@ -1051,6 +1055,18 @@ PrefabInstance:
     - target: {fileID: 954198204920748499, guid: b480ac7a3268c4a58a9cbf9cf836f7ad, type: 3}
       propertyPath: m_TagString
       value: blockingLayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 6002086073777852928, guid: b480ac7a3268c4a58a9cbf9cf836f7ad, type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6002086073777852928, guid: b480ac7a3268c4a58a9cbf9cf836f7ad, type: 3}
+      propertyPath: m_Size.y
+      value: 0.125
+      objectReference: {fileID: 0}
+    - target: {fileID: 6002086073777852928, guid: b480ac7a3268c4a58a9cbf9cf836f7ad, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b480ac7a3268c4a58a9cbf9cf836f7ad, type: 3}
