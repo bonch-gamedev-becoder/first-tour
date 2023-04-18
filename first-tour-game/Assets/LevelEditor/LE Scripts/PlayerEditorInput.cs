@@ -33,7 +33,7 @@ public partial class @PlayerEditorInput : IInputActionCollection2, IDisposable
                     ""id"": ""41326d76-fb52-48df-8fbb-9273393b2e38"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """",
+                    ""interactions"": ""Tap,SlowTap"",
                     ""initialStateCheck"": false
                 },
                 {
