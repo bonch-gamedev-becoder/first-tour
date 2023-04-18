@@ -15,11 +15,12 @@ public class EnemyAttackBase : MonoBehaviour
 
         if (tag == "HunterEnemy")
         {
-            target = GameObject.FindGameObjectWithTag("Player").transform;
+                target = Cooperative.instance.Player1.transform;
         }
         else
         {
-            target = GameObject.FindWithTag("Base").transform;
+            if (GameManager.instance.currentBase != null)
+            target = GameManager.instance.currentBase.transform;
         }
 
         

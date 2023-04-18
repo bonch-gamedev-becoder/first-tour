@@ -27,6 +27,14 @@ public class Cooperative : MonoBehaviour
             Player2.SetActive(false);
     }
 
+    public bool PlayersActive()
+    {
+        if (Player1.active)
+            return true;
+
+        return false;
+    }
+
 
     public void SetControls()
     {

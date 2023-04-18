@@ -33,6 +33,9 @@ public class NewEnemyMovementTest : MonoBehaviour
 
     private void Update()
     {
+        if (!Cooperative.instance.PlayersActive())
+            return;
+
         if (tag == "HunterEnemy")
         {
             Vector2 obj = GameObject.FindGameObjectWithTag("Player").transform.position;

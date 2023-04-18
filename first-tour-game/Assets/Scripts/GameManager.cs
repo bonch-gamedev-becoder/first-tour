@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
     public int mazeCof = 8;
     public int level;
     public int points;
+    public int Player1Score;
+    public int Player2Score;
     public bool gameOver;
 
 
@@ -132,6 +134,17 @@ public class GameManager : MonoBehaviour
             levelComplete();
 
         ScoreTracker.instance.ChangeText();
+    }
+
+    public void AddPointsToTheShooter(GameObject shooter)
+    {
+        if (shooter == null)
+            return;
+
+        if (shooter.TryGetComponent<Statistics>(out Statistics stat)) 
+            stat.AddScore();  
+        else 
+            shooter.AddComponent<Statistics>().AddScore();
     }
 
     void levelComplete()

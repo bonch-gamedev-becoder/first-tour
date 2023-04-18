@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 18846
+  controlID: 27977
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 18847
+  controlID: 27978
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 18848
+  controlID: 27979
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -187,8 +187,8 @@ MonoBehaviour:
     y: 0
     width: 319
     height: 517.5
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 6}
   m_Panes:
   - {fileID: 6}
@@ -226,9 +226,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: e6610000
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 3605f5ff883cf5ff2e70f5ff8a72f5ff6eb9f5ffb2b9f5ffaaf2f5fff207f6ff060df6ffda27f6ff1628f6ff0e9cf7ff529ff7ffc69ff7ff6ca0f7ff16a1f7ff96a3f7ff60a6f7ffcaa6f7ffccb6fbff90f1fbffe40ffdffb034feffb46cfeff166dfeff8af9ffffe0fafffff4ffffff206200009a960000989700005098000062980000969f0000fa9f0000b2a60000d4a60000eca600001ea70000e6ae000008af000022af000054af0000
+      m_ExpandedIDs: da1beefff498eeffd0d2efffca4ff0ff20d4f0ff5c4bf1ffbc4bf1ff1823f3ff8a61f3ff9ee0f3ff3605f5ff883cf5ff2e70f5ff8a72f5ff6eb9f5ffb2b9f5ffaaf2f5fff207f6ff060df6ffda27f6ff1628f6ff0e9cf7ff529ff7ffc69ff7ff6ca0f7ff16a1f7ff96a3f7ff60a6f7ffcaa6f7ffccb6fbff90f1fbffe40ffdffb034feffb46cfeff166dfeff8af9ffffe0fafffff4ffffff206200009a960000989700005098000062980000969f0000fa9f0000b2a60000d4a60000eca600001ea70000e6ae000008af000022af000054af0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -560,9 +560,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 301.17133, y: 989.19305, z: -7.367074}
+    m_Target: {x: 11.714085, y: 11.652313, z: 0}
     speed: 2
-    m_Value: {x: 301.17133, y: 989.19305, z: -7.367074}
+    m_Value: {x: 11.714085, y: 11.652313, z: 0}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -613,9 +613,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 862.9522
+    m_Target: 10
     speed: 2
-    m_Value: 862.9522
+    m_Value: 10
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -711,21 +711,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: /Users/igorekmakarek/Documents/GitHub/GameJam/Becoder/first-tour-game
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0.5}
-    m_SelectedIDs: aa610000
-    m_LastClickedID: 25002
+    m_SelectedIDs: 8e610000
+    m_LastClickedID: 24974
     m_ExpandedIDs: 000000008e61000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -779,8 +779,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: e6610000
-    m_LastClickedInstanceID: 25062
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c62300009e78000080630000
     m_RenameOverlay:
@@ -1003,7 +1003,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 42708
+  m_LastSelectedObjectID: -1140600
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
