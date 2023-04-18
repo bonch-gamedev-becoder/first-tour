@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73eca226c7d6b4e469327824c143e251, type: 3}
   m_Name: UIWalls
   m_EditorClassIdentifier: 
-  siblingIndex: 0
+  siblingIndex: 2
   backgroundColor: {r: 1, g: 0.54624265, b: 0.11959362, a: 1}

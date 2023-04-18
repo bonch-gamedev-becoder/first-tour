@@ -16,7 +16,18 @@ public class BuildingCategory : ScriptableObject
 {
     [SerializeField] PlaceType placeType;
     [SerializeField] int sortingOrder = 0;
+
     Tilemap tilemap;
+
+    [SerializeField] List<BuildingCategory> placementRestrictions;
+
+    public List<BuildingCategory> PlacementRestrictions
+    {
+        get
+        {
+            return placementRestrictions;
+        }
+    }
 
     public PlaceType PlaceType
     {

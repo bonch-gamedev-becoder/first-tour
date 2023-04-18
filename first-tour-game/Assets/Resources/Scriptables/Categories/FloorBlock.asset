@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d931df03a048e934fac856b175708362, type: 3}
   m_Name: FloorBlock
   m_EditorClassIdentifier: 
-  placeType: 0
-  sortingOrder: 0
+  placeType: 1
+  sortingOrder: 1

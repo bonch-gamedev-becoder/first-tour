@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 73eca226c7d6b4e469327824c143e251, type: 3}
-  m_Name: UIBackground
+  m_Name: UITools
   m_EditorClassIdentifier: 
   siblingIndex: 1
-  backgroundColor: {r: 0.42148042, g: 1, b: 0.7294021, a: 1}
+  backgroundColor: {r: 0.3679245, g: 0.3679245, b: 0.3679245, a: 1}

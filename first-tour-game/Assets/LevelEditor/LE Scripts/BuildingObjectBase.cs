@@ -10,6 +10,16 @@ public class BuildingObjectBase : ScriptableObject
     [SerializeField] UICategory uiCategory;
     [SerializeField] TileBase tileBase;
     [SerializeField] PlaceType placeType;
+    [SerializeField] bool usePlacementRestrictions;
+    [SerializeField] List<BuildingCategory> placementRestrictions;
+
+    public List<BuildingCategory> PlacementRestrictions
+    {
+        get
+        {
+            return usePlacementRestrictions ? placementRestrictions : category.PlacementRestrictions;
+        }
+    }
 
     public TileBase TileBase
     {

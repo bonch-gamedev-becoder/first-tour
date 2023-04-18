@@ -1,16 +1,26 @@
-
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.Tilemaps;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Interactions;
+using UnityEngine.Tilemaps;
+
 public class BuildingCreator : Singleton<BuildingCreator>
 {
-    [SerializeField] Tilemap previewMap, defaultMap;
-    PlayerEditorInput playerInput;
+    [SerializeField]
+    Tilemap previewMap,
+    defaultMap;
+
+
+    [SerializeField] List<Tilemap> forbidPlacingWithMaps;
+
+
+    PlayerInput playerInput;
 
     TileBase tileBase;
     BuildingObjectBase selectedObj;
+
     Camera _camera;
 
     Vector2 mousePos;
@@ -22,10 +32,10 @@ public class BuildingCreator : Singleton<BuildingCreator>
 
     BoundsInt bounds;
 
-    private void Awake()
+    protected override void Awake()
     {
         base.Awake();
-        playerInput = new PlayerEditorInput();
+        playerInput = new PlayerInput();
         _camera = Camera.main;
     }
 
@@ -35,11 +45,12 @@ public class BuildingCreator : Singleton<BuildingCreator>
 
         playerInput.Gameplay.MousePosition.performed += OnMouseMove;
 
-        playerInput.Gameplay.MouseLeftClick.performed += OnLeftClick;
         playerInput.Gameplay.MouseLeftClick.started += OnLeftClick;
+        playerInput.Gameplay.MouseLeftClick.performed += OnLeftClick;
         playerInput.Gameplay.MouseLeftClick.canceled += OnLeftClick;
 
         playerInput.Gameplay.MouseRightClick.performed += OnRightClick;
+
     }
 
     private void OnDisable()
@@ -48,8 +59,8 @@ public class BuildingCreator : Singleton<BuildingCreator>
 
         playerInput.Gameplay.MousePosition.performed -= OnMouseMove;
 
-        playerInput.Gameplay.MouseLeftClick.performed -= OnLeftClick;
         playerInput.Gameplay.MouseLeftClick.started -= OnLeftClick;
+        playerInput.Gameplay.MouseLeftClick.performed -= OnLeftClick;
         playerInput.Gameplay.MouseLeftClick.canceled -= OnLeftClick;
 
         playerInput.Gameplay.MouseRightClick.performed -= OnRightClick;
@@ -60,7 +71,9 @@ public class BuildingCreator : Singleton<BuildingCreator>
         set
         {
             selectedObj = value;
+
             tileBase = selectedObj != null ? selectedObj.TileBase : null;
+
             UpdatePreview();
         }
     }
@@ -73,12 +86,14 @@ public class BuildingCreator : Singleton<BuildingCreator>
             {
                 return selectedObj.Category.Tilemap;
             }
+
             return defaultMap;
         }
     }
 
     private void Update()
     {
+        // if something is selected - show preview
         if (selectedObj != null)
         {
             Vector3 pos = _camera.ScreenToWorldPoint(mousePos);
@@ -88,7 +103,9 @@ public class BuildingCreator : Singleton<BuildingCreator>
             {
                 lastGridPosition = currentGridPosition;
                 currentGridPosition = gridPos;
+
                 UpdatePreview();
+
                 if (holdActive)
                 {
                     HandleDrawing();
@@ -97,38 +114,37 @@ public class BuildingCreator : Singleton<BuildingCreator>
         }
     }
 
-    private void OnMouseMove(InputAction.CallbackContext context)
+    private void OnMouseMove(InputAction.CallbackContext ctx)
     {
-        mousePos = context.ReadValue<Vector2>();
+        mousePos = ctx.ReadValue<Vector2>();
     }
 
-    private void OnLeftClick(InputAction.CallbackContext context) 
+    private void OnLeftClick(InputAction.CallbackContext ctx)
     {
         if (selectedObj != null && !EventSystem.current.IsPointerOverGameObject())
         {
-            if (context.phase == InputActionPhase.Started)
+            if (ctx.phase == InputActionPhase.Started)
             {
                 holdActive = true;
-                if (context.interaction is TapInteraction)
+
+                if (ctx.interaction is TapInteraction)
                 {
-                    
                     holdStartPosition = currentGridPosition;
                 }
-                
                 HandleDrawing();
             }
             else
             {
-                if (context.interaction is SlowTapInteraction || context.interaction is TapInteraction && context.phase == InputActionPhase.Performed)
+                if (ctx.interaction is SlowTapInteraction || ctx.interaction is TapInteraction && ctx.phase == InputActionPhase.Performed)
                 {
                     holdActive = false;
                     HandleDrawRelease();
                 }
             }
-            HandleDrawing();
         }
     }
-    private void OnRightClick(InputAction.CallbackContext context) 
+
+    private void OnRightClick(InputAction.CallbackContext ctx)
     {
         SelectedObj = null;
     }
@@ -140,20 +156,32 @@ public class BuildingCreator : Singleton<BuildingCreator>
 
     private void UpdatePreview()
     {
+        // Remove old tile if existing
         previewMap.SetTile(lastGridPosition, null);
-        previewMap.SetTile(currentGridPosition, tileBase);
+
+        if (!IsForbidden(currentGridPosition))
+        {
+            // Set current tile to current mouse positions tile
+            previewMap.SetTile(currentGridPosition, tileBase);
+        }
+        
+    }
+
+    private bool IsForbidden(Vector3Int pos)
+    {
+        List<BuildingCategory> restrictedCategories = selectedObj.PlacementRestrictions;
+        List<Tilemap> restrictedMaps = restrictedCategories.ConvertAll(category => category.Tilemap);
+
+        List<Tilemap> allMaps = forbidPlacingWithMaps.Concat(restrictedMaps).ToList();
+        return allMaps.Any(map => { return map.HasTile(pos); });
     }
 
     private void HandleDrawing()
     {
         if (selectedObj != null)
         {
-            switch(selectedObj.PlaceType)
+            switch (selectedObj.PlaceType)
             {
-                case PlaceType.Single:
-                default: 
-                    DrawItem(); 
-                    break;
                 case PlaceType.Line:
                     LineRenderer();
                     break;
@@ -162,7 +190,7 @@ public class BuildingCreator : Singleton<BuildingCreator>
                     break;
             }
         }
-        DrawItem();
+
     }
 
     private void HandleDrawRelease()
@@ -176,12 +204,18 @@ public class BuildingCreator : Singleton<BuildingCreator>
                     DrawBounds(tilemap);
                     previewMap.ClearAllTiles();
                     break;
+                case PlaceType.Single:
+                default:
+                    DrawItem(tilemap, currentGridPosition, tileBase);
+                    break;
             }
         }
     }
 
     private void RectangleRenderer()
     {
+        //  Render Preview on UI Map, draw real one on Release
+
         previewMap.ClearAllTiles();
 
         bounds.xMin = currentGridPosition.x < holdStartPosition.x ? currentGridPosition.x : holdStartPosition.x;
@@ -194,7 +228,10 @@ public class BuildingCreator : Singleton<BuildingCreator>
 
     private void LineRenderer()
     {
+        //  Render Preview on UI Map, draw real one on Release
+
         previewMap.ClearAllTiles();
+
         float diffX = Mathf.Abs(currentGridPosition.x - holdStartPosition.x);
         float diffY = Mathf.Abs(currentGridPosition.y - holdStartPosition.y);
 
@@ -218,20 +255,34 @@ public class BuildingCreator : Singleton<BuildingCreator>
         DrawBounds(previewMap);
     }
 
-    private void DrawBounds (Tilemap map)
+    private void DrawBounds(Tilemap map)
     {
+        // Draws bounds on given map
         for (int x = bounds.xMin; x <= bounds.xMax; x++)
         {
             for (int y = bounds.yMin; y <= bounds.yMax; y++)
             {
-                map.SetTile(new Vector3Int(x, y, 0), tileBase);
+                DrawItem(map, new Vector3Int(x, y, 0), tileBase);
             }
         }
     }
 
-
-    private void DrawItem()
+    private void DrawItem(Tilemap map, Vector3Int position, TileBase tileBase)
     {
-        tilemap.SetTile(currentGridPosition, tileBase);
+
+        if (map != previewMap && selectedObj.GetType() == typeof(BuildingTool))
+        {
+            // it is a tool
+            BuildingTool tool = (BuildingTool)selectedObj;
+
+            tool.Use(position);
+
+        }
+        else if (!IsForbidden(position))
+        {
+            map.SetTile(position, tileBase);
+        }
+
     }
+
 }

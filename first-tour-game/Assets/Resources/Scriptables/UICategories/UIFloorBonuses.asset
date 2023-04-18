@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73eca226c7d6b4e469327824c143e251, type: 3}
   m_Name: UIFloorBonuses
   m_EditorClassIdentifier: 
-  siblingIndex: 0
+  siblingIndex: 3
   backgroundColor: {r: 1, g: 0.11764705, b: 0.46643436, a: 1}
