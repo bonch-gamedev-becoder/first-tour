@@ -70,7 +70,7 @@ public class EnemyCombat : MonoBehaviour
         rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage, GameObject shooter)
     {
 //        Debug.Log("Enemy taking damage. its hp is " + currentHealth);
         currentHealth -= damage;
@@ -78,6 +78,7 @@ public class EnemyCombat : MonoBehaviour
         if (currentHealth < 0)
         {
             Death();
+            GameManager.instance.AddPointsToTheShooter(shooter);
         }
     }
 

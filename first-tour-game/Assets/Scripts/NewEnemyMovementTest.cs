@@ -16,6 +16,9 @@ public class NewEnemyMovementTest : MonoBehaviour
 
     private void Start()
     {
+        if (GameManager.instance.gameOver)
+            return;
+
         lastPlayerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
         isAttackBaseScriptAdded = false;
         Test();
@@ -30,6 +33,9 @@ public class NewEnemyMovementTest : MonoBehaviour
 
     private void Update()
     {
+        if (!Cooperative.instance.PlayersActive())
+            return;
+
         if (tag == "HunterEnemy")
         {
             Vector2 obj = GameObject.FindGameObjectWithTag("Player").transform.position;

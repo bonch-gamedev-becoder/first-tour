@@ -19,6 +19,22 @@ public class Cooperative : MonoBehaviour
             instance = this;
     }
 
+    public void DisablePlayers()
+    {
+        Player1.SetActive(false);
+
+        if (Player2 != null)
+            Player2.SetActive(false);
+    }
+
+    public bool PlayersActive()
+    {
+        if (Player1.active)
+            return true;
+
+        return false;
+    }
+
 
     public void SetControls()
     {

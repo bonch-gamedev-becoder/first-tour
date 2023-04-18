@@ -22,6 +22,9 @@ public class GameManager : MonoBehaviour
     public int mazeCof = 8;
     public int level;
     public int points;
+    public int Player1Score;
+    public int Player2Score;
+    public bool gameOver;
 
 
     private void Awake()
@@ -63,6 +66,9 @@ public class GameManager : MonoBehaviour
         if (level > 8)
             difficulty = 3;
 
+        if (level > 10)
+            SceneManager.LoadScene("Ending");
+
         Debug.Log("difficulty=" + difficulty);
     }
 
@@ -73,7 +79,7 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene("MainMenu");
         }
 
-        if (Input.GetKeyDown(KeyCode.L))
+        if (Input.GetKeyDown(KeyCode.L) || PlayerPrefs.GetInt("Second") == 1)
         {
             if (Coop == false)
             SpawnSecondPlayer();
@@ -111,6 +117,7 @@ public class GameManager : MonoBehaviour
             return;
 
         Coop = true;
+        PlayerPrefs.SetInt("Second", 1);
         Vector2 pos = new Vector2(currentMaze.finishPosition.x, currentMaze.finishPosition.y + 1);
         Cooperative.instance.Player2 = Instantiate(PlayerPrefab, pos, Quaternion.identity);
         Cooperative.instance.SetControls();
@@ -127,10 +134,21 @@ public class GameManager : MonoBehaviour
     {
         points += number;
 
-        if (points > difficulty * 10)
+        if (points > level * 10)
             levelComplete();
 
         ScoreTracker.instance.ChangeText();
+    }
+
+    public void AddPointsToTheShooter(GameObject shooter)
+    {
+        if (shooter == null)
+            return;
+
+        if (shooter.TryGetComponent<Statistics>(out Statistics stat)) 
+            stat.AddScore();  
+        else 
+            shooter.AddComponent<Statistics>().AddScore();
     }
 
     void levelComplete()
@@ -147,7 +165,18 @@ public class GameManager : MonoBehaviour
 
     public void loadNextLevel()
     {
+        PlayerPrefs.SetInt("previous", level);
         points = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void showStat()
+    {
+        if (gameOver)
+            return;
+
+        gameOver = true;
+        Cooperative.instance.DisablePlayers();
+        GameOver.instance.ShowGameOver();
     }
 }

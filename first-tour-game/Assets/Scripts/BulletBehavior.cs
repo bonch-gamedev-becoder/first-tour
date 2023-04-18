@@ -15,9 +15,9 @@ public class BulletBehavior : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Collistion for bullit is " + collision.transform.name);
+        //Debug.Log("Collistion for bullit is " + collision.transform.name);
 
-        //рикошет пули от стены
+        //??????? ???? ?? ?????
         if (gameObject.CompareTag("Bullet") && collision.gameObject.CompareTag("blockingLayer"))
         {
             Vector2 wallNormal = collision.contacts[0].normal;
@@ -30,7 +30,7 @@ public class BulletBehavior : MonoBehaviour
         //player hit enemies
         if (gameObject.tag == "Bullet" && collision.gameObject.layer == 9)
         {
-            collision.gameObject.GetComponent<EnemyCombat>().TakeDamage(damage);
+            collision.gameObject.GetComponent<EnemyCombat>().TakeDamage(damage, executor);
         }
 
         if (gameObject.tag == "BulletHunter" && collision.collider.tag == "Player")

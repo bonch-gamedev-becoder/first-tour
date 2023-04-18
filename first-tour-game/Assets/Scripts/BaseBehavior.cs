@@ -48,6 +48,6 @@ public class BaseBehavior : MonoBehaviour
     private void Death()
     {
         Destroy(gameObject);
-        GameManager.instance.loadNextLevel();
+        GameManager.instance.showStat();
     }
 }

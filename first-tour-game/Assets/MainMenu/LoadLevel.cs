@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class LoadLevel : MonoBehaviour
 {
     public int levelNumber;
+    public bool previous;
     
     void Start()
     {
@@ -15,6 +16,13 @@ public class LoadLevel : MonoBehaviour
 
     void StartGame()
     {
+        if (previous)
+        {
+            SceneManager.LoadScene("GameMap");
+            return;
+        }
+
+
         if (PlayerPrefs.GetInt("maximum") >= levelNumber)
             PlayerPrefs.SetInt("level", levelNumber);
         else
