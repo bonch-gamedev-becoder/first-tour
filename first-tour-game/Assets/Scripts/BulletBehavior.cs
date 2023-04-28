@@ -8,6 +8,8 @@ public class BulletBehavior : MonoBehaviour
     public GameObject executor;
     public int damage;
     private Rigidbody2D rb;
+    [SerializeField] GameObject deathEffect;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -16,6 +18,11 @@ public class BulletBehavior : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //Debug.Log("Collistion for bullit is " + collision.transform.name);
+
+        if (gameObject.CompareTag("Bullet") && collision.gameObject.CompareTag("Player"))
+        {
+            return;
+        }
 
         //??????? ???? ?? ?????
         if (gameObject.CompareTag("Bullet") && collision.gameObject.CompareTag("blockingLayer"))
@@ -47,9 +54,10 @@ public class BulletBehavior : MonoBehaviour
             GameManager.instance.currentBase.TakeDamage(damage);
         }
 
-        if (collision.gameObject.tag == "blockingLayerBreakable")
+        if (collision.gameObject.tag == "blockingLayerBreakable" && tag == "Bullet")
         {
             Destroy(collision.gameObject);
+            Instantiate(deathEffect, collision.gameObject.transform.position, Quaternion.identity);
         }
 
         Destroy(gameObject);

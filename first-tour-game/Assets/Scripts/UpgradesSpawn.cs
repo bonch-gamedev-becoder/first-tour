@@ -22,9 +22,13 @@ public class UpgradesSpawn : MonoBehaviour
         {
             for (int y = 0; y < GameManager.instance.difficulty * GameManager.instance.mazeCof - 1; y++)
             {
-                int randnum = Random.Range(0, 40);
-                if (randnum == 1)
-                    SpawnUpgrade(x,y);
+                //upgrades should not spawn near base
+                if (MazeSpawner.instance != null || tag == "JokerEnemy")
+                {
+                    int randnum = Random.Range(0, 40);
+                    if (randnum == 1)
+                        SpawnUpgrade(x, y);
+                }
             }
         }
     }

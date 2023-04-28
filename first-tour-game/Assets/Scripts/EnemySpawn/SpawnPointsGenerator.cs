@@ -72,9 +72,26 @@ public class SpawnPointsGenerator : MonoBehaviour
 
     void SetSpawner()
     {
-        int randnum = Random.Range(0, spawnPoints.Count);
-        int randSpawner = Random.Range(0, spawners.Count);
+        int randnumChance = Random.Range(0, 100);
+        int randnum = Random.Range(0, spawnPoints.Count - 1);
+        int randSpawner = 0;
 
+        if (randnumChance >= 0 && randnumChance <= 40)
+        {
+            randSpawner = 0;
+        }
+        else if (randnumChance >= 41 && randnumChance <= 70)
+        {
+            randSpawner = 1;
+        }
+        else if (randnumChance >= 71 && randnumChance <= 90)
+        {
+            randSpawner = 2;
+        }
+        else if (randnumChance >= 91 && randnumChance <= 100)
+        {
+            randSpawner = 3;
+        }
         GameObject obj = Instantiate(spawners[randSpawner], spawnPoints[randnum], Quaternion.identity).gameObject;
         currentSpawnPoints.Add(obj);
         spawnPoints.RemoveAt(randnum);

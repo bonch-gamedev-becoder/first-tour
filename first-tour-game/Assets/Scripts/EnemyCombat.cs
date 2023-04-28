@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using Random = System.Random;
+//using Random = System.Random;
 
 public class EnemyCombat : MonoBehaviour
 {
@@ -92,13 +92,12 @@ public class EnemyCombat : MonoBehaviour
         
         Destroy(gameObject);
 
-        Random rand = new Random();
-        int randNumber = rand.Next(0, 49);
+        int randNumber = Random.Range(0, 49);
 
-        //Thanos bonus (probability chance 1/10)
-        if (randNumber >= 0 && randNumber <= 4)
+        //Thanos bonus (probability chance 1/25)
+        if (randNumber == 35)
         {
-            Instantiate(thanosBonus, transform.position, Quaternion.identity);
+             Instantiate(thanosBonus, transform.position, Quaternion.identity);
         }
         //Shield bonus (probability chance 1/5)
         else if (randNumber >= 5 && randNumber <= 14)

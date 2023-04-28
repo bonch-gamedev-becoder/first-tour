@@ -14,7 +14,8 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public bool Coop;
 
-    public GameObject PlayerPrefab;
+    public GameObject Player1Prefab;
+    public GameObject Player2Prefab;
     public GameObject Base;
     public GameObject enemySpawnPoints;
     public GameObject upgrades;
@@ -107,7 +108,7 @@ public class GameManager : MonoBehaviour
             return;
 
         Vector2 pos = new Vector2(currentMaze.finishPosition.x, currentMaze.finishPosition.y - 1);
-        Cooperative.instance.Player1 = Instantiate(PlayerPrefab, pos, Quaternion.identity);
+        Cooperative.instance.Player1 = Instantiate(Player1Prefab, pos, Quaternion.identity);
         Cooperative.instance.SetControls();
     }
 
@@ -119,7 +120,7 @@ public class GameManager : MonoBehaviour
         Coop = true;
         PlayerPrefs.SetInt("Second", 1);
         Vector2 pos = new Vector2(currentMaze.finishPosition.x, currentMaze.finishPosition.y + 1);
-        Cooperative.instance.Player2 = Instantiate(PlayerPrefab, pos, Quaternion.identity);
+        Cooperative.instance.Player2 = Instantiate(Player2Prefab, pos, Quaternion.identity);
         Cooperative.instance.SetControls();
     }
 

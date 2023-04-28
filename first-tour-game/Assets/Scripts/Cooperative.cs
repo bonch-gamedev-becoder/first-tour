@@ -6,9 +6,9 @@ public class Cooperative : MonoBehaviour
 {
     public static Cooperative instance;
 
-    [HideInInspector]
+    //[HideInInspector]
     public GameObject Player1;
-    [HideInInspector]
+    //[HideInInspector]
     public GameObject Player2;
 
 

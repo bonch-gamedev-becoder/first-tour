@@ -23,6 +23,7 @@ TagManager:
   - Maze
   - HunterEnemy
   - BulletHunter
+  - JokerEnemy
   layers:
   - Default
   - TransparentFX

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 09a30fbb42c401946aa8bdb1278fd60d
+guid: b6a4605c631392042a18733aabc9a60e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 8
+  spritePixelsToUnits: 13
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -117,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: shield_spritesheet_0
+      name: shield_spritesheet(1)_0
       rect:
         serializedVersion: 2
         x: 0
@@ -131,14 +131,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6fcf10404f152194687e15227b2eff87
-      internalID: 1283834627
+      spriteID: f62df09e8a0e1b14a9e01fdfb1578e38
+      internalID: 447449738
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shield_spritesheet_1
+      name: shield_spritesheet(1)_1
       rect:
         serializedVersion: 2
         x: 26
@@ -152,14 +152,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 37d14d71262839f4c98d4b9d6ecfd743
-      internalID: 7750575
+      spriteID: a265ad8cdd6654e4a85f779b9cffc30b
+      internalID: 96632044
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shield_spritesheet_2
+      name: shield_spritesheet(1)_2
       rect:
         serializedVersion: 2
         x: 52
@@ -173,14 +173,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba94e6c4c2f7abb4582b0a3ae4cde2b1
-      internalID: 1814128628
+      spriteID: f8b73b5e641bc9a4f8679fe2e28b969b
+      internalID: 99783768
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shield_spritesheet_3
+      name: shield_spritesheet(1)_3
       rect:
         serializedVersion: 2
         x: 78
@@ -194,14 +194,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e7fe9d4712687e245aad214537727b7d
-      internalID: 1608191445
+      spriteID: 0216fc8bf94d5dd4e9cfd3defda2572a
+      internalID: -1085197802
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shield_spritesheet_4
+      name: shield_spritesheet(1)_4
       rect:
         serializedVersion: 2
         x: 104
@@ -215,8 +215,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f88b477413bfe54cbea725abed7feb0
-      internalID: 1019066150
+      spriteID: 8b0ea93e84fdea14c85d21d1195227b0
+      internalID: -791360451
       vertices: []
       indices: 
       edges: []
@@ -232,11 +232,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      shield_spritesheet_2: 1814128628
-      shield_spritesheet_1: 7750575
-      shield_spritesheet_4: 1019066150
-      shield_spritesheet_3: 1608191445
-      shield_spritesheet_0: 1283834627
+      shield_spritesheet(1)_4: -791360451
+      shield_spritesheet(1)_0: 447449738
+      shield_spritesheet(1)_3: -1085197802
+      shield_spritesheet(1)_1: 96632044
+      shield_spritesheet(1)_2: 99783768
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

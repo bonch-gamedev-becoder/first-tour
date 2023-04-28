@@ -114,7 +114,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 1841137394, guid: 6707ddc3195a5064bba27294aa0cf9af, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.99076056, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -138,7 +138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabDebug: {fileID: 0}
   mazespawner: {fileID: 8556974059376787603, guid: 5424bade280704503b1b2a04cd7d6e31, type: 3}
-  cooldown: 0.25
+  cooldown: 1
   coefficientOfEnemy: 1
 --- !u!50 &6425118310537953836
 Rigidbody2D:
@@ -193,6 +193,7 @@ MonoBehaviour:
   upgrades:
   - {fileID: 334504115486616768, guid: 694e787cc7c4afb449a668fa4316afe3, type: 3}
   - {fileID: 8540741278544936299, guid: 23fb8f3f155865b469ea6afb28e95b5f, type: 3}
+  - {fileID: 7284783116802447960, guid: d69c37edaab9d85428ccfcdb179cfbaa, type: 3}
 --- !u!61 &7362462535759571802
 BoxCollider2D:
   m_ObjectHideFlags: 0
