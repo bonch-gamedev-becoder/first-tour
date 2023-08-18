@@ -57,11 +57,11 @@ public class SpawnPointsGenerator : MonoBehaviour
                 if (Mathf.Abs(x - baseX) > GameManager.instance.difficulty + 2) {
                     if (Mathf.Abs(x - baseY) > GameManager.instance.difficulty + 2)
                     {
-                        Vector2 vector = new(GameManager.instance.currentMaze.cells[x, y].X + 0.5f, GameManager.instance.currentMaze.cells[x, y].Y + 0.5f);
+}                        Vector2 vector = new Vector3(GameManager.instance.currentMaze.cells[x, y].X + 0.5f, GameManager.instance.currentMaze.cells[x, y].Y + 0.5f);
                         spawnPoints.Add(vector);
                     }
                 }       
-    }
+    
 
     void SetSpawners()
     {

@@ -39,7 +39,7 @@ public class CameraMovement : MonoBehaviour
 		transform.position = Vector3.Lerp(Player1Pos, GameManager.instance.currentBase.transform.position, 0.5f / distanceFromFirstToSecond);
 
 		if (transform.position.z >= 0)
-			transform.position = new(transform.position.x, transform.position.y, -10);
+            transform.position = new Vector3(transform.position.x, transform.position.y, -10);
 
 //		Debug.Log("Size of camera: " + mainCamera.orthographicSize + "\n distance from target: " + distanceFromFirstToSecond);
 
@@ -47,8 +47,8 @@ public class CameraMovement : MonoBehaviour
 
 	void CameraForCoop()
     {
-		Player1Pos = new (Cooperative.instance.Player1.transform.position.x, Cooperative.instance.Player1.transform.position.y, -10);
-		Player2Pos = new (Cooperative.instance.Player2.transform.position.x, Cooperative.instance.Player2.transform.position.y, -10);
+		Player1Pos = new Vector3(Cooperative.instance.Player1.transform.position.x, Cooperative.instance.Player1.transform.position.y, -10);
+		Player2Pos = new Vector3(Cooperative.instance.Player2.transform.position.x, Cooperative.instance.Player2.transform.position.y, -10);
 
 		float distanceFromFirstToSecond = Vector2.Distance(Player1Pos, Player2Pos);
 
