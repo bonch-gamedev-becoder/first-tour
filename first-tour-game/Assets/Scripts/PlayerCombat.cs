@@ -30,7 +30,9 @@ public class PlayerCombat : MonoBehaviour
     void Shoot()
     {
         SpawnAndImpulseBullet();
-        SoundsManager.instance.PlaySound("Shoot", true);
+
+        if (SoundsManager.instance != null)
+         SoundsManager.instance.PlaySound("Shoot", true);
     }
 
     private void SpawnAndImpulseBullet()

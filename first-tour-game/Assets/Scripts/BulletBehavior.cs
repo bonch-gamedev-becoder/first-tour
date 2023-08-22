@@ -56,8 +56,11 @@ public class BulletBehavior : MonoBehaviour
 
         if (collision.gameObject.tag == "blockingLayerBreakable" && tag == "Bullet")
         {
-            Destroy(collision.gameObject);
+            if (deathEffect != null)
             Instantiate(deathEffect, collision.gameObject.transform.position, Quaternion.identity);
+
+            if (collision.gameObject != null)
+            Destroy(collision.gameObject);
         }
 
         Destroy(gameObject);

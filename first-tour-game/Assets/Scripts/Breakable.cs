@@ -10,9 +10,10 @@ public class Breakable : MonoBehaviour
     {
         if (collision.transform.tag == "Bullet")
         {
+            Debug.Log(gameObject);
             Instantiate(crash, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }
-  
+
 }
