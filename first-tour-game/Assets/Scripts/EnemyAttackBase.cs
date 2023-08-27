@@ -23,8 +23,10 @@ public class EnemyAttackBase : MonoBehaviour
             target = GameManager.instance.currentBase.transform;
         }
 
-        
+
+        if (target.position != null)
         dir = target.position - transform.position;
+
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
 
         transform.rotation = Quaternion.Euler(0f, 0f, angle);

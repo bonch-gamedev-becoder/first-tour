@@ -84,7 +84,7 @@ public class EnemyCombat : MonoBehaviour
 
     public void Death()
     {
-        GameManager.instance.AddPoints(1);
+        GameManager.instance.AddPoints(PointsScaler());
         if (deathEffect != null)
         {
             Instantiate(deathEffect, transform.position, Quaternion.identity);
@@ -109,5 +109,25 @@ public class EnemyCombat : MonoBehaviour
         {
             Instantiate(invisibilityBonus, transform.position, Quaternion.identity);
         }
+    }
+
+   private int PointsScaler()
+    {
+        int scale = 1;
+
+        if (gameObject.name == "JokerEnemy")
+            scale = 5;
+
+        if (gameObject.name == "FastEnemy")
+            scale = 2;
+
+        if (gameObject.name == "ArtilleryEnemy")
+            scale = 10;
+
+        if (gameObject.name == "HunterEnemy")
+            scale = 20;
+
+        return scale;
+
     }
 }

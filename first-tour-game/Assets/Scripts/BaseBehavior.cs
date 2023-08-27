@@ -5,8 +5,12 @@ using UnityEngine;
 using UnityEngine.UI;
 public class BaseBehavior : MonoBehaviour
 {
-    [SerializeField] int maxHealth;
-    public int currentHealth;
+    public static BaseBehavior instance = null;
+
+    [SerializeField]
+    public float maxHealth;
+    [SerializeField]
+    public float currentHealth;
 
     public bool shieldActive = false;
     private Animator animator;
@@ -14,6 +18,9 @@ public class BaseBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (instance == null)
+            instance = this;
+
         currentHealth = maxHealth;
         animator = GetComponent<Animator>();
     }
@@ -42,7 +49,7 @@ public class BaseBehavior : MonoBehaviour
         {
             Death();
         }
-        BaseHpTracker.instance.ChangeText();
+        BaseHpTracker.instance.ChangeHealthLine();
     }
 
     private void Death()

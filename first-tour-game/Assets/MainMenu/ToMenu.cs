@@ -15,6 +15,6 @@ public class ToMenu : MonoBehaviour
     void GoToMenu()
     {
         PlayerPrefs.SetInt("Second", 0);
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("MenuForSep");
     }
 }

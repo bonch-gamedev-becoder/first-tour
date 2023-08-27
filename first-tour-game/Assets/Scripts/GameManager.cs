@@ -34,8 +34,9 @@ public class GameManager : MonoBehaviour
         if (instance == null)
             instance = this;
 
-    
-        level = PlayerPrefs.GetInt("level");
+
+        level = 8;
+            //PlayerPrefs.GetInt("level");    ЗАЛОЧЕНО ДЛЯ ТУРНИРА!
 
         if (level == 0)
             level = 1;
@@ -77,7 +78,7 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            SceneManager.LoadScene("MainMenu");
+            SceneManager.LoadScene("MenuForSep");
         }
 
         if (Input.GetKeyDown(KeyCode.L) || PlayerPrefs.GetInt("Second") == 1)
@@ -114,14 +115,16 @@ public class GameManager : MonoBehaviour
 
     void SpawnSecondPlayer()
     {
-        if (Cooperative.instance == null)
-            return;
+        //if (Cooperative.instance == null)
+        //    return;
 
-        Coop = true;
-        PlayerPrefs.SetInt("Second", 1);
-        Vector2 pos = new Vector2(currentMaze.finishPosition.x, currentMaze.finishPosition.y + 1);
-        Cooperative.instance.Player2 = Instantiate(Player2Prefab, pos, Quaternion.identity);
-        Cooperative.instance.SetControls();
+        //Coop = true;
+        //PlayerPrefs.SetInt("Second", 1);
+        //Vector2 pos = new Vector2(currentMaze.finishPosition.x, currentMaze.finishPosition.y + 1);
+        //Cooperative.instance.Player2 = Instantiate(Player2Prefab, pos, Quaternion.identity);
+        //Cooperative.instance.SetControls();
+
+        //ЗАБЛОЧЕНО ДЛЯ ТУРНИРА!
     }
 
     void SpawnBase()
@@ -154,14 +157,16 @@ public class GameManager : MonoBehaviour
 
     void levelComplete()
     {
-        level += 1;
-        PlayerPrefs.SetInt("level", level);
+        //level += 1;
+        //PlayerPrefs.SetInt("level", level);
 
-        if (level > PlayerPrefs.GetInt("maximum"))
-            PlayerPrefs.SetInt("maximum", level);
+        //if (level > PlayerPrefs.GetInt("maximum"))
+        //    PlayerPrefs.SetInt("maximum", level);
 
-        Debug.Log("You completed " + level + " level!");
-        loadNextLevel();
+        //Debug.Log("You completed " + level + " level!");
+        //loadNextLevel();
+
+        //ЗАЛОЧЕНО ДЛЯ ТУРНИРА!
     }
 
     public void loadNextLevel()
@@ -176,8 +181,10 @@ public class GameManager : MonoBehaviour
         if (gameOver)
             return;
 
+        SceneManager.LoadScene("Results");
+
         gameOver = true;
-        Cooperative.instance.DisablePlayers();
-        GameOver.instance.ShowGameOver();
+        //Cooperative.instance.DisablePlayers();
+        //GameOver.instance.ShowGameOver();
     }
 }

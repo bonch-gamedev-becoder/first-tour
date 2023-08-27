@@ -8,19 +8,23 @@ public class BaseHpTracker : MonoBehaviour
 {
     public static BaseHpTracker instance = null;
 
-    Text text;
+    Image Line;
 
     private void Start()
     {
         if (instance == null)
             instance = this;
 
-        text = GetComponent<Text>();
+        Line = GetComponent<Image>();
         //ChangeText();
     }
 
-    public void ChangeText()
+    
+
+    public void ChangeHealthLine()
     {
-        text.text = "Base HP: " + GameManager.instance.currentBase.currentHealth;
+      
+        Line.fillAmount = BaseBehavior.instance.currentHealth / BaseBehavior.instance.maxHealth;
+        Debug.Log(Line.fillAmount);
     }
 }
